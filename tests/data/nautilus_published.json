@@ -1,0 +1,21 @@
+{
+  "floor_aware": false,
+  "lcdm": {
+    "name": "\u039bCDM (PUBLISHED \u03c3)",
+    "log_Z": 12.595019094436052,
+    "n_eff": 10067.190390917252,
+    "elapsed_s": 98.76163458824158,
+    "max_logL": 34.586877679978855,
+    "n_samples": 13100
+  },
+  "um": {
+    "name": "UM-locked (PUBLISHED \u03c3)",
+    "log_Z": -792.2964864547498,
+    "n_eff": 10012.717045983687,
+    "elapsed_s": 30.02969264984131,
+    "max_logL": -787.6843094538478,
+    "n_samples": 11400
+  },
+  "ln_B": -804.8915055491858,
+  "verdict": "DECISIVE evidence AGAINST UM"
+}

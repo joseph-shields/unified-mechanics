@@ -1,0 +1,120 @@
+{
+  "total": 1242895,
+  "pass": 1218411,
+  "fail": 24484,
+  "sub_floor": 761173,
+  "compute_time_s": 3.60316801071167,
+  "per_category": [
+    {
+      "category": "CMB_BB",
+      "N": 2499,
+      "PASS": 2499,
+      "FAIL": 0,
+      "SUB_FLOOR": 853,
+      "median_residual": 0.03710304945707321,
+      "p90_residual": 0.061492785811424255,
+      "max_residual": 0.06508183479309082
+    },
+    {
+      "category": "CMB_EE",
+      "N": 2499,
+      "PASS": 1818,
+      "FAIL": 681,
+      "SUB_FLOOR": 496,
+      "median_residual": 0.06707517057657242,
+      "p90_residual": 0.131400465965271,
+      "max_residual": 0.15494099259376526
+    },
+    {
+      "category": "CMB_TE",
+      "N": 2499,
+      "PASS": 521,
+      "FAIL": 1978,
+      "SUB_FLOOR": 112,
+      "median_residual": 0.16651883721351624,
+      "p90_residual": 0.5921042561531067,
+      "max_residual": 1.9993915557861328
+    },
+    {
+      "category": "CMB_TT",
+      "N": 2499,
+      "PASS": 1911,
+      "FAIL": 588,
+      "SUB_FLOOR": 466,
+      "median_residual": 0.03102898597717285,
+      "p90_residual": 0.0754598081111908,
+      "max_residual": 0.09803147614002228
+    },
+    {
+      "category": "CMB_phiphi",
+      "N": 2499,
+      "PASS": 2499,
+      "FAIL": 0,
+      "SUB_FLOOR": 3,
+      "median_residual": 0.04201970994472504,
+      "p90_residual": 0.047349605709314346,
+      "max_residual": 0.04816404730081558
+    },
+    {
+      "category": "D_A",
+      "N": 80000,
+      "PASS": 80000,
+      "FAIL": 0,
+      "SUB_FLOOR": 79313,
+      "median_residual": 0.00807526707649231,
+      "p90_residual": 0.008664002642035484,
+      "max_residual": 0.016949575394392014
+    },
+    {
+      "category": "D_C",
+      "N": 80000,
+      "PASS": 80000,
+      "FAIL": 0,
+      "SUB_FLOOR": 79313,
+      "median_residual": 0.00807526707649231,
+      "p90_residual": 0.008664002642035484,
+      "max_residual": 0.016949575394392014
+    },
+    {
+      "category": "D_L",
+      "N": 80000,
+      "PASS": 80000,
+      "FAIL": 0,
+      "SUB_FLOOR": 80000,
+      "median_residual": 0.008071396499872208,
+      "p90_residual": 0.008615680038928986,
+      "max_residual": 0.01102516707032919
+    },
+    {
+      "category": "H_z",
+      "N": 400,
+      "PASS": 400,
+      "FAIL": 0,
+      "SUB_FLOOR": 400,
+      "median_residual": 0.0017582408618181944,
+      "p90_residual": 0.0017912543844431639,
+      "max_residual": 0.0017927082953974605
+    },
+    {
+      "category": "P_k",
+      "N": 990000,
+      "PASS": 968763,
+      "FAIL": 21237,
+      "SUB_FLOOR": 520217,
+      "median_residual": 0.010624513030052185,
+      "p90_residual": 0.03680571913719177,
+      "max_residual": 0.05831539258360863
+    }
+  ],
+  "global_residual_stats": {
+    "median": 0.008309806697070599,
+    "p10": 0.0005586448241956532,
+    "p25": 0.003969143144786358,
+    "p50": 0.008309806697070599,
+    "p75": 0.020204409956932068,
+    "p90": 0.0347798690199852,
+    "p99": 0.05686859041452408,
+    "max": 1.9993915557861328
+  },
+  "epsilon_floor": 0.029508497187473705
+}

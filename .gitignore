@@ -1,0 +1,16 @@
+# Survey chain text files — reproducible from OSIRIS scripts
+# (see tests/data/chains/_summary*.json for the actual results)
+tests/data/chains/*.txt
+
+# Compiled python / caches
+__pycache__/
+*.pyc
+.DS_Store
+
+# JAX cache
+.jax_cache/
+.jax_cache_*/
+
+# editor temp
+*.swp
+*~
