@@ -30,6 +30,13 @@ From `r` alone, with **zero free parameters**:
 
 **98-observable test suite:** 88 PASS within n×ε_floor. Structural Bayes ln B = +102 vs ΛCDM, fluke probability ~10⁻⁴⁴.
 
+---
+
+![UM-derived CMB sky — simulated realization from c²=c+1 (not the Planck sky)](tests/figures/07_cmb_sky_4k.png)
+
+*Simulated full-sky CMB temperature map produced by LiMB/CAMB using only r-derived inputs (nside 4096, lmax 8000, no beam smoothing). This is a stochastic realization — not the Planck sky.*
+
+---
 
 ## Corpus
 
@@ -70,7 +77,7 @@ limb/
 └── LICENSE              # LGPL v3+
 ```
 
-The CMB image above was produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on CPU.
+The CMB image at the top was produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on CPU.
 
 ### Tests and figures
 
