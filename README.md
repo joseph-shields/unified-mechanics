@@ -44,7 +44,7 @@ From `r` alone, with **zero free parameters**:
   <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — seed e, Mollweide projection"/>
 </p>
 
-*Full-sky Mollweide projection (seed `e = 271828`, nside 4096, lmax 8000). This realization closely reproduces the large-scale structure of the Planck sky — the warm region upper-left, cold region lower-right — by statistical coincidence, not by design.*
+*Full-sky Mollweide projection (seed `e = 271828`, nside 4096, lmax 8000). This realization closely reproduces the large-scale structure of the Planck sky — the warm region upper-left, cold region lower-right — by statistical coincidence, not by design. The renders here use lmax 8000; LiMB/CAMB runs cleanly to lmax 20000, resolving angular scales (~0.6 arcmin) an order of magnitude finer than any current instrument, with all inputs remaining closed-form functions of `r` at every multipole.*
 
 ---
 
