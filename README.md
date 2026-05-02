@@ -30,6 +30,18 @@ From `r` alone, with **zero free parameters**:
 
 **98-observable test suite:** 88 PASS within n×ε_floor. Structural Bayes ln B = +102 vs ΛCDM, fluke probability ~10⁻⁴⁴.
 
+---
+
+<p align="center">
+  <img src="tests/figures/08a_cmb_sphere_1.png" width="48%" alt="UM-derived CMB sphere — simulated realization from c²=c+1"/>
+  &nbsp;
+  <img src="tests/figures/08c_cmb_sphere_3.png" width="48%" alt="UM-derived CMB sphere — cold spot realization"/>
+</p>
+
+*Orthographic sphere renders of UM-derived CMB temperature maps — simulated realizations from `c²=c+1`, not the Planck sky.*
+
+---
+
 ## Corpus
 
 | paper | content |
