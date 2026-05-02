@@ -9,15 +9,14 @@ Nothing in LiMB silently falls back to a LCDM fiducial.
 
 Usage::
 
-    from osiris.limb.derivations import lcdm_inputs as D
+    from limb.derivations import lcdm_inputs as D
     H0 = D.H0()                # 67.x ± 0.x  (UM-derived value)
     Omega_b = D.Omega_b()
     Omega_c = D.Omega_c()
     ...
 
-Drop the actual UM math into the function bodies as the derivations
-land. Tests in ``tests/test_limb_derivations.py`` (to be written)
-should pin every returned value against the published UM result so a
-regression in the algebra is caught immediately.
+Tests in ``tests/test_limb_derivations.py`` pin every returned value
+against the published UM result so a regression in the algebra is
+caught immediately.
 """
 from __future__ import annotations

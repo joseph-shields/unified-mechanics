@@ -3,11 +3,9 @@
 """
 LiMB **M**atter channel — baryon + CDM source terms.
 
-In the trivial-channel limit (UM → GR), this returns zero. Drop UM
-matter-sector corrections in here as derivations land. The matter
-channel is the one most likely to fix the Apollo familiarity issues
-seen in DGF chains: CMB peak-height ratios and lensing smoothing are
-both dominated by matter-sector physics.
+In the trivial-channel limit (UM → GR), this returns zero.
+UM matter-sector corrections enter here; CMB peak-height ratios
+and lensing smoothing are both dominated by matter-sector physics.
 """
 from __future__ import annotations
 

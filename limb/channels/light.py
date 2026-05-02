@@ -4,8 +4,8 @@
 LiMB **L**ight channel — radiation-sector source terms.
 
 In the trivial-channel limit (UM → GR), this returns zero and
-LiMB-LCDM reduces to standard linear-perturbation cosmology. Drop UM
-photon/neutrino corrections in here as derivations land.
+LiMB-LCDM reduces to standard linear-perturbation cosmology.
+UM photon/neutrino corrections enter here.
 """
 from __future__ import annotations
 
@@ -21,12 +21,12 @@ def source_fn(state, tau, k, cosmo):
         Full perturbation state vector at conformal time ``tau`` for
         wavenumber ``k``. Layout matches the vendored DISCO-EB
         synchronous-gauge hierarchy (see
-        ``osiris/_boltzmann/perturbations.py``).
+        synchronous-gauge perturbation hierarchy.
     tau : float
         Conformal time, Mpc.
     k : float
         Wavenumber, 1/Mpc.
-    cosmo : osiris.Cosmology
+    cosmo : Cosmology
         Cosmology instance.
 
     Returns

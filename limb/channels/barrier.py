@@ -11,10 +11,7 @@ contributions to the CMB. UM treats this as a structural channel, not
 a passive consequence of recombination physics.
 
 In the trivial-channel limit, this reduces to standard Thomson
-coupling driven by ``osiris.recombination.peebles_xe`` (or whatever
-recombination history LiMB-LCDM ends up using once the first-principles
-xe(a) replacement lands — Saha + Peebles three-level atom rather than
-a RECFAST fit).
+coupling via a Saha + Peebles three-level recombination history.
 """
 from __future__ import annotations
 

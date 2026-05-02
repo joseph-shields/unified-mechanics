@@ -19,8 +19,8 @@ the framework itself.
 """
 from __future__ import annotations
 
-from osiris.cosmology import Cosmology
-from osiris.limb.derivations import lcdm_inputs as D
+from osiris.cosmology import Cosmology  # OSIRIS Cosmology dataclass (runtime dep)
+from limb.derivations import lcdm_inputs as D
 
 
 # Dimensional anchors. UM derives the shape of both but not the

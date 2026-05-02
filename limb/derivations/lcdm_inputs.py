@@ -27,8 +27,6 @@ Sources for each closed form: Paper 1 (``01_foundation.md``) §8 and
 Appendix A.1, plus Paper 2 (``02_cosmology.md``) §3-7. Each ``DERIVED``
 function carries an inline citation to the equation it implements.
 
-Language note (Joe, 2026-04-29): use **derivation** / **result** /
-**must**. Never "prediction".
 """
 from __future__ import annotations
 
@@ -48,7 +46,7 @@ ONE_MINUS_R: float = 1.0 - R
 def _open(name: str, note: str) -> float:
     raise NotImplementedError(
         f"UM derivation of {name!r} is OPEN. {note}\n"
-        f"Fill in the body of osiris.limb.derivations.lcdm_inputs.{name} "
+        f"Fill in the body of limb.derivations.lcdm_inputs.{name} "
         f"with the closed-form result and update the docstring tag."
     )
 
