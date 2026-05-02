@@ -4,11 +4,6 @@
 
 ---
 
-![CMB full-sky map derived from c²=c+1](tests/figures/07_cmb_sky_4k.png)
-*Full-sky CMB temperature map rendered from UM-derived inputs via LiMB/CAMB. Every parameter is a closed-form function of r = 1/(2φ). No fitting.*
-
----
-
 ## The axiom
 
 ```
