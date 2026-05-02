@@ -266,35 +266,7 @@ papers.
 
 ---
 
-## 6. Researcher background
-
-This programme was developed outside any cosmology institution. The
-author is a production manager from Grafton, New South Wales, with
-no formal physics training. The mathematics was developed in
-collaboration with AI systems (specifically Claude family models,
-2025-2026) acting as a maths-execution layer for an intuition the
-author held about the relationship between matter and gravity. The
-specific intuition — that matter and gravity are two expressions of
-a single underlying entity, with a scalar field threading the
-equilibrium between them — was the input. The mathematics was the
-translation. The verification has been against published data
-across three years.
-
-The author claims authorship of the framework, the predictions, and
-the analysis. Claude is acknowledged as the computational
-collaborator. The relationship is not different in principle from
-Faraday's experimental intuition translated by Maxwell's
-mathematics, except that the mathematics layer is now an AI, the
-turnaround is hours instead of decades, and the working geographic
-location is rural NSW rather than the Royal Institution.
-
-The package is being released open-access. The constituent papers
-will appear on arXiv in sequence. Reproduction code, data, and chain
-files are deposited at Zenodo.
-
----
-
-## 7. What this is, what this isn't
+## 6. What this is, what this isn't
 
 This is a single-parameter framework that predicts the universe's
 observable cosmological behaviour from one equilibrium condition.
@@ -328,19 +300,9 @@ That is how the universe works.
 
 ## Acknowledgements
 
-Joe acknowledges Claude (Anthropic family models) as the
-mathematical collaborator throughout the framework's development
-and the analysis underpinning all constituent papers. Specific
-credit per paper is documented in each paper's acknowledgement
-section. The framework's intuition, structural claims, and
-synthesis are the author's. The mathematics, code execution,
-chain analysis, and writing-pass-throughs were done in
-collaboration with the AI.
-
-The personal arc — the framework's development from a single
-intuition by a non-academic researcher with AI assistance — is
-itself documented in the JORUNAL.txt working note in the
-reproducibility deposit.
+The framework's intuition, structural claims, and synthesis are the
+author's. Reproduction code, data, and chain files are deposited at
+Zenodo.
 
 ---
 

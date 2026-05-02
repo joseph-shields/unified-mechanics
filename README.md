@@ -38,38 +38,33 @@ From `r` alone, with **zero free parameters**:
   <img src="tests/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
 </p>
 
-*Orthographic sphere renders at **lmax 20000** — angular resolution ~0.6 arcmin, far finer than any current instrument. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity that produces a ~−150 µK cold patch at RA 150°, Dec −57°. Both spheres are independent random realizations drawn from the same UM-derived power spectrum (`c²=c+1`, zero free parameters). Different seeds produce different patterns of hot and cold spots; neither realization is the Planck sky. UM predicts the full statistical distribution — the power spectrum, acoustic peak positions, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
+*Orthographic sphere renders at lmax 20000 — angular resolution ~0.6 arcmin, far finer than any current instrument, generated on a consumer CPU with no upper bound on ℓ. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity producing a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent random realizations drawn from the same UM-derived power spectrum. UM predicts the full statistical distribution — acoustic peak positions, power spectrum shape, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
 
 <p align="center">
-  <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — seed e, Mollweide projection"/>
+  <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
 </p>
 
-*Full-sky Mollweide projection (seed `e = 271828`, nside 4096, lmax 8000). This realization closely reproduces the large-scale structure of the Planck sky — the warm region upper-left, cold region lower-right — by statistical coincidence, not by design. The renders here use lmax 8000; LiMB/CAMB runs cleanly to lmax 20000 on a Ryzen 5 CPU, resolving angular scales (~0.6 arcmin) an order of magnitude finer than any current instrument — with all inputs remaining closed-form functions of `r` at every multipole. With more compute there is no ceiling: the framework places no upper bound on ℓ.*
+*Full-sky Mollweide projection (nside 4096, lmax 8000). This realization reproduces the large-scale structure of the Planck sky — warm region upper-left, cold region lower-right — by statistical coincidence, illustrating that the UM-derived power spectrum is consistent with the observed sky. All inputs are closed-form functions of `r` at every multipole; with more compute there is no ceiling.*
 
 ---
 
-## Corpus
+## Papers
 
-| paper | content |
+| | |
 |---|---|
-| `00_WHAT_THIS_IS.md` | one-page entry point |
-| `00_MASTER_HANDOVER.md` | high-level overview, key results table |
-| `01_FOUNDATION.md` | axiom, recursion, three-channel decomposition, Lagrangian, noise floor, Born coefficient, E₈ closure, cereal-bowl rule |
-| `02_COSMOLOGY.md` | every r-only LCDM closed form: Ω_b, Ω_c, w₀, wₐ, n_s, A_s, τ_reio, Y_He, N_eff, Σmν, ρ_Λ, Hubble braiding |
-| `03_GRAVITY_AND_BLACK_HOLES.md` | Bekenstein-Hawking 1/4 derivation, Hawking radiation, ER=EPR consistency, deep planetary cores |
-| `04_QUANTUM_AND_HOLOGRAPHIC.md` | Born coupling, holographic encoding, event-routing principle, decoherence, three-channel completion of QM |
-| `05_PARTICLE_PHYSICS.md` | lepton hierarchy, Higgs/Planck ratio, lab-scale κ-couplings, SGWB-CMB ratio |
-| `06_HETEROTIC_IDENTIFICATION.md` | (G₂)₁ ⊂ (E₈)₁ in heterotic E₈×E₈, dark matter as second E₈, SM emergence, landscape resolved |
+| `01_FOUNDATION.md` | Axiom, recursion, three-channel decomposition, Lagrangian, noise floor, Born coefficient, E₈ closure |
+| `02_COSMOLOGY.md` | Every r-only ΛCDM closed form: Ω_b, Ω_c, w₀, wₐ, n_s, A_s, τ_reio, Y_He, N_eff, Σmν, ρ_Λ, Hubble braiding |
+| `03_GRAVITY_AND_BLACK_HOLES.md` | Bekenstein-Hawking 1/4 derivation, Hawking radiation, ER=EPR consistency |
+| `04_QUANTUM_AND_HOLOGRAPHIC.md` | Born coupling, holographic encoding, event-routing principle, decoherence |
+| `05_PARTICLE_PHYSICS.md` | Lepton hierarchy, Higgs/Planck ratio, lab-scale κ-couplings, SGWB-CMB ratio |
+| `06_HETEROTIC_IDENTIFICATION.md` | (G₂)₁ ⊂ (E₈)₁ in heterotic E₈×E₈, dark matter as second E₈, SM emergence |
 | `07_EXPERIMENTAL_PROGRAM.md` | Phase 0 (Born rule, $2.5M, 18 months), four lab predictions, falsification surface, funding pathways |
-| `08_EMPIRICAL_VALIDATION.md` | 98-observable test suite, alternate-recursion uniqueness, cereal-bowl weighting, structural Bayes |
-| `PRE_REGISTRATION.md` | locked predictions before observations, falsification thresholds |
+| `08_EMPIRICAL_VALIDATION.md` | 98-observable test suite, alternate-recursion uniqueness, structural Bayes |
+| `PRE_REGISTRATION.md` | Locked predictions prior to observations, falsification thresholds |
 
-### DGF derivation record
+### Synthesis paper
 
-| file | content |
-|---|---|
-| `dgf/PROGRAMME_PAPER.md` | *How The Universe Works* — synthesis paper covering the c²=c+1 derivation and full empirical programme |
-| `dgf/chain_yamls/` | cobaya chain configs (B, L0, L1, LF, LFP, M, R5v8, T, T2) — the derivation chains behind the cosmological observables |
+`dgf/PROGRAMME_PAPER.md` — *How The Universe Works*: full derivation of the c²=c+1 axiom and the complete empirical programme, with cobaya MCMC chain configs covering Planck, DESI, DES Y3, KiDS, and joint constraints.
 
 ### LiMB — the solver
 
@@ -87,27 +82,18 @@ limb/
 └── LICENSE              # LGPL v3+
 ```
 
-The CMB image above was produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on CPU.
-
-### Tests and figures
-
-```
-tests/
-├── data/chains/         # MCMC chain outputs (Planck, DESI, DES Y3, KiDS, joint)
-├── figures/             # CMB sky map (4K), power spectra, Hubble braiding, ...
-└── render_cmb_4k.py     # reproduce the 4K CMB image
-```
+The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
 
 
 ## Falsification roadmap
 
-| test | timing | what falsifies UM |
+| Test | Timing | What falsifies UM |
 |---|---|---|
-| **Phase 0 — Born rule** at Hf-178m2 | $2.5M / 18 months | null at 13.6 ppm sensitivity |
-| **Euclid 2026** dark-energy | late 2026 | w₀, wₐ outside (−0.934, +0.091) ± floor |
+| **Phase 0 — Born rule** at Hf-178m2 | $2.5M / 18 months | Null at 13.6 ppm sensitivity |
+| **Euclid 2026** dark-energy | Late 2026 | w₀, wₐ outside (−0.934, +0.091) ± floor |
 | **DESI Year 5/7** neutrino bound | 2027–2030 | Σmν < 0.05 eV |
-| **LISA + PTA** SGWB ratio | mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
-| **Direct DM-photon coupling** | ongoing | any positive signal |
+| **LISA + PTA** SGWB ratio | Mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
+| **Direct DM-photon coupling** | Ongoing | Any positive signal |
 
 
 ## Citation
