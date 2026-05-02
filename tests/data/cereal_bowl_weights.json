@@ -1,0 +1,51 @@
+{
+  "target_universe_composition": {
+    "light": 0.4774575140626314,
+    "boundary": 0.42705098312484224,
+    "matter": 0.09549150281252627
+  },
+  "survey_compositions": {
+    "planck": {
+      "light": 0.7,
+      "boundary": 0.2,
+      "matter": 0.1,
+      "rationale": "CMB is the light-channel record of recombination; ISW + lensing are boundary; peak-height ratios are matter."
+    },
+    "desi": {
+      "light": 0.2,
+      "boundary": 0.75,
+      "matter": 0.05,
+      "rationale": "Acoustic scale set by photons; distance-to-z is purely boundary-channel geometry."
+    },
+    "kids": {
+      "light": 0.3,
+      "boundary": 0.4,
+      "matter": 0.3,
+      "rationale": "Photons (light) bent by gravity (boundary) of matter clumps (matter); roughly even split."
+    },
+    "des_y3": {
+      "light": 0.25,
+      "boundary": 0.35,
+      "matter": 0.4,
+      "rationale": "Shear + galaxy clustering + g-g lensing; galaxy clustering dominates \u2192 matter-heavy."
+    }
+  },
+  "cereal_bowl_weights": {
+    "planck": 0.5400559537790981,
+    "desi": 0.38639130397295346,
+    "kids": 0.07355274224794857,
+    "des_y3": 0.0
+  },
+  "achieved_composition": {
+    "light": 0.47738325111434393,
+    "boundary": 0.42722576563471415,
+    "matter": 0.09539098325094206
+  },
+  "naive_equal_composition": {
+    "light": 0.3625,
+    "boundary": 0.42500000000000004,
+    "matter": 0.21250000000000002
+  },
+  "loss_cereal_bowl": 4.616809350655768e-08,
+  "loss_naive_equal": 0.026910424985309545
+}

@@ -1,0 +1,21 @@
+{
+  "floor_aware": true,
+  "lcdm": {
+    "name": "\u039bCDM (FLOOR-AWARE \u03c3)",
+    "log_Z": 10.049138254144907,
+    "n_eff": 10060.272038287421,
+    "elapsed_s": 65.88482975959778,
+    "max_logL": 22.737776458086337,
+    "n_samples": 11800
+  },
+  "um": {
+    "name": "UM-locked (FLOOR-AWARE \u03c3)",
+    "log_Z": 15.61153520479536,
+    "n_eff": 10086.18927322405,
+    "elapsed_s": 25.934409379959106,
+    "max_logL": 18.482515743223196,
+    "n_samples": 11500
+  },
+  "ln_B": 5.562396950650452,
+  "verdict": "DECISIVE evidence FOR UM  (Jeffreys: ln B > 5)"
+}

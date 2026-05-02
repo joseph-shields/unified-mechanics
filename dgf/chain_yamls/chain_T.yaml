@@ -1,0 +1,138 @@
+# Channel-Scan follow-up — Chain T (Thermocline boundary anchor)
+# Pre-registered in 02_THERMOCLINE_ANCHOR_PREREG.md (timestamp 14:55 NSW).
+# Tests whether the J6 thermocline-equilibrium result (𝒯 = 69.507 ± 0.844
+# at 0.04σ from prediction) survives the addition of KiDS-1000 + BOSS fσ8.
+# w0 is FIXED at the framework's attractor -0.933 (well inside v7's
+# training core; the v7 edge-extrapolation issue does not apply).
+
+theory:
+  dgf_emulator_v7.DGFEmulator:
+    python_path: /home/joe/Science/DGF/research/scripts
+    w0: -0.933
+
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+  planck_2018_lowl.TT: null
+  bao.desi_dr2.desi_bao_all: null
+  boss_fsigma8.BOSS_fsigma8:
+    python_path: /home/joe/Science/DGF/research/scripts
+  kids1000_cobaya.KiDS1000:
+    python_path: /home/joe/Science/DGF/research/scripts
+    data_directory: /mnt/Data/Science/DGF/research/dgf_env/data/KiDS-1000
+
+# Matter-channel anchor: TDCOSMO-style Gaussian prior on h (= H0/100)
+# Cobaya requires priors on input parameters. h_TDCOSMO = 73.29/100 = 0.7329.
+prior:
+  TDCOSMO_h_prior: 'lambda h: -((h - 0.7329) / 0.0168)**2 / 2'
+
+params:
+  omega_b:
+    prior:
+      min: 0.019
+      max: 0.025
+    ref:
+      dist: norm
+      loc: 0.02238
+      scale: 0.0003
+    proposal: 0.0002
+    latex: \omega_b
+  omega_cdm:
+    prior:
+      min: 0.08
+      max: 0.2
+    ref:
+      dist: norm
+      loc: 0.11
+      scale: 0.005
+    proposal: 0.003
+    latex: \omega_{\rm cdm}
+  h:
+    prior:
+      min: 0.6
+      max: 0.8
+    ref:
+      dist: norm
+      loc: 0.7
+      scale: 0.01
+    proposal: 0.006
+    latex: h
+  tau_reio:
+    prior:
+      min: 0.01
+      max: 0.15
+    ref:
+      dist: norm
+      loc: 0.054
+      scale: 0.005
+    proposal: 0.003
+    latex: \tau_{\rm reio}
+  n_s:
+    prior:
+      min: 0.9
+      max: 1.1
+    ref:
+      dist: norm
+      loc: 0.966
+      scale: 0.005
+    proposal: 0.004
+    latex: n_s
+  logA:
+    prior:
+      min: 2.8
+      max: 3.2
+    ref:
+      dist: norm
+      loc: 3.002
+      scale: 0.015
+    proposal: 0.01
+    latex: \ln(10^{10}A_s)
+  Sigma_lens:
+    prior:
+      min: -0.5
+      max: 0.5
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.05
+    proposal: 0.03
+    latex: \Sigma_{\rm lens}
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1.0
+      scale: 0.0025
+    ref: 1.0
+    proposal: 0.001
+    latex: A_{\rm planck}
+  H0:
+    derived: true
+    latex: H_0
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_m
+  S8:
+    derived: true
+    latex: S_8
+  rdrag:
+    derived: true
+    latex: r_{\rm drag}
+
+sampler:
+  mcmc:
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 30.0
+    max_samples: 50000
+    max_tries: 1000000
+    Rminus1_stop: 0.05
+    Rminus1_cl_stop: 0.1
+    seed: 7005
+    output_every: 60s
+    learn_every: 40d
+    burn_in: 500
+    oversample_power: 0.4
+
+output: chain_T
+packages_path: /home/joe/Science/DGF/research/data

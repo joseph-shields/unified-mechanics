@@ -1,0 +1,165 @@
+# Channel-Scan follow-up — Chain LFP (Light Flood PURE)
+# After chain LF (with KiDS still in it as a "boundary check")
+# converged at h = 0.7367 — the same matter attractor as T and T2 —
+# we identified that KiDS's narrow physical-volume sampling (~10⁷⁵ cm³)
+# combined with cobaya's volume-blind inverse-variance weighting was
+# enough to dominate basin selection even at "85% light" stack design
+# by raw inverse-variance contribution. See volume_weighting_methodology.md.
+#
+# Chain LFP tests the framework's prediction at TRUE light-only
+# composition: drop KiDS entirely; keep only likelihoods whose physical
+# sampling volume is comparable to Planck's full-sky integration.
+#
+# Stack: Planck plik_lite + Planck lowl + DESI DR2 BAO ONLY.
+# All three sample large fractions of the cosmic volume:
+#   Planck plik_lite:   V ≈ 3 × 10⁸⁵ cm³  (full sky × to last scattering)
+#   Planck lowl:        V ≈ 3 × 10⁸⁵ cm³  (full sky × to last scattering)
+#   DESI DR2 BAO:       V ≈ 5 × 10⁸² cm³  (~30% sky × z = 0.3-2.4)
+#
+# Total volume sampled: ~6 × 10⁸⁵ cm³, all light-channel.
+# Matter-channel volume sampled: 0.
+# This is 100/0/0 light/boundary/matter — pure light-channel test.
+#
+# w₀ FIXED at -0.933 (same as T/T2/LF; v7 inside training core).
+#
+# Predicted outcome: H₀ ≈ 65.7 ± 1.0 (the framework's light-channel
+# H₀ value at fixed w₀ = -0.933, reproducing J6's H₀_light = 65.72).
+# Post-hoc 𝒯_arithmetic = (H₀_chain + 73.29)/2 ≈ 69.50 ± 0.50,
+# reproducing J6 thermocline equilibrium at extended dataset.
+#
+# Falsification: if the chain converges at h ≈ 0.737 (same matter
+# attractor as T/T2/LF), the v7 emulator has a fixed-w₀ artefact
+# that pushes h up regardless of dataset — and chain LFP will
+# motivate transitioning to v8 emulator for any further fixed-w₀
+# physics tests.
+
+theory:
+  dgf_emulator_v8.DGFEmulatorV8:
+    python_path: /home/joe/Science/DGF/research/scripts
+
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+  planck_2018_lowl.TT: null
+  bao.desi_dr2.desi_bao_all: null
+
+params:
+  w0:
+    prior:
+      min: -2.0
+      max: -0.3
+    ref:
+      dist: norm
+      loc: -0.933
+      scale: 0.05
+    proposal: 0.03
+    latex: w_0
+  omega_b:
+    prior:
+      min: 0.018
+      max: 0.028
+    ref:
+      dist: norm
+      loc: 0.02238
+      scale: 0.0003
+    proposal: 0.0002
+    latex: \omega_b
+  omega_cdm:
+    prior:
+      min: 0.08
+      max: 0.2
+    ref:
+      dist: norm
+      loc: 0.120
+      scale: 0.003
+    proposal: 0.003
+    latex: \omega_{\rm cdm}
+  h:
+    prior:
+      min: 0.6
+      max: 0.8
+    ref:
+      dist: norm
+      loc: 0.674
+      scale: 0.005
+    proposal: 0.012
+    latex: h
+  tau_reio:
+    prior:
+      min: 0.01
+      max: 0.15
+    ref:
+      dist: norm
+      loc: 0.054
+      scale: 0.005
+    proposal: 0.003
+    latex: \tau_{\rm reio}
+  n_s:
+    prior:
+      min: 0.9
+      max: 1.1
+    ref:
+      dist: norm
+      loc: 0.966
+      scale: 0.005
+    proposal: 0.004
+    latex: n_s
+  logA:
+    prior:
+      min: 2.8
+      max: 3.2
+    ref:
+      dist: norm
+      loc: 3.002
+      scale: 0.015
+    proposal: 0.01
+    latex: \ln(10^{10}A_s)
+  Sigma_lens:
+    prior:
+      min: -0.5
+      max: 0.5
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.05
+    proposal: 0.03
+    latex: \Sigma_{\rm lens}
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1.0
+      scale: 0.0025
+    ref: 1.0
+    proposal: 0.001
+    latex: A_{\rm planck}
+  H0:
+    derived: true
+    latex: H_0
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_m
+  S8:
+    derived: true
+    latex: S_8
+  rdrag:
+    derived: true
+    latex: r_{\rm drag}
+
+sampler:
+  mcmc:
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 5.0
+    max_samples: 50000
+    max_tries: 1000000
+    Rminus1_stop: 0.05
+    Rminus1_cl_stop: 0.1
+    seed: 7009
+    output_every: 60s
+    learn_every: 40d
+    burn_in: 500
+    oversample_power: 0.4
+
+output: chain_R5v8
+packages_path: /home/joe/Science/DGF/research/data

@@ -1,0 +1,127 @@
+# Channel-Scan Experiment — Chain L1
+# Light + small matter: L0 + BOSS fsigma8
+# Pre-registered lambda_eff = 0.164, predicted w0 = -0.962
+# See 00_PREREGISTRATION.md for hypothesis and methodology.
+
+theory:
+  dgf_emulator_v7.DGFEmulator:
+    python_path: /home/joe/Science/DGF/research/scripts
+
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+  planck_2018_lowl.TT: null
+  bao.desi_dr2.desi_bao_all: null
+  boss_fsigma8.BOSS_fsigma8:
+    python_path: /home/joe/Science/DGF/research/scripts
+
+params:
+  omega_b:
+    prior:
+      min: 0.019
+      max: 0.025
+    ref:
+      dist: norm
+      loc: 0.02238
+      scale: 0.0003
+    proposal: 0.0002
+    latex: \omega_b
+  omega_cdm:
+    prior:
+      min: 0.08
+      max: 0.2
+    ref:
+      dist: norm
+      loc: 0.11
+      scale: 0.005
+    proposal: 0.003
+    latex: \omega_{\rm cdm}
+  h:
+    prior:
+      min: 0.6
+      max: 0.8
+    ref:
+      dist: norm
+      loc: 0.7
+      scale: 0.01
+    proposal: 0.006
+    latex: h
+  tau_reio:
+    prior:
+      min: 0.01
+      max: 0.15
+    ref:
+      dist: norm
+      loc: 0.054
+      scale: 0.005
+    proposal: 0.003
+    latex: \tau_{\rm reio}
+  n_s:
+    prior:
+      min: 0.9
+      max: 1.1
+    ref:
+      dist: norm
+      loc: 0.966
+      scale: 0.005
+    proposal: 0.004
+    latex: n_s
+  logA:
+    prior:
+      min: 2.8
+      max: 3.2
+    ref:
+      dist: norm
+      loc: 3.002
+      scale: 0.015
+    proposal: 0.01
+    latex: \ln(10^{10}A_s)
+  w0:
+    prior:
+      min: -1.10
+      max: -0.50
+    ref:
+      dist: norm
+      loc: -0.962
+      scale: 0.04
+    proposal: 0.03
+    latex: w_0
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1.0
+      scale: 0.0025
+    ref: 1.0
+    proposal: 0.001
+    latex: A_{\rm planck}
+  sigma8:
+    derived: true
+    latex: \sigma_8
+  Omega_m:
+    derived: true
+    latex: \Omega_m
+  H0:
+    derived: true
+    latex: H_0
+  S8:
+    derived: true
+    latex: S_8
+  rdrag:
+    derived: true
+    latex: r_{\rm drag}
+
+sampler:
+  mcmc:
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 30.0
+    max_samples: 50000
+    max_tries: 1000000
+    Rminus1_stop: 0.05
+    Rminus1_cl_stop: 0.1
+    seed: 7002
+    output_every: 60s
+    learn_every: 40d
+    burn_in: 500
+    oversample_power: 0.4
+
+output: chain_L1
+packages_path: /home/joe/Science/DGF/research/data
