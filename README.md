@@ -38,7 +38,7 @@ From `r` alone, with **zero free parameters**:
   <img src="tests/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
 </p>
 
-*Orthographic sphere renders at **lmax 20000** — angular resolution ~0.6 arcmin, far finer than any current instrument. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity that produces a ~−150 µK cold patch at RA 150°, Dec −57°. Both spheres are independent random realizations drawn from the same UM-derived power spectrum (`c²=c+1`, zero free parameters). Different seeds produce different patterns of hot and cold spots; neither realization is the Planck sky — the real CMB pattern is fixed by the quantum fluctuations of our specific universe, which no theory predicts.*
+*Orthographic sphere renders at **lmax 20000** — angular resolution ~0.6 arcmin, far finer than any current instrument. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity that produces a ~−150 µK cold patch at RA 150°, Dec −57°. Both spheres are independent random realizations drawn from the same UM-derived power spectrum (`c²=c+1`, zero free parameters). Different seeds produce different patterns of hot and cold spots; neither realization is the Planck sky. UM predicts the full statistical distribution — the power spectrum, acoustic peak positions, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
 
 <p align="center">
   <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — seed e, Mollweide projection"/>
