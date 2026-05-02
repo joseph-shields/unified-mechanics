@@ -33,12 +33,18 @@ From `r` alone, with **zero free parameters**:
 ---
 
 <p align="center">
-  <img src="tests/figures/08a_cmb_sphere_1.png" width="48%" alt="UM-derived CMB sphere — simulated realization from c²=c+1"/>
+  <img src="tests/figures/08a_cmb_sphere_1.png" width="48%" alt="UM-derived CMB sphere — seed 1"/>
   &nbsp;
-  <img src="tests/figures/08c_cmb_sphere_3.png" width="48%" alt="UM-derived CMB sphere — cold spot realization"/>
+  <img src="tests/figures/08c_cmb_sphere_3.png" width="48%" alt="UM-derived CMB sphere — seed 3"/>
 </p>
 
-*Orthographic sphere renders of UM-derived CMB temperature maps — simulated realizations from `c²=c+1`, not the Planck sky.*
+*Two independent random realizations of the UM-derived CMB temperature field (different random seeds). Each draw has the same statistical properties — acoustic peak positions, angular power spectrum, variance at every scale — derived from `c²=c+1` with zero free parameters. The specific pattern of hot and cold spots differs between seeds, and neither matches the Planck sky: the actual CMB pattern is set by the quantum fluctuations of our particular universe, which no theory can predict from first principles.*
+
+<p align="center">
+  <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — seed e, Mollweide projection"/>
+</p>
+
+*Full-sky Mollweide projection (seed `e = 271828`, nside 4096, lmax 8000). This realization closely reproduces the large-scale structure of the Planck sky — the warm region upper-left, cold region lower-right — by statistical coincidence, not by design.*
 
 ---
 
