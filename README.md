@@ -33,12 +33,12 @@ From `r` alone, with **zero free parameters**:
 ---
 
 <p align="center">
-  <img src="tests/figures/08a_cmb_sphere_1.png" width="48%" alt="UM-derived CMB sphere — seed 1"/>
-  &nbsp;
-  <img src="tests/figures/08c_cmb_sphere_3.png" width="48%" alt="UM-derived CMB sphere — seed 3"/>
+  <img src="tests/figures/08a_cmb_sphere_1.png" width="46%" alt="UM-derived CMB sphere — Eridanus supervoid realization"/>
+  &nbsp;&nbsp;
+  <img src="tests/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
 </p>
 
-*Two independent random realizations of the UM-derived CMB temperature field (different random seeds). Each draw has the same statistical properties — acoustic peak positions, angular power spectrum, variance at every scale — derived from `c²=c+1` with zero free parameters. The specific pattern of hot and cold spots differs between seeds, and neither matches the Planck sky: the actual CMB pattern is set by the quantum fluctuations of our particular universe, which no theory can predict from first principles.*
+*Orthographic sphere renders at **lmax 20000** — angular resolution ~0.6 arcmin, far finer than any current instrument. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity that produces a ~−150 µK cold patch at RA 150°, Dec −57°. Both spheres are independent random realizations drawn from the same UM-derived power spectrum (`c²=c+1`, zero free parameters). Different seeds produce different patterns of hot and cold spots; neither realization is the Planck sky — the real CMB pattern is fixed by the quantum fluctuations of our specific universe, which no theory predicts.*
 
 <p align="center">
   <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — seed e, Mollweide projection"/>
