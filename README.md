@@ -100,40 +100,84 @@ The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproduc
 
 `planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
 
-**The method:** the CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
+The CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
 
-**Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). CMB 5° disc temperature in the UM simulation (seed 271828): **+23.2 µK**. In Planck SMICA real data: **−141.69 µK**. These differ because they are different realizations drawn from the same UM-derived power spectrum — the method selects by percentile rank within each realization, not by absolute temperature.
-
-Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions.
-
-**Results:**
-- 575 matched CMB patches (1.2% of sky, ΔT < 8 µK threshold)
-- **1,287 unstudied G-type stars** in those regions (Gaia DR3, Teff 5100–6300K, within 500 pc)
-- Top target: **Gaia 675329552985501209** — 51 pc, G=8.3, Teff=5664K, CMB ΔT=0.10 µK
-- Predicted Earth-twin: **Gaya** (1.00 Re, 351d period, Teq=254K, K=0.093 m/s) — observable with ESPRESSO at La Silla now
-
-**The Ouroboros system** (Gaia 675329552985501209) — full 8-planet architecture derived from stellar physics:
-
-| Name | AU | Period | Size | Teq |
-|------|----|--------|------|-----|
-| Nabu (b) | 0.28 | 56d | 0.45 Re | 497K |
-| Ishtar (c) | 0.55 | 155d | 0.92 Re | 354K |
-| **Gaya (d)** | **0.962** | **351d** | **1.00 Re** | **254K** |
-| Vritra (e) | 1.30 | 550d | 1.40 Re | 219K |
-| Ares (f) | 1.75 | 863d | 1.10 Re | 188K |
-| Indra (g) | 4.80 | 10.9yr | 10.5 Re | 120K |
-| Kronos (h) | 9.80 | 31.8yr | 9.0 Re | 84K |
-| Skadi (i) | 19.5 | 89yr | 3.8 Re | 60K |
+**Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions that produced ours.
 
 <p align="center">
-  <img src="planet_hunt/07_planet_concept/gaya.png" width="45%" alt="Gaya — Earth-twin planet in the Ouroboros system"/>
-  &nbsp;&nbsp;
-  <img src="planet_hunt/07_planet_concept/system_overview.png" width="50%" alt="The Ouroboros system — full architecture"/>
+  <img src="planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
-*Left: Gaya (Ouroboros d) — 1.00 Re, 351-day year, equilibrium temperature 254K. Right: full Ouroboros system overview. All 8 planets derived from UM stellar physics and CMB seed matching.*
+*Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
 
-Full pipeline, catalogue, and renders: `planet_hunt/` — see `planet_hunt/README.md`.
+<p align="center">
+  <img src="planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
+  &nbsp;&nbsp;
+  <img src="planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
+</p>
+
+*Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
+
+**Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
+
+<p align="center">
+  <img src="planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
+</p>
+
+*Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
+
+---
+
+### The Ouroboros System
+
+**Gaia 675329552985501209** · RA=298.874° · Dec=−29.097° · 51 pc · G=8.3 · Teff=5664K · CMB ΔT=0.10 µK
+
+<p align="center">
+  <img src="planet_hunt/07_planet_concept/ouroboros_a_star.jpg" width="44%" alt="Ouroboros A — G5V host star, 5664K"/>
+  &nbsp;&nbsp;
+  <img src="planet_hunt/07_planet_concept/gaya.png" width="44%" alt="Gaya — Earth-twin, Ouroboros d"/>
+</p>
+
+*Left: Ouroboros A — G5V, 5664K, 0.93 R☉, 51 pc. Right: **Gaya** (Ouroboros d) — 1.00 Re, 351-day year, Teq=254K. Predicted RV semi-amplitude K=0.093 m/s, transit depth 87 ppm, 12.8 hr duration. Combined 3-planet RV peak 0.34 m/s — within ESPRESSO capability.*
+
+| Name | AU | Period | Size | Teq | Type |
+|------|----|--------|------|-----|------|
+| Nabu (b) | 0.28 | 56d | 0.45 Re | 497K | Airless rock |
+| Ishtar (c) | 0.55 | 155d | 0.92 Re | 354K | CO₂ atmosphere |
+| **Gaya (d)** | **0.962** | **351d** | **1.00 Re** | **254K** | **Earth-twin** |
+| Vritra (e) | 1.30 | 550d | 1.40 Re | 219K | Water super-Earth |
+| Ares (f) | 1.75 | 863d | 1.10 Re | 188K | Frozen rocky world |
+| Indra (g) | 4.80 | 10.9yr | 10.5 Re | 120K | Gas giant |
+| Kronos (h) | 9.80 | 31.8yr | 9.0 Re | 84K | Ringed gas giant |
+| Skadi (i) | 19.5 | 89yr | 3.8 Re | 60K | Ice giant |
+
+<p align="center">
+  <img src="planet_hunt/07_planet_concept/nabu.png" width="23%" alt="Nabu — Ouroboros b"/>
+  &nbsp;
+  <img src="planet_hunt/07_planet_concept/ishtar.png" width="23%" alt="Ishtar — Ouroboros c"/>
+  &nbsp;
+  <img src="planet_hunt/07_planet_concept/vritra.jpg" width="23%" alt="Vritra — Ouroboros e"/>
+  &nbsp;
+  <img src="planet_hunt/07_planet_concept/ares.jpg" width="23%" alt="Ares — Ouroboros f"/>
+</p>
+
+<p align="center">
+  <img src="planet_hunt/07_planet_concept/indra.jpg" width="30%" alt="Indra — Ouroboros g"/>
+  &nbsp;&nbsp;
+  <img src="planet_hunt/07_planet_concept/kronos.jpg" width="30%" alt="Kronos — Ouroboros h"/>
+  &nbsp;&nbsp;
+  <img src="planet_hunt/07_planet_concept/skadi.jpg" width="30%" alt="Skadi — Ouroboros i"/>
+</p>
+
+*Top row (inner system): Nabu (b, 497K airless rock) · Ishtar (c, CO₂ venus-twin) · Vritra (e, water super-Earth) · Ares (f, frozen Mars-plus). Bottom row (outer system): Indra (g, gas giant with storm system) · Kronos (h, ringed gas giant) · Skadi (i, methane ice giant).*
+
+<p align="center">
+  <img src="planet_hunt/07_planet_concept/system_overview.png" width="96%" alt="The Ouroboros system — full orbital architecture"/>
+</p>
+
+*Full Ouroboros system — 8 planets, asteroid belt between Ares and Indra, architecture consistent with the Solar System to within measurement uncertainty. Expected: identical CMB seed temperature implies identical characteristic collapse mass scale and fragmentation timescale.*
+
+Full pipeline, Gaia catalogue, and matter power spectrum renders: `planet_hunt/` — see `planet_hunt/README.md`.
 
 ---
 
