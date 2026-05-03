@@ -138,13 +138,13 @@ The CMB temperature at any sky position is the fossil record of the primordial d
   <img src="planet_hunt/07_planet_concept/gaya.png" width="44%" alt="Gaya — Earth-twin, Ouroboros d"/>
 </p>
 
-*Left: Ouroboros A — G5V, 5664K, 0.93 R☉, 51 pc. Right: **Gaya** (Ouroboros d) — 1.00 Re, 351-day year, Teq=254K. Predicted RV semi-amplitude K=0.093 m/s, transit depth 87 ppm, 12.8 hr duration. Combined 3-planet RV peak 0.34 m/s — within ESPRESSO capability.*
+*Left: Ouroboros A — G5V, 5664K, 0.93 R☉, 51 pc. Right: **Gaia** (Ouroboros d) — 1.00 Re, 351-day year, Teq=254K. Predicted RV semi-amplitude K=0.093 m/s, transit depth 87 ppm, 12.8 hr duration. Combined 3-planet RV peak 0.34 m/s — within ESPRESSO capability.*
 
 | Name | AU | Period | Size | Teq | Type |
 |------|----|--------|------|-----|------|
 | Nabu (b) | 0.28 | 56d | 0.45 Re | 497K | Airless rock |
 | Ishtar (c) | 0.55 | 155d | 0.92 Re | 354K | CO₂ atmosphere |
-| **Gaya (d)** | **0.962** | **351d** | **1.00 Re** | **254K** | **Earth-twin** |
+| **Gaia (d)** | **0.962** | **351d** | **1.00 Re** | **254K** | **Earth-twin** |
 | Vritra (e) | 1.30 | 550d | 1.40 Re | 219K | Water super-Earth |
 | Ares (f) | 1.75 | 863d | 1.10 Re | 188K | Frozen rocky world |
 | Indra (g) | 4.80 | 10.9yr | 10.5 Re | 120K | Gas giant |
