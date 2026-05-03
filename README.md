@@ -96,6 +96,47 @@ The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproduc
 | **Direct DM-photon coupling** | Ongoing | Any positive signal |
 
 
+## CMB-Guided Planet Hunt
+
+`planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
+
+**The method:** the CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
+
+**Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). CMB 5° disc temperature in the UM simulation (seed 271828): **+23.2 µK**. In Planck SMICA real data: **−141.69 µK**. These differ because they are different realizations drawn from the same UM-derived power spectrum — the method selects by percentile rank within each realization, not by absolute temperature.
+
+Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions.
+
+**Results:**
+- 575 matched CMB patches (1.2% of sky, ΔT < 8 µK threshold)
+- **1,287 unstudied G-type stars** in those regions (Gaia DR3, Teff 5100–6300K, within 500 pc)
+- Top target: **Gaia 675329552985501209** — 51 pc, G=8.3, Teff=5664K, CMB ΔT=0.10 µK
+- Predicted Earth-twin: **Gaya** (1.00 Re, 351d period, Teq=254K, K=0.093 m/s) — observable with ESPRESSO at La Silla now
+
+**The Ouroboros system** (Gaia 675329552985501209) — full 8-planet architecture derived from stellar physics:
+
+| Name | AU | Period | Size | Teq |
+|------|----|--------|------|-----|
+| Nabu (b) | 0.28 | 56d | 0.45 Re | 497K |
+| Ishtar (c) | 0.55 | 155d | 0.92 Re | 354K |
+| **Gaya (d)** | **0.962** | **351d** | **1.00 Re** | **254K** |
+| Vritra (e) | 1.30 | 550d | 1.40 Re | 219K |
+| Ares (f) | 1.75 | 863d | 1.10 Re | 188K |
+| Indra (g) | 4.80 | 10.9yr | 10.5 Re | 120K |
+| Kronos (h) | 9.80 | 31.8yr | 9.0 Re | 84K |
+| Skadi (i) | 19.5 | 89yr | 3.8 Re | 60K |
+
+<p align="center">
+  <img src="planet_hunt/07_planet_concept/gaya.png" width="45%" alt="Gaya — Earth-twin planet in the Ouroboros system"/>
+  &nbsp;&nbsp;
+  <img src="planet_hunt/07_planet_concept/system_overview.png" width="50%" alt="The Ouroboros system — full architecture"/>
+</p>
+
+*Left: Gaya (Ouroboros d) — 1.00 Re, 351-day year, equilibrium temperature 254K. Right: full Ouroboros system overview. All 8 planets derived from UM stellar physics and CMB seed matching.*
+
+Full pipeline, catalogue, and renders: `planet_hunt/` — see `planet_hunt/README.md`.
+
+---
+
 ## Citation
 
 ```
