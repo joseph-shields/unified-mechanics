@@ -152,26 +152,6 @@ The CMB temperature at any sky position is the fossil record of the primordial d
 | Skadi (i) | 19.5 | 89yr | 3.8 Re | 60K | Ice giant |
 
 <p align="center">
-  <img src="planet_hunt/07_planet_concept/nabu.png" width="23%" alt="Nabu — Ouroboros b"/>
-  &nbsp;
-  <img src="planet_hunt/07_planet_concept/ishtar.png" width="23%" alt="Ishtar — Ouroboros c"/>
-  &nbsp;
-  <img src="planet_hunt/07_planet_concept/vritra.jpg" width="23%" alt="Vritra — Ouroboros e"/>
-  &nbsp;
-  <img src="planet_hunt/07_planet_concept/ares.jpg" width="23%" alt="Ares — Ouroboros f"/>
-</p>
-
-<p align="center">
-  <img src="planet_hunt/07_planet_concept/indra.jpg" width="30%" alt="Indra — Ouroboros g"/>
-  &nbsp;&nbsp;
-  <img src="planet_hunt/07_planet_concept/kronos.jpg" width="30%" alt="Kronos — Ouroboros h"/>
-  &nbsp;&nbsp;
-  <img src="planet_hunt/07_planet_concept/skadi.jpg" width="30%" alt="Skadi — Ouroboros i"/>
-</p>
-
-*Top row (inner system): Nabu (b, 497K airless rock) · Ishtar (c, CO₂ venus-twin) · Vritra (e, water super-Earth) · Ares (f, frozen Mars-plus). Bottom row (outer system): Indra (g, gas giant with storm system) · Kronos (h, ringed gas giant) · Skadi (i, methane ice giant).*
-
-<p align="center">
   <img src="planet_hunt/07_planet_concept/system_overview.png" width="96%" alt="The Ouroboros system — full orbital architecture"/>
 </p>
 
