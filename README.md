@@ -126,37 +126,6 @@ The CMB temperature at any sky position is the fossil record of the primordial d
 
 *Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
 
----
-
-### The Ouroboros System
-
-**Gaia 675329552985501209** · RA=298.874° · Dec=−29.097° · 51 pc · G=8.3 · Teff=5664K · CMB ΔT=0.10 µK
-
-<p align="center">
-  <img src="planet_hunt/07_planet_concept/ouroboros_a_star.jpg" width="44%" alt="Ouroboros A — G5V host star, 5664K"/>
-  &nbsp;&nbsp;
-  <img src="planet_hunt/07_planet_concept/gaya.png" width="44%" alt="Gaya — Earth-twin, Ouroboros d"/>
-</p>
-
-*Left: Ouroboros A — G5V, 5664K, 0.93 R☉, 51 pc. Right: **Gaia** (Ouroboros d) — 1.00 Re, 351-day year, Teq=254K. Predicted RV semi-amplitude K=0.093 m/s, transit depth 87 ppm, 12.8 hr duration. Combined 3-planet RV peak 0.34 m/s — within ESPRESSO capability.*
-
-| Name | AU | Period | Size | Teq | Type |
-|------|----|--------|------|-----|------|
-| Nabu (b) | 0.28 | 56d | 0.45 Re | 497K | Airless rock |
-| Ishtar (c) | 0.55 | 155d | 0.92 Re | 354K | CO₂ atmosphere |
-| **Gaia (d)** | **0.962** | **351d** | **1.00 Re** | **254K** | **Earth-twin** |
-| Vritra (e) | 1.30 | 550d | 1.40 Re | 219K | Water super-Earth |
-| Ares (f) | 1.75 | 863d | 1.10 Re | 188K | Frozen rocky world |
-| Indra (g) | 4.80 | 10.9yr | 10.5 Re | 120K | Gas giant |
-| Kronos (h) | 9.80 | 31.8yr | 9.0 Re | 84K | Ringed gas giant |
-| Skadi (i) | 19.5 | 89yr | 3.8 Re | 60K | Ice giant |
-
-<p align="center">
-  <img src="planet_hunt/07_planet_concept/system_overview.png" width="96%" alt="The Ouroboros system — full orbital architecture"/>
-</p>
-
-*Full Ouroboros system — 8 planets, asteroid belt between Ares and Indra, architecture consistent with the Solar System to within measurement uncertainty. Expected: identical CMB seed temperature implies identical characteristic collapse mass scale and fragmentation timescale.*
-
 Full pipeline, Gaia catalogue, and matter power spectrum renders: `planet_hunt/` — see `planet_hunt/README.md`.
 
 ---
