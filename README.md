@@ -73,6 +73,8 @@ From `r` alone, with **zero free parameters**:
 `limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver.
 Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
 
+> **Requirements:** LiMB plugs into your local [CAMB](https://camb.readthedocs.io) installation. Install it first with `pip install camb`. LiMB does not bundle CAMB — it just drives it with UM-derived inputs instead of fitted parameters.
+
 > **Note on the channel source terms:** `channels/` returns zeros by design — this is the trivial-channel limit (UM → GR), where UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. `camb_backend.py` is the forward solver. A built-in Planck ΛCDM reference run is included in the same file for direct comparison.
 
 ```
