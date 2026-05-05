@@ -4,6 +4,28 @@
 
 ---
 
+## New here? Start with this.
+
+You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
+
+Call the ratio `c`. The self-repeating condition gives:
+
+```
+c² = c + 1
+```
+
+Solve it (quadratic formula, positive root only):
+
+```
+φ = (1 + √5) / 2  ≈  1.618
+```
+
+Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived from nothing but the question above — predicts the dark energy fraction of the universe, the dark matter fraction, the baryon fraction, the spectral index of the CMB, and the cosmological constant, with zero free parameters and zero fitting.
+
+**Full plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
+
+---
+
 ## The axiom
 
 ```
