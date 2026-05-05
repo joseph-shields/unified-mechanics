@@ -4,8 +4,6 @@
 
 ---
 
-## New here? Start with this.
-
 You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
 
 Call the ratio `c`. The self-repeating condition gives:
