@@ -10,7 +10,7 @@
 c² = c + 1
 ```
 
-Unique positive fixed point: `φ = (1+√5)/2`. Contraction rate: `r = 1/(2φ) ≈ 0.309`.
+The recursion `c² = c + 1` is self-referential: each value feeds back into the next. Its unique positive fixed point is `φ = (1+√5)/2` — full derivation in `01_FOUNDATION.md §2`. Contraction rate: `r = 1/(2φ) ≈ 0.309`.
 From `r` alone, with **zero free parameters**:
 
 | Quantity | UM closed form | Observed | Residual |
@@ -70,6 +70,8 @@ From `r` alone, with **zero free parameters**:
 
 `limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver.
 Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
+
+> **Note on the channel source terms:** `channels/` returns zeros by design — this is the trivial-channel limit (UM → GR), where UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. `camb_backend.py` is the forward solver. A built-in Planck ΛCDM reference run is included in the same file for direct comparison.
 
 ```
 limb/
