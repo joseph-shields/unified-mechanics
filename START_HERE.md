@@ -4,15 +4,15 @@
 
 ---
 
-## Step 1: One question about a line
+## Step 1: How long is a piece of string?
 
-Take a line. Cut it into a longer piece and a shorter piece.
+You've got a piece of string. Could be any length — doesn't matter. Cut it into a longer piece and a shorter piece.
 
-Now ask one question: *what ratio between the two pieces makes the whole line relate to the longer piece in exactly the same way the longer piece relates to the shorter piece?*
+Now ask one question: *what ratio between the two pieces makes the whole string relate to the longer piece in exactly the same way the longer piece relates to the shorter piece?*
 
 That's it. That's the whole question.
 
-In other words — what cut makes the ratio repeat at every scale?
+In other words — what cut makes the ratio repeat at every scale, no matter how long the string is?
 
 ---
 
