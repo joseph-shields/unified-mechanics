@@ -1,0 +1,134 @@
+{
+  "description": "UM x hi_class/EFTCAMB full cobaya MCMC chains (2026-05-07)",
+  "theory": {
+    "code": "hi_class via DGFHiClass cobaya wrapper",
+    "gravity_model": "tabulated_alphas",
+    "alpha_K": 4.0,
+    "alpha_B": 1.0,
+    "alpha_M": 0.0,
+    "alpha_T": 0.0,
+    "G_eff_over_G_N": 1.0729
+  },
+  "um_cosmo": {
+    "omega_b": 0.02169,
+    "omega_cdm": 0.119898,
+    "h": 0.674,
+    "tau_reio": 0.059017,
+    "n_s": 0.963525,
+    "logA": 3.061748,
+    "sigma8_hiclass": 0.83747,
+    "sigma8_camb": 0.81762,
+    "sigma8_delta_pct": 2.43,
+    "rdrag_hiclass": 147.88,
+    "rdrag_camb": 147.09,
+    "Omega_m": 0.31168,
+    "S8": 0.85362
+  },
+  "runs": [
+    {
+      "label": "CMB only",
+      "data": "Planck TTTEEE_lite + lowl TT + EE",
+      "free": [
+        "A_planck"
+      ],
+      "seed": 2801,
+      "steps": 520,
+      "Rminus1": 0.009123,
+      "Rminus1_cl": 0.1735,
+      "wall_s": 3.4,
+      "n_samples": 520,
+      "min_neg_logL": 950.79692,
+      "chi2_best": 1901.59384,
+      "wmean_neg_logL": 951.2725454292929,
+      "wstd_neg_logL": 0.6333755863299613,
+      "A_planck_best": 1.0039195,
+      "A_planck_mean": 1.003890347895623,
+      "A_planck_std": 0.0007235219861774069
+    },
+    {
+      "label": "CMB + BAO",
+      "data": "Planck + DESI DR2 BAO",
+      "free": [
+        "A_planck"
+      ],
+      "seed": 2802,
+      "steps": 560,
+      "Rminus1": 0.006712,
+      "Rminus1_cl": 0.155,
+      "wall_s": 9.0,
+      "n_samples": 560,
+      "min_neg_logL": 959.26528,
+      "chi2_best": 1918.53056,
+      "wmean_neg_logL": 959.9117940895521,
+      "wstd_neg_logL": 0.8753251163074467,
+      "A_planck_best": 1.0039214,
+      "A_planck_mean": 1.0038953375373134,
+      "A_planck_std": 0.0008431937077607731
+    },
+    {
+      "label": "CMB + BAO + f\u03c38",
+      "data": "Planck + DESI DR2 BAO + BOSS f\u03c38",
+      "free": [
+        "A_planck"
+      ],
+      "seed": 2803,
+      "steps": 1000,
+      "Rminus1": 0.004667,
+      "Rminus1_cl": 0.1197,
+      "wall_s": 8.3,
+      "n_samples": 1000,
+      "min_neg_logL": 959.65616,
+      "chi2_best": 1919.31232,
+      "wmean_neg_logL": 960.1075143463742,
+      "wstd_neg_logL": 0.627311748552273,
+      "A_planck_best": 1.0039176,
+      "A_planck_mean": 1.0039498810114504,
+      "A_planck_std": 0.0007051598313503957
+    },
+    {
+      "label": "CMB + BAO + f\u03c38 (alt seed)",
+      "data": "Planck + DESI DR2 BAO + BOSS f\u03c38",
+      "free": [
+        "A_planck"
+      ],
+      "seed": 2807,
+      "steps": 1040,
+      "Rminus1": 0.006122,
+      "Rminus1_cl": 0.0807,
+      "wall_s": 7.9,
+      "n_samples": 1040,
+      "min_neg_logL": 959.65616,
+      "chi2_best": 1919.31232,
+      "wmean_neg_logL": 960.1648289779473,
+      "wstd_neg_logL": 0.7197138327001895,
+      "A_planck_best": 1.0039192,
+      "A_planck_mean": 1.0039163232400339,
+      "A_planck_std": 0.0007485580605195646
+    },
+    {
+      "label": "CMB + BAO + f\u03c38 + H_tension",
+      "data": "Planck + DESI DR2 BAO + BOSS f\u03c38 + H_matter",
+      "free": [
+        "A_planck",
+        "H_matter"
+      ],
+      "seed": 2809,
+      "steps": 2400,
+      "Rminus1": 0.002462,
+      "Rminus1_cl": 0.097,
+      "wall_s": 6.6,
+      "n_samples": 2400,
+      "min_neg_logL": 962.87719,
+      "chi2_best": 1925.75438,
+      "wmean_neg_logL": 963.9186817295946,
+      "wstd_neg_logL": 1.0785504435793074,
+      "A_planck_best": 1.0039665,
+      "A_planck_mean": 1.0038459916435314,
+      "A_planck_std": 0.0007564700116259073,
+      "H_matter_best": 72.526425,
+      "H_matter_mean": 72.46381302443088,
+      "H_matter_std": 1.5276950773798101,
+      "F_arith_best": 69.963212
+    }
+  ]
+}
