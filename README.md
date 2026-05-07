@@ -4,28 +4,7 @@
 
 ---
 
-## Reproducibility
-
-| | |
-|---|---|
-| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
-| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
-| `tests/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
-| `tests/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
-| `tests/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
-| `PRE_REGISTRATION.md` | Predictions locked before observations |
-
-**On `limb/channels/`:** Every file returns zeros by design. This is the trivial-channel limit (UM → GR). UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. The forward solver is `limb/camb_backend.py`.
-
-**On notation:** `c` in `c² = c + 1` is **not** the speed of light. It is a dimensionless recursion variable that solves to φ = (1+√5)/2. No units, no relation to electromagnetism.
-
----
-
-## What this is
-
-One question. One equation. No free parameters.
-
-You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
+You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
 
 Call the ratio `c`. The self-repeating condition gives:
 
@@ -33,13 +12,28 @@ Call the ratio `c`. The self-repeating condition gives:
 c² = c + 1
 ```
 
-Solve it:
+Solve it (quadratic formula, positive root only):
 
 ```
 φ = (1 + √5) / 2  ≈  1.618
 ```
 
-Define the contraction rate `r = 1/(2φ) ≈ 0.309`. From `r` alone, with **zero free parameters and zero fitting**:
+Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived from nothing but the question above — predicts the dark energy fraction of the universe, the dark matter fraction, the baryon fraction, the spectral index of the CMB, and the cosmological constant, with zero free parameters and zero fitting.
+
+**Full plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
+
+---
+
+## The axiom
+
+```
+c² = c + 1
+```
+
+> **Note on notation:** `c` here is **not** the speed of light. It is the dimensionless recursion variable — the unknown you are solving for. I developed this framework in private notes and got used to calling it `c` before I realised how that reads to anyone picking it up cold. Apologies for the confusion. The variable solves to `φ = (1+√5)/2`; it has no units and no relation to electromagnetism.
+
+The recursion `c² = c + 1` is self-referential: each value feeds back into the next. Its unique positive fixed point is `φ = (1+√5)/2` — full derivation in `00_DERIVATION.md`. Contraction rate: `r = 1/(2φ) ≈ 0.309`.
+From `r` alone, with **zero free parameters**:
 
 | Quantity | UM closed form | Observed | Residual |
 |---|---|---|---|
@@ -56,7 +50,7 @@ Define the contraction rate `r = 1/(2φ) ≈ 0.309`. From `r` alone, with **zero
 | ε_floor | r³ | 2.95% obs. band | structural |
 | m_τ/m_e | φ¹⁷(1−r³) | 3477 (PDG) | 0.33% |
 
-**Full plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
+**98-observable test suite:** 88 PASS within n×ε_floor. Structural Bayes ln B = +102 vs ΛCDM, fluke probability ~10⁻⁴⁴.
 
 ---
 
@@ -66,45 +60,13 @@ Define the contraction rate `r = 1/(2φ) ≈ 0.309`. From `r` alone, with **zero
   <img src="tests/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
 </p>
 
-*Orthographic sphere renders at lmax 20000 — angular resolution ~0.6 arcmin, far finer than any current instrument, generated on a consumer CPU. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity producing a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent random realizations drawn from the same UM-derived power spectrum.*
+*Orthographic sphere renders at lmax 20000 — angular resolution ~0.6 arcmin, far finer than any current instrument, generated on a consumer CPU with no upper bound on ℓ. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity producing a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent random realizations drawn from the same UM-derived power spectrum. UM predicts the full statistical distribution — acoustic peak positions, power spectrum shape, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
 
 <p align="center">
   <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
 </p>
 
-*Full-sky Mollweide projection (nside 4096, lmax 8000). All inputs are closed-form functions of `r` at every multipole.*
-
----
-
-## MCMC chains — zero free cosmological parameters
-
-The standard approach fixes a model and samples 6+ cosmological parameters. UM derives all of them from `r`. The sampler has nothing to explore in cosmology space — it converges on nuisance parameters only.
-
-**Run results (cobaya, hi_class/EFTCAMB backend, 2026-05-07):**
-
-| Run | Data | Steps to R-1<0.01 | Wall time |
-|---|---|---|---|
-| A | Planck TTTEEE + lowl | 520 | 3.4 s |
-| B | Planck + DESI DR2 BAO | 560 | 9.0 s |
-| C | Planck + BAO + BOSS fσ8 | 1000 | 8.3 s |
-| H | Planck + BAO + BOSS fσ8 (alt seed) | 1040 | 7.9 s |
-| I | Planck + BAO + fσ8 + H_tension | 2400 | 6.6 s |
-
-Runs C and H (same likelihoods, different random seeds) produce identical best-fit χ² — reproducibility confirmed across independent runs.
-
-Standard ΛCDM chains on the same data: ~10⁵ steps, hours of compute. The compression factor is ~200× and is a direct consequence of zero free cosmological parameters.
-
-**Recursion floor:** When pushed to Rminus1_stop = R^8 = 8.31×10⁻⁵, the chain density peaks at exactly R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant R = 1/(2φ). The standard cobaya convergence threshold of 0.01 is within 0.07% of R^4 = 9.12×10⁻³. The sampler is detecting the recursive structure of the posterior. Full analysis: `tests/recursion_floor/`.
-
-**Cross-code validation:**
-
-| Code | σ8 | rdrag |
-|---|---|---|
-| CAMB | 0.81762 | 147.09 Mpc |
-| hi_class/EFTCAMB | 0.83747 | 147.88 Mpc |
-| Δ | +2.43% | +0.54% |
-
-The σ8 offset is expected: hi_class runs with G_eff/G_N = 1.0729 (full EFT gravity sector), which enhances structure growth. Background quantities (rdrag) are identical — same physics, different perturbation treatment.
+*Full-sky Mollweide projection (nside 4096, lmax 8000). This realization reproduces the large-scale structure of the Planck sky — warm region upper-left, cold region lower-right — by statistical coincidence, illustrating that the UM-derived power spectrum is consistent with the observed sky. All inputs are closed-form functions of `r` at every multipole; with more compute there is no ceiling.*
 
 ---
 
@@ -128,24 +90,26 @@ The σ8 offset is expected: hi_class runs with G_eff/G_N = 1.0729 (full EFT grav
 
 ### LiMB — the solver
 
-`limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver. Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
+`limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver.
+Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
 
-> **`channels/` returns zeros by design** — this is the trivial-channel limit (UM → GR). UM's predictions come entirely from the r-only closed-form inputs to CAMB. The forward solver is `camb_backend.py`.
+> **Requirements:** LiMB plugs into your local [CAMB](https://camb.readthedocs.io) installation. Install it first with `pip install camb`. LiMB does not bundle CAMB — it just drives it with UM-derived inputs instead of fitted parameters.
 
-> **Requirements:** Needs a local [CAMB](https://camb.readthedocs.io) install (`pip install camb`).
+> **Note on the channel source terms:** `channels/` returns zeros by design — this is the trivial-channel limit (UM → GR), where UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. `camb_backend.py` is the forward solver. A built-in Planck ΛCDM reference run is included in the same file for direct comparison.
 
 ```
 limb/
 ├── camb_backend.py      # CAMB forward solve with UM-derived inputs
 ├── lcdm.py              # LiMBLCDMCosmology — trivial-channel limit
 ├── um.py                # LiMBUMCosmology   — full L+M+B source extension
-├── channels/            # L (light), M (matter), B (barrier) source terms — zeros by design
+├── channels/            # L (light), M (matter), B (barrier) source terms
 ├── derivations/
 │   └── lcdm_inputs.py   # every closed-form derivation (r-only)
 └── LICENSE              # LGPL v3+
 ```
 
----
+The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
+
 
 ## Falsification roadmap
 
@@ -157,7 +121,6 @@ limb/
 | **LISA + PTA** SGWB ratio | Mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
 | **Direct DM-photon coupling** | Ongoing | Any positive signal |
 
----
 
 ## CMB-Guided Planet Hunt
 
@@ -171,7 +134,7 @@ The CMB temperature at any sky position is the fossil record of the primordial d
   <img src="tests/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
-*Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches.*
+*Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
 
 <p align="center">
   <img src="tests/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
@@ -179,7 +142,7 @@ The CMB temperature at any sky position is the fossil record of the primordial d
   <img src="tests/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
 </p>
 
-*Left: 30°×30° zoom on Earth's CMB seed patch. Right: Earth as calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
+*Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
 
 **Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
@@ -187,9 +150,9 @@ The CMB temperature at any sky position is the fossil record of the primordial d
   <img src="tests/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
 </p>
 
-*Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets.*
+*Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
 
-Full pipeline, Gaia catalogue, and matter power spectrum renders: `tests/planet_hunt/README.md`.
+Full pipeline, Gaia catalogue, and matter power spectrum renders: `tests/planet_hunt/` — see `tests/planet_hunt/README.md`.
 
 ---
 
