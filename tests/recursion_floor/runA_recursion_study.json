@@ -1,0 +1,120 @@
+{
+  "description": "runA (CMB only, hi_class/EFTCAMB) recursion floor study",
+  "chain": "2026-05-07/recursion_floor/runA",
+  "likelihoods": "Planck TTTEEE_lite + lowl TT + EE",
+  "free_params": [
+    "A_planck"
+  ],
+  "total_progress_entries": 6820,
+  "um_recursion_constant": {
+    "R": 0.3090169943749474,
+    "phi": 1.618033988749895,
+    "formula": "R = 1/(2phi) = sin(18deg)"
+  },
+  "recursion_levels": {
+    "1": {
+      "value": 0.3090169943749474,
+      "count_nearest": 6
+    },
+    "2": {
+      "value": 0.09549150281252627,
+      "count_nearest": 4
+    },
+    "3": {
+      "value": 0.029508497187473705,
+      "count_nearest": 6
+    },
+    "4": {
+      "value": 0.009118627109394713,
+      "count_nearest": 52
+    },
+    "5": {
+      "value": 0.0028178107421710685,
+      "count_nearest": 93
+    },
+    "6": {
+      "value": 0.0008707514062631435,
+      "count_nearest": 359
+    },
+    "7": {
+      "value": 0.00026907698241119535,
+      "count_nearest": 2242
+    },
+    "8": {
+      "value": 8.314936036018817e-05,
+      "count_nearest": 3548
+    },
+    "9": {
+      "value": 2.5694565422704742e-05,
+      "count_nearest": 459
+    },
+    "10": {
+      "value": 7.94005737869467e-06,
+      "count_nearest": 33
+    },
+    "11": {
+      "value": 2.45361266632885e-06,
+      "count_nearest": 18
+    }
+  },
+  "descent_milestones": {
+    "1": {
+      "step": 32.0,
+      "rminus1": 0.198614,
+      "timestamp": "2026-05-07T16:27:05.747951"
+    },
+    "2": {
+      "step": 64.0,
+      "rminus1": 0.018302,
+      "timestamp": "2026-05-07T16:27:05.895092"
+    },
+    "3": {
+      "step": 64.0,
+      "rminus1": 0.018302,
+      "timestamp": "2026-05-07T16:27:05.895092"
+    },
+    "4": {
+      "step": 160.0,
+      "rminus1": 0.008112,
+      "timestamp": "2026-05-07T16:27:06.308319"
+    },
+    "5": {
+      "step": 288.0,
+      "rminus1": 0.001946,
+      "timestamp": "2026-05-07T16:27:06.968544"
+    },
+    "6": {
+      "step": 832.0,
+      "rminus1": 0.000197,
+      "timestamp": "2026-05-07T16:27:09.534250"
+    },
+    "7": {
+      "step": 832.0,
+      "rminus1": 0.000197,
+      "timestamp": "2026-05-07T16:27:09.534250"
+    },
+    "8": {
+      "step": 5248.0,
+      "rminus1": 3.5e-05,
+      "timestamp": "2026-05-07T16:27:30.912828"
+    },
+    "9": {
+      "step": 22944.0,
+      "rminus1": 2.2e-05,
+      "timestamp": "2026-05-07T16:28:59.437066"
+    },
+    "10": {
+      "step": 23072.0,
+      "rminus1": 5e-06,
+      "timestamp": "2026-05-07T16:29:00.162197"
+    },
+    "11": {
+      "step": 32320.0,
+      "rminus1": 2e-06,
+      "timestamp": "2026-05-07T16:29:46.916257"
+    }
+  },
+  "final_rminus1": 4.5e-05,
+  "min_rminus1": 0.0,
+  "floor_observation": "Chain density peaks at R^8 (3548 entries) and R^7 (2242 entries), consistent with the UM recursion floor at R^8 = 8.315e-5"
+}
