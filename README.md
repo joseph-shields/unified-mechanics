@@ -4,11 +4,9 @@
 
 ---
 
-## If you're a scientist, start here
+## Reproducibility
 
-Skip the theory. Look at the outputs first — that's what any physicist should do.
-
-| Where to look | What you'll find |
+| | |
 |---|---|
 | `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
 | `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
@@ -17,16 +15,9 @@ Skip the theory. Look at the outputs first — that's what any physicist should 
 | `tests/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
 | `PRE_REGISTRATION.md` | Predictions locked before observations |
 
-**The short version of the numbers:**
-- 88/98 observables pass within the UM braiding floor (n × r³ per cycle)
-- Structural Bayes ln B = +102 vs ΛCDM — fluke probability ~10⁻⁴⁴
-- Full cobaya MCMC chains (Planck + DESI + BOSS + hi_class) converge in **520–1040 accepted steps**, wall time < 10 s — because zero cosmological parameters are free
-- The Gelman-Rubin R-1 statistic naturally floors at **R^4 = 9.12×10⁻³** on first convergence — R = 1/(2φ) to four decimal places. Pushing to R^8 = 8.31×10⁻⁵ shows the chain density peaks at exact recursion levels, not continuous noise
-- Independent cross-validation: CAMB, hi_class/EFTCAMB, two seeds, five dataset combinations — all consistent
+**On `limb/channels/`:** Every file returns zeros by design. This is the trivial-channel limit (UM → GR). UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. The forward solver is `limb/camb_backend.py`.
 
-**On `limb/channels/`:** Every file returns zeros by design. This is the trivial-channel limit (UM → GR). UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. If you opened that folder and stopped reading, you missed the point — the forward solver is `limb/camb_backend.py`.
-
-**On notation:** `c` in `c² = c + 1` is **not** the speed of light. It is a dimensionless recursion variable. It solves to φ = (1+√5)/2. No units, no relation to electromagnetism.
+**On notation:** `c` in `c² = c + 1` is **not** the speed of light. It is a dimensionless recursion variable that solves to φ = (1+√5)/2. No units, no relation to electromagnetism.
 
 ---
 
