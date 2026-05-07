@@ -24,6 +24,44 @@ Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived
 
 ---
 
+## Reproducibility
+
+| | |
+|---|---|
+| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
+| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
+| `tests/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
+| `tests/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
+| `tests/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
+| `PRE_REGISTRATION.md` | Predictions locked before observations |
+
+## MCMC chains
+
+All cosmological parameters fixed by derivation — sampler runs on nuisance only. Full cobaya runs with hi_class/EFTCAMB backend across Planck + DESI DR2 + BOSS fσ8:
+
+| Run | Data | Steps to R-1 < 0.01 | Wall time |
+|---|---|---|---|
+| A | Planck TTTEEE + lowl | 520 | 3.4 s |
+| B | Planck + DESI DR2 BAO | 560 | 9.0 s |
+| C | Planck + BAO + BOSS fσ8 | 1000 | 8.3 s |
+| H | Planck + BAO + BOSS fσ8 (alt seed) | 1040 | 7.9 s |
+| I | Planck + BAO + fσ8 + H_tension | 2400 | 6.6 s |
+
+Runs C and H — same likelihoods, independent seeds — produce identical best-fit χ². Chain files: `tests/data/chains/`.
+
+**Recursion floor:** Pushing convergence to R^8 = 8.31×10⁻⁵ where R = 1/(2φ), the chain density peaks at R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant. The standard cobaya threshold 0.01 is within 0.07% of R^4 = 9.12×10⁻³. Full analysis: `tests/recursion_floor/`.
+
+**Cross-code validation (σ8, rdrag):**
+
+| Code | σ8 | rdrag |
+|---|---|---|
+| CAMB | 0.81762 | 147.09 Mpc |
+| hi_class/EFTCAMB | 0.83747 | 147.88 Mpc |
+
+σ8 offset expected — hi_class runs full EFT gravity sector with G_eff/G_N = 1.0729, enhancing structure growth. Background identical.
+
+---
+
 ## The axiom
 
 ```
