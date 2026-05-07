@@ -162,22 +162,22 @@ The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproduc
 
 ## CMB-Guided Planet Hunt
 
-`planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
+`tests/planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
 
 The CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
 
 **Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions that produced ours.
 
 <p align="center">
-  <img src="planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
+  <img src="tests/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
 *Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
 
 <p align="center">
-  <img src="planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
+  <img src="tests/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
   &nbsp;&nbsp;
-  <img src="planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
+  <img src="tests/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
 </p>
 
 *Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
@@ -185,12 +185,12 @@ The CMB temperature at any sky position is the fossil record of the primordial d
 **Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
 <p align="center">
-  <img src="planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
+  <img src="tests/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
 </p>
 
 *Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
 
-Full pipeline, Gaia catalogue, and matter power spectrum renders: `planet_hunt/` — see `planet_hunt/README.md`.
+Full pipeline, Gaia catalogue, and matter power spectrum renders: `tests/planet_hunt/` — see `tests/planet_hunt/README.md`.
 
 ---
 
