@@ -24,19 +24,6 @@ Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived
 
 ---
 
-## Reproducibility
-
-| | |
-|---|---|
-| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
-| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
-| `tests/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
-| `tests/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
-| `tests/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
-| `PRE_REGISTRATION.md` | Predictions locked before observations |
-
----
-
 ## The axiom
 
 ```
@@ -64,33 +51,6 @@ From `r` alone, with **zero free parameters**:
 | m_τ/m_e | φ¹⁷(1−r³) | 3477 (PDG) | 0.33% |
 
 **98-observable test suite:** 88 PASS within n×ε_floor. Structural Bayes ln B = +102 vs ΛCDM, fluke probability ~10⁻⁴⁴.
-
----
-
-## MCMC chains
-
-With all cosmological parameters fixed by derivation, the sampler has only nuisance parameters to explore. Full cobaya runs across Planck + DESI DR2 + BOSS fσ8 using hi_class/EFTCAMB as the Boltzmann backend:
-
-| Run | Data | Steps | Wall time |
-|---|---|---|---|
-| A | Planck TTTEEE + lowl | 520 | 3.4 s |
-| B | Planck + DESI DR2 BAO | 560 | 9.0 s |
-| C | Planck + BAO + BOSS fσ8 | 1000 | 8.3 s |
-| H | Planck + BAO + BOSS fσ8 (alt seed) | 1040 | 7.9 s |
-| I | Planck + BAO + fσ8 + H_tension | 2400 | 6.6 s |
-
-Runs C and H (same likelihoods, independent seeds) produce identical best-fit χ². Chain files: `tests/data/chains/`.
-
-**Recursion floor:** Pushing the convergence criterion to R^8 = 8.31×10⁻⁵ (where R = 1/(2φ)), the chain density peaks at R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant, not continuous noise. The standard cobaya threshold of 0.01 is within 0.07% of R^4 = 9.12×10⁻³. Full analysis: `tests/recursion_floor/`.
-
-**Cross-code validation:**
-
-| Code | σ8 | rdrag |
-|---|---|---|
-| CAMB | 0.81762 | 147.09 Mpc |
-| hi_class/EFTCAMB | 0.83747 | 147.88 Mpc |
-
-The σ8 offset is expected: hi_class runs with G_eff/G_N = 1.0729 (full EFT gravity sector), enhancing structure growth. Background quantities are identical.
 
 ---
 
@@ -126,7 +86,7 @@ The σ8 offset is expected: hi_class runs with G_eff/G_N = 1.0729 (full EFT grav
 
 ### Synthesis paper
 
-`tests/dgf/PROGRAMME_PAPER.md` — *How The Universe Works*: full derivation of the c²=c+1 axiom and the complete empirical programme, with cobaya MCMC chain configs covering Planck, DESI, DES Y3, KiDS, and joint constraints.
+`dgf/PROGRAMME_PAPER.md` — *How The Universe Works*: full derivation of the c²=c+1 axiom and the complete empirical programme, with cobaya MCMC chain configs covering Planck, DESI, DES Y3, KiDS, and joint constraints.
 
 ### LiMB — the solver
 
@@ -135,7 +95,7 @@ Every cosmological input to CAMB is a closed-form function of `r`; nothing is fi
 
 > **Requirements:** LiMB plugs into your local [CAMB](https://camb.readthedocs.io) installation. Install it first with `pip install camb`. LiMB does not bundle CAMB — it just drives it with UM-derived inputs instead of fitted parameters.
 
-> **`channels/` returns zeros by design** — this is the trivial-channel limit (UM → GR). UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. The forward solver is `camb_backend.py`. A built-in Planck ΛCDM reference run is included for direct comparison.
+> **Note on the channel source terms:** `channels/` returns zeros by design — this is the trivial-channel limit (UM → GR), where UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. `camb_backend.py` is the forward solver. A built-in Planck ΛCDM reference run is included in the same file for direct comparison.
 
 ```
 limb/
@@ -164,22 +124,22 @@ The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproduc
 
 ## CMB-Guided Planet Hunt
 
-`tests/planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
+`planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
 
 The CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
 
 **Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions that produced ours.
 
 <p align="center">
-  <img src="tests/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
+  <img src="planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
 *Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
 
 <p align="center">
-  <img src="tests/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
+  <img src="planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
   &nbsp;&nbsp;
-  <img src="tests/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
+  <img src="planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
 </p>
 
 *Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
@@ -187,12 +147,12 @@ The CMB temperature at any sky position is the fossil record of the primordial d
 **Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
 <p align="center">
-  <img src="tests/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
+  <img src="planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
 </p>
 
 *Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
 
-Full pipeline, Gaia catalogue, and matter power spectrum renders: `tests/planet_hunt/` — see `tests/planet_hunt/README.md`.
+Full pipeline, Gaia catalogue, and matter power spectrum renders: `planet_hunt/` — see `planet_hunt/README.md`.
 
 ---
 
