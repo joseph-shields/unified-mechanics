@@ -104,7 +104,7 @@ Sum = 1 exactly.
 | ε_floor | r³ | 2.95% obs. band | structural |
 
 Full derivations: `01_FOUNDATION.md`, `02_COSMOLOGY.md`, `05_PARTICLE_PHYSICS.md`.
-The cosmological chain results and Bayesian evidence: `dgf/PROGRAMME_PAPER.md`.
+The cosmological chain results and Bayesian evidence: `research/dgf/PROGRAMME_PAPER.md`.
 
 ---
 

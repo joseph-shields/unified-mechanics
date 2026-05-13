@@ -6,127 +6,19 @@
 
 You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
 
-Call the ratio `c`. The self-repeating condition gives:
+That gives you one equation — `c² = c + 1` — with one positive solution: `φ = (1+√5)/2 ≈ 1.618`. Define `r = 1/(2φ) ≈ 0.309`. From `r` alone, with no fitting:
 
-```
-c² = c + 1
-```
+- Dark energy: `1 − 9r²/2 + 4r³ = 68.8%` (observed 68.5%)
+- Hubble tension: `3r³ = 8.85%` (observed ~9%)
+- CMB spectral index: `1 − r²/φ² = 0.9635` (observed 0.9649)
+- Cosmological constant: `r²⁴⁰ = 10⁻¹²²·⁴` (observed `10⁻¹²²·⁰⁴`)
 
-Solve it (quadratic formula, positive root only):
-
-```
-φ = (1 + √5) / 2  ≈  1.618
-```
-
-Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived from nothing but the question above — predicts the dark energy fraction of the universe, the dark matter fraction, the baryon fraction, the spectral index of the CMB, and the cosmological constant, with zero free parameters and zero fitting.
-
-**Full plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
+**Full derivation table and conceptual overview: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)**
+**Plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
 
 ---
 
-## Reproducibility
-
-| | |
-|---|---|
-| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
-| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
-| `research/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
-| `research/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
-| `research/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
-| `PRE_REGISTRATION.md` | Predictions locked before observations |
-
-## MCMC chains
-
-All cosmological parameters fixed by derivation — sampler runs on nuisance only. Full cobaya runs with hi_class/EFTCAMB backend across Planck + DESI DR2 + BOSS fσ8:
-
-| Run | Data | Steps to R-1 < 0.01 | Wall time |
-|---|---|---|---|
-| A | Planck TTTEEE + lowl | 520 | 3.4 s |
-| B | Planck + DESI DR2 BAO | 560 | 9.0 s |
-| C | Planck + BAO + BOSS fσ8 | 1000 | 8.3 s |
-| H | Planck + BAO + BOSS fσ8 (alt seed) | 1040 | 7.9 s |
-| I | Planck + BAO + fσ8 + H_tension | 2400 | 6.6 s |
-
-Runs C and H — same likelihoods, independent seeds — produce identical best-fit χ². Chain files: `tests/data/chains/`.
-
-**Recursion floor:** Pushing convergence to R^8 = 8.31×10⁻⁵ where R = 1/(2φ), the chain density peaks at R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant. The standard cobaya threshold 0.01 is within 0.07% of R^4 = 9.12×10⁻³. Full analysis: `research/recursion_floor/`.
-
-**Cross-code validation (σ8, rdrag):**
-
-| Code | σ8 | rdrag |
-|---|---|---|
-| CAMB | 0.81762 | 147.09 Mpc |
-| hi_class/EFTCAMB | 0.83747 | 147.88 Mpc |
-
-σ8 offset expected — hi_class runs full EFT gravity sector with G_eff/G_N = 1.0729, enhancing structure growth. Background identical.
-
----
-
-## The axiom
-
-```
-c² = c + 1
-```
-
-> **Note on notation:** `c` here is **not** the speed of light. It is the dimensionless recursion variable — the unknown you are solving for. I developed this framework in private notes and got used to calling it `c` before I realised how that reads to anyone picking it up cold. Apologies for the confusion. The variable solves to `φ = (1+√5)/2`; it has no units and no relation to electromagnetism.
-
-The recursion `c² = c + 1` is self-referential: each value feeds back into the next. Its unique positive fixed point is `φ = (1+√5)/2` — full derivation in `00_DERIVATION.md`. Contraction rate: `r = 1/(2φ) ≈ 0.309`.
-From `r` alone, with **zero free parameters**:
-
-| Quantity | UM closed form | Observed | Residual |
-|---|---|---|---|
-| ρ_Λ / M_Pl⁴ | r²⁴⁰ | 10⁻¹²²·⁰⁴ | 0.4% in log |
-| Ω_b | r²/2 | 0.0493 | 3.0% (at floor) |
-| Ω_DM | 4r²(1-r) | 0.2647 | 0.3% |
-| Ω_DE | 1 − 9r²/2 + 4r³ | 0.685 | 0.5% |
-| w₀ | −(r+2)/(8r) | −0.93 (DESI) | within band |
-| ΔH₀/H₀ | 3r³ | ~9% | within band |
-| G_eff/G_N | 1 + r/(3+4r) | 1.073 (lab G) | structural |
-| n_s | 1 − r²/φ² | 0.9649 | 0.15% |
-| A_s | r¹⁷ | 2.1×10⁻⁹ | 1.7% |
-| Born coupling | 1/φ = 2r | — | exact |
-| ε_floor | r³ | 2.95% obs. band | structural |
-| m_τ/m_e | φ¹⁷(1−r³) | 3477 (PDG) | 0.33% |
-
-**98-observable test suite:** 88 PASS within n×ε_floor. Structural Bayes ln B = +102 vs ΛCDM, fluke probability ~10⁻⁴⁴.
-
----
-
-<p align="center">
-  <img src="research/figures/08a_cmb_sphere_1.png" width="46%" alt="UM-derived CMB sphere — Eridanus supervoid realization"/>
-  &nbsp;&nbsp;
-  <img src="research/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
-</p>
-
-*Orthographic sphere renders at lmax 20000 — angular resolution ~0.6 arcmin, far finer than any current instrument, generated on a consumer CPU with no upper bound on ℓ. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity producing a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent random realizations drawn from the same UM-derived power spectrum. UM predicts the full statistical distribution — acoustic peak positions, power spectrum shape, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
-
-<p align="center">
-  <img src="research/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
-</p>
-
-*Full-sky Mollweide projection (nside 4096, lmax 8000). This realization reproduces the large-scale structure of the Planck sky — warm region upper-left, cold region lower-right — by statistical coincidence, illustrating that the UM-derived power spectrum is consistent with the observed sky. All inputs are closed-form functions of `r` at every multipole; with more compute there is no ceiling.*
-
----
-
-## Papers
-
-| | |
-|---|---|
-| `01_FOUNDATION.md` | Axiom, recursion, three-channel decomposition, Lagrangian, noise floor, Born coefficient, E₈ closure |
-| `02_COSMOLOGY.md` | Every r-only ΛCDM closed form: Ω_b, Ω_c, w₀, wₐ, n_s, A_s, τ_reio, Y_He, N_eff, Σmν, ρ_Λ, Hubble braiding |
-| `03_GRAVITY_AND_BLACK_HOLES.md` | Bekenstein-Hawking 1/4 derivation, Hawking radiation, ER=EPR consistency |
-| `04_QUANTUM_AND_HOLOGRAPHIC.md` | Born coupling, holographic encoding, event-routing principle, decoherence |
-| `05_PARTICLE_PHYSICS.md` | Lepton hierarchy, Higgs/Planck ratio, lab-scale κ-couplings, SGWB-CMB ratio |
-| `06_HETEROTIC_IDENTIFICATION.md` | (G₂)₁ ⊂ (E₈)₁ in heterotic E₈×E₈, dark matter as second E₈, SM emergence |
-| `07_EXPERIMENTAL_PROGRAM.md` | Phase 0 (Born rule, $2.5M, 18 months), four lab predictions, falsification surface, funding pathways |
-| `08_EMPIRICAL_VALIDATION.md` | 98-observable test suite, alternate-recursion uniqueness, structural Bayes |
-| `PRE_REGISTRATION.md` | Locked predictions prior to observations, falsification thresholds |
-
-### Synthesis paper
-
-`dgf/PROGRAMME_PAPER.md` — *How The Universe Works*: full derivation of the c²=c+1 axiom and the complete empirical programme, with cobaya MCMC chain configs covering Planck, DESI, DES Y3, KiDS, and joint constraints.
-
-### LiMB — the solver
+## LiMB — the solver
 
 `limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver.
 Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
@@ -180,8 +72,69 @@ limb/
 
 **Tests:** `pytest tests/test_limb_derivations.py` — 32 pinned derivation tests.
 
-The CMB images above are produced by `research/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
+---
 
+## Demo chain
+
+50,016-step emcee chain — LiMB C_ℓ vs Planck 2018 TT bandpowers, run from a fresh clone:
+
+| | |
+|---|---|
+| Free parameters | 1 (A_planck — overall calibration nuisance) |
+| Fixed cosmological parameters | 10 (all UM-derived) |
+| A_planck posterior | 1.0067 ± 0.0012 (0.67% from unity — within ε_floor) |
+| χ²/dof | 1.343 (2471 bins, ℓ ∈ [30, 2500]) |
+| N_eff | 1,688 independent samples |
+| Wall time | 0.6 s |
+
+Chain: `tests/data/demo_chain/` · Script: `tests/demo_chain.py`
+
+---
+
+## CMB power spectrum
+
+<p align="center">
+  <img src="research/figures/08a_cmb_sphere_1.png" width="46%" alt="UM-derived CMB sphere — Eridanus supervoid realization"/>
+  &nbsp;&nbsp;
+  <img src="research/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
+</p>
+
+*Orthographic sphere renders at lmax 20000. The dark blue region in the first sphere is the simulated **Eridanus supervoid** — a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent realizations drawn from the same UM-derived power spectrum.*
+
+<p align="center">
+  <img src="research/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
+</p>
+
+*Full-sky Mollweide projection (nside 4096, lmax 8000). Produced by `research/render_cmb_4k.py` — reproducible, ~60 s on a consumer CPU.*
+
+---
+
+## Reproducibility
+
+| | |
+|---|---|
+| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
+| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
+| `research/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
+| `research/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
+| `research/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
+| `PRE_REGISTRATION.md` | Predictions locked before observations |
+
+## MCMC chains
+
+All cosmological parameters fixed by derivation — sampler runs on nuisance only. Full cobaya runs with hi_class/EFTCAMB backend across Planck + DESI DR2 + BOSS fσ8:
+
+| Run | Data | Steps to R-1 < 0.01 | Wall time |
+|---|---|---|---|
+| A | Planck TTTEEE + lowl | 520 | 3.4 s |
+| B | Planck + DESI DR2 BAO | 560 | 9.0 s |
+| C | Planck + BAO + BOSS fσ8 | 1000 | 8.3 s |
+| H | Planck + BAO + BOSS fσ8 (alt seed) | 1040 | 7.9 s |
+| I | Planck + BAO + fσ8 + H_tension | 2400 | 6.6 s |
+
+Runs C and H — same likelihoods, independent seeds — produce identical best-fit χ². Chain files: `tests/data/chains/`.
+
+---
 
 ## Falsification roadmap
 
@@ -193,38 +146,23 @@ The CMB images above are produced by `research/render_cmb_4k.py` — fully repro
 | **LISA + PTA** SGWB ratio | Mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
 | **Direct DM-photon coupling** | Ongoing | Any positive signal |
 
+---
 
 ## CMB-Guided Planet Hunt
 
-`research/planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
+`research/planet_hunt/` applies the UM cosmological framework to exoplanet targeting. CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there — regions with the same temperature as Earth's neighbourhood formed under the same initial conditions.
 
-The CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
-
-**Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions that produced ours.
+**Results:** 575 matched CMB patches · **1,287 unstudied Gaia G-stars** · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
 <p align="center">
   <img src="research/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
-*Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
-
 <p align="center">
-  <img src="research/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
-  &nbsp;&nbsp;
-  <img src="research/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
+  <img src="research/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches"/>
 </p>
 
-*Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
-
-**Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
-
-<p align="center">
-  <img src="research/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
-</p>
-
-*Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
-
-Full pipeline, Gaia catalogue, and matter power spectrum renders: `research/planet_hunt/` — see `research/planet_hunt/README.md`.
+Full pipeline and Gaia catalogue: `research/planet_hunt/README.md`
 
 ---
 

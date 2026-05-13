@@ -103,5 +103,5 @@ The tension isn't a problem. It's a signal.
 
 - The geometric derivation in full: `00_DERIVATION.md`
 - Every cosmological quantity derived: `02_COSMOLOGY.md`
-- The chain results and Bayesian evidence: `dgf/PROGRAMME_PAPER.md`
+- The chain results and Bayesian evidence: `research/dgf/PROGRAMME_PAPER.md`
 - The 98-observable test suite: `08_EMPIRICAL_VALIDATION.md`
