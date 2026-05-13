@@ -9,7 +9,7 @@ UM photon/neutrino corrections enter here.
 """
 from __future__ import annotations
 
-import jax.numpy as jnp
+import numpy as np
 
 
 def source_fn(state, tau, k, cosmo):
@@ -34,4 +34,4 @@ def source_fn(state, tau, k, cosmo):
     jnp.ndarray
         Same shape as ``state``. Trivial-channel limit returns zeros.
     """
-    return jnp.zeros_like(state)
+    return np.zeros_like(state)

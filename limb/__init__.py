@@ -3,30 +3,64 @@
 """
 LiMB — *Light instigating Matter Barrier*.
 
-The UM-derived CAMB-backend solver.
+A zero-free-parameter CMB forward solver. All cosmological inputs are
+derived from a single boundary condition (c² = c + 1) via the golden
+ratio φ and its contraction rate r = 1/(2φ).
 
-Two operating modes:
+Quickstart
+----------
+::
 
-* :class:`limb.lcdm.LiMBLCDMCosmology` — zero-free-parameter
-  LCDM. Every input value comes from
-  :mod:`limb.derivations.lcdm_inputs`. Validation target:
-  parity with CAMB on Planck LCDM.
-* :class:`limb.um.LiMBUMCosmology` — same parameter container
-  plus the three-channel UM source-term extension wired via
-  ``Cosmology.extra_source_fn``.
+    from limb import compute_limb_lcdm_cls, planck_lcdm_reference_cls
+    import numpy as np
 
-The three channels live under :mod:`limb.channels`:
+    um     = compute_limb_lcdm_cls(lmax=2500)
+    planck = planck_lcdm_reference_cls(lmax=2500)
 
-    L  light    — radiation sector
-    M  matter   — baryons + CDM
-    B  barrier  — recombination / decoupling threshold + light↔matter
-                  coupling
+    ell = um["ells"]
+    residual = (um["totCl_TT"] - planck["totCl_TT"]) / planck["totCl_TT"]
+    print(f"Peak residual: {np.abs(residual[2:]).max()*100:.2f}%")
 
-The acronym is the architecture.
+Pipeline
+--------
+``derivations`` → ``Cosmology`` → ``CAMBparams`` → C_ℓ
+
+1. :mod:`limb.derivations.lcdm_inputs` — closed-form UM derivations (no deps).
+2. :func:`build_LiMBLCDMCosmology` — assemble all values into a frozen
+   :class:`~limb.cosmology.Cosmology` parameter container.
+3. :func:`cosmology_to_camb_params` — translate ``Cosmology`` → ``CAMBparams``.
+4. :func:`compute_limb_lcdm_cls` — run CAMB end-to-end, return C_ℓ dict.
+
+The three channels
+------------------
+:mod:`limb.channels` holds the L / M / B source-function stubs for the
+future JAX Boltzmann solver. In the current trivial-channel limit they
+return zero, recovering standard LCDM.
 """
 from __future__ import annotations
 
-from .lcdm import LiMBLCDMCosmology
-from .um import LiMBUMCosmology
+from limb.cosmology import Cosmology
+from limb.lcdm import build_LiMBLCDMCosmology, LiMBLCDMCosmology
+from limb.um import build_LiMBUMCosmology, LiMBUMCosmology
+from limb.camb_backend import (
+    cosmology_to_camb_params,
+    build_camb_params,
+    compute_limb_lcdm_cls,
+    planck_lcdm_reference_cls,
+)
 
-__all__ = ["LiMBLCDMCosmology", "LiMBUMCosmology"]
+__all__ = [
+    # Core types
+    "Cosmology",
+    # Cosmology builders
+    "build_LiMBLCDMCosmology",
+    "build_LiMBUMCosmology",
+    # CAMB pipeline
+    "cosmology_to_camb_params",
+    "build_camb_params",
+    "compute_limb_lcdm_cls",
+    "planck_lcdm_reference_cls",
+    # Legacy aliases
+    "LiMBLCDMCosmology",
+    "LiMBUMCosmology",
+]

@@ -15,9 +15,9 @@ coupling via a Saha + Peebles three-level recombination history.
 """
 from __future__ import annotations
 
-import jax.numpy as jnp
+import numpy as np
 
 
 def source_fn(state, tau, k, cosmo):
     """Barrier-channel contribution to the perturbation RHS."""
-    return jnp.zeros_like(state)
+    return np.zeros_like(state)

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "limb-cosmology"
+version = "0.1.0"
+description = "LiMB — Light instigating Matter Barrier. Zero-free-parameter CMB solver derived from Unified Mechanics."
+authors = [{ name = "Joseph Shields", email = "joe.shields.0459@gmail.com" }]
+license = { text = "LGPL-3.0-or-later" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "camb>=1.5",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+figures = [
+    "matplotlib>=3.7",
+    "healpy>=1.16",
+    "scipy>=1.10",
+]
+dev = [
+    "pytest>=7",
+]
+
+[project.scripts]
+limb-run = "limb.camb_backend:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["limb*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

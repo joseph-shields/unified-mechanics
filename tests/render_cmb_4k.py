@@ -11,12 +11,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import healpy as hp
 
-_HERE   = os.path.dirname(os.path.abspath(__file__))
-_V2     = os.path.dirname(_HERE)
-_OSIRIS = "/mnt/Data/Science/OSIRIS"
-for p in (_V2, _OSIRIS):
-    if p not in sys.path:
-        sys.path.insert(0, p)
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_HERE)
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
 
 from limb.camb_backend import build_camb_params
 

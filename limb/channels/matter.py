@@ -9,9 +9,9 @@ and lensing smoothing are both dominated by matter-sector physics.
 """
 from __future__ import annotations
 
-import jax.numpy as jnp
+import numpy as np
 
 
 def source_fn(state, tau, k, cosmo):
     """Matter-channel contribution to the perturbation RHS."""
-    return jnp.zeros_like(state)
+    return np.zeros_like(state)
