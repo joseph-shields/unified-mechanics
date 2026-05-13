@@ -30,9 +30,9 @@ Define the contraction rate `r = 1/(2φ) ≈ 0.309`. That one number — derived
 |---|---|
 | `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
 | `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
-| `tests/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
-| `tests/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
-| `tests/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
+| `research/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
+| `research/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
+| `research/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
 | `PRE_REGISTRATION.md` | Predictions locked before observations |
 
 ## MCMC chains
@@ -49,7 +49,7 @@ All cosmological parameters fixed by derivation — sampler runs on nuisance onl
 
 Runs C and H — same likelihoods, independent seeds — produce identical best-fit χ². Chain files: `tests/data/chains/`.
 
-**Recursion floor:** Pushing convergence to R^8 = 8.31×10⁻⁵ where R = 1/(2φ), the chain density peaks at R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant. The standard cobaya threshold 0.01 is within 0.07% of R^4 = 9.12×10⁻³. Full analysis: `tests/recursion_floor/`.
+**Recursion floor:** Pushing convergence to R^8 = 8.31×10⁻⁵ where R = 1/(2φ), the chain density peaks at R^7 (2,242 entries) and R^8 (3,548 entries) — discrete powers of the UM recursion constant. The standard cobaya threshold 0.01 is within 0.07% of R^4 = 9.12×10⁻³. Full analysis: `research/recursion_floor/`.
 
 **Cross-code validation (σ8, rdrag):**
 
@@ -93,15 +93,15 @@ From `r` alone, with **zero free parameters**:
 ---
 
 <p align="center">
-  <img src="tests/figures/08a_cmb_sphere_1.png" width="46%" alt="UM-derived CMB sphere — Eridanus supervoid realization"/>
+  <img src="research/figures/08a_cmb_sphere_1.png" width="46%" alt="UM-derived CMB sphere — Eridanus supervoid realization"/>
   &nbsp;&nbsp;
-  <img src="tests/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
+  <img src="research/figures/08c_cmb_sphere_3.png" width="46%" alt="UM-derived CMB sphere — independent realization"/>
 </p>
 
 *Orthographic sphere renders at lmax 20000 — angular resolution ~0.6 arcmin, far finer than any current instrument, generated on a consumer CPU with no upper bound on ℓ. The dark blue region in the first sphere is the simulated **Eridanus supervoid** (CMB Cold Spot): a large coherent underdensity producing a ~−150 µK cold patch at RA 150°, Dec −57°. Both are independent random realizations drawn from the same UM-derived power spectrum. UM predicts the full statistical distribution — acoustic peak positions, power spectrum shape, variance at every angular scale — from which the CMB is drawn. The Planck sky is one specific draw from that distribution; these are others.*
 
 <p align="center">
-  <img src="tests/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
+  <img src="research/figures/07b_cmb_sky_4k_seed_e.png" width="96%" alt="UM-derived CMB full sky — Mollweide projection"/>
 </p>
 
 *Full-sky Mollweide projection (nside 4096, lmax 8000). This realization reproduces the large-scale structure of the Planck sky — warm region upper-left, cold region lower-right — by statistical coincidence, illustrating that the UM-derived power spectrum is consistent with the observed sky. All inputs are closed-form functions of `r` at every multipole; with more compute there is no ceiling.*
@@ -180,7 +180,7 @@ limb/
 
 **Tests:** `pytest tests/test_limb_derivations.py` — 32 pinned derivation tests.
 
-The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
+The CMB images above are produced by `research/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
 
 
 ## Falsification roadmap
@@ -196,22 +196,22 @@ The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproduc
 
 ## CMB-Guided Planet Hunt
 
-`tests/planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
+`research/planet_hunt/` applies the UM cosmological framework directly to exoplanet targeting.
 
 The CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there. Regions with the same CMB temperature as Earth's neighbourhood formed under the same initial conditions. The pipeline identifies those regions and queries Gaia DR3 for unstudied G-type stars within them.
 
 **Earth CMB reference:** RA=242.56°, Dec=−59.68° (Laniakea / Great Attractor direction). Earth appears at **rank #0** in its own seed category. Every star in the catalogue below it is a candidate for another Earth, selected by the same cosmological initial conditions that produced ours.
 
 <p align="center">
-  <img src="tests/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
+  <img src="research/planet_hunt/00_earth_reference/cmb_fullsky.png" width="96%" alt="Full-sky CMB — Earth seed patches marked"/>
 </p>
 
 *Full-sky CMB realization (UM-derived C_ℓ, NSIDE=512, lmax=3000). ★ marks Earth's CMB seed direction (Laniakea, RA=242.56°, Dec=−59.68°). Green circles are the 50 best-matched seed patches — regions that formed under the same primordial conditions as our solar neighbourhood.*
 
 <p align="center">
-  <img src="tests/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
+  <img src="research/planet_hunt/00_earth_reference/earth_cmb_patch.png" width="47%" alt="Earth CMB seed patch — 30° zoom"/>
   &nbsp;&nbsp;
-  <img src="tests/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
+  <img src="research/planet_hunt/00_earth_reference/earth_reference_card.png" width="47%" alt="Earth reference — RV and transit profiles"/>
 </p>
 
 *Left: 30°×30° zoom on Earth's CMB seed patch at the Laniakea direction. The 5° disc average temperature here (UM simulation, seed 271828) is +23.2 µK; Planck SMICA measures −141.69 µK at the same position — two independent draws from the same power spectrum. Right: Earth used as the calibration target — Solar system RV signal and transit profiles for Venus, Earth, and Mars.*
@@ -219,12 +219,12 @@ The CMB temperature at any sky position is the fossil record of the primordial d
 **Results:** 575 matched CMB patches (1.2% of sky) · **1,287 unstudied Gaia G-stars** in those regions · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
 <p align="center">
-  <img src="tests/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
+  <img src="research/planet_hunt/04_skypy_lss/skypy_highl_patches.png" width="96%" alt="Matter overdensity in top-12 CMB seed patches — NSIDE=2048"/>
 </p>
 
 *Matter overdensity in the top-12 CMB seed patches, synthesised at NSIDE=2048 (lmax=8000) via Limber C_ℓ from the UM matter power spectrum. White stars mark Gaia G-type planet targets within each patch.*
 
-Full pipeline, Gaia catalogue, and matter power spectrum renders: `tests/planet_hunt/` — see `tests/planet_hunt/README.md`.
+Full pipeline, Gaia catalogue, and matter power spectrum renders: `research/planet_hunt/` — see `research/planet_hunt/README.md`.
 
 ---
 
