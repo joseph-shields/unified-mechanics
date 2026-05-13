@@ -131,20 +131,54 @@ From `r` alone, with **zero free parameters**:
 `limb/` contains **LiMB** *(Light instigating Matter Barrier)*, the UM-derived CAMB-backend solver.
 Every cosmological input to CAMB is a closed-form function of `r`; nothing is fitted.
 
-> **Requirements:** LiMB plugs into your local [CAMB](https://camb.readthedocs.io) installation. Install it first with `pip install camb`. LiMB does not bundle CAMB — it just drives it with UM-derived inputs instead of fitted parameters.
+**Install:**
 
-> **Note on the channel source terms:** `channels/` returns zeros by design — this is the trivial-channel limit (UM → GR), where UM's predictions come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation source terms. `camb_backend.py` is the forward solver. A built-in Planck ΛCDM reference run is included in the same file for direct comparison.
+```bash
+pip install camb numpy
+git clone https://github.com/joseph-shields/unified-mechanics.git
+cd unified-mechanics
+pip install -e .
+```
+
+**Quickstart:**
+
+```python
+from limb import compute_limb_lcdm_cls, planck_lcdm_reference_cls
+import numpy as np
+
+um     = compute_limb_lcdm_cls(lmax=2500)
+planck = planck_lcdm_reference_cls(lmax=2500)
+
+ell      = um["ells"]
+residual = (um["totCl_TT"] - planck["totCl_TT"]) / planck["totCl_TT"]
+print(f"Peak residual vs Planck best-fit: {np.abs(residual[2:]).max()*100:.2f}%")
+```
+
+Or from the command line:
+
+```bash
+limb-run          # lmax=2500
+limb-run 100000   # push to ℓ=100000
+```
+
+**Pipeline:** `derivations` → `Cosmology` → `CAMBparams` → C_ℓ
 
 ```
 limb/
-├── camb_backend.py      # CAMB forward solve with UM-derived inputs
-├── lcdm.py              # LiMBLCDMCosmology — trivial-channel limit
-├── um.py                # LiMBUMCosmology   — full L+M+B source extension
-├── channels/            # L (light), M (matter), B (barrier) source terms
+├── camb_backend.py      # forward solver — cosmology_to_camb_params(), compute_limb_lcdm_cls()
+├── cosmology.py         # frozen parameter container — one object, all CAMB inputs
+├── lcdm.py              # build_LiMBLCDMCosmology() — every field derived from r
+├── um.py                # LiMB-UM — L+M+B source extension (trivial-channel limit for now)
+├── channels/            # L (light), M (matter), B (barrier) source-function stubs
 ├── derivations/
-│   └── lcdm_inputs.py   # every closed-form derivation (r-only)
+│   └── lcdm_inputs.py   # every closed-form derivation, source-cited to the papers
+├── pyproject.toml       # pip install — camb + numpy only
 └── LICENSE              # LGPL v3+
 ```
+
+> **Note on `channels/`:** source terms return zero by design — this is the trivial-channel limit (UM → GR). UM's predictions here come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation terms. A Planck ΛCDM reference run is included in `camb_backend.py` for direct comparison. Full three-channel perturbation solver (JAX) is next.
+
+**Tests:** `pytest tests/test_limb_derivations.py` — 32 pinned derivation tests.
 
 The CMB images above are produced by `tests/render_cmb_4k.py` — fully reproducible, ~60 s on a consumer CPU.
 
