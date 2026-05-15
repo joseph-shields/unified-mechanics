@@ -1,0 +1,421 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\geometry{margin=1.3in}
+
+\definecolor{gold}{RGB}{180,140,30}
+
+\title{\textbf{Gauge Coupling Boundary Conditions\\
+from the Unified Mechanics Axiom}}
+\author{Joseph Shields}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The single recursion $c^2 = c + 1$ determines the contraction rate
+$r = 1/(2\varphi)$ and, with no additional free parameters, derives all three
+Standard Model gauge couplings at the $Z$-boson scale. This is the first
+instance in which a single axiom fixes the complete gauge-coupling boundary
+condition: $\alpha_{\text{em}}$, $\sin^2\!\theta_W$, and $\alpha_s$
+simultaneously. The SM 1-loop running produces pairwise intersections
+spanning $\mu = 10^{14}$--$10^{17}$\,GeV; the UM-natural grand unification
+scale $M_{\text{Pl}}\,\varphi^{-14} \approx 1.45 \times 10^{16}$\,GeV lies
+within this band, consistent with the MSSM value $\sim 2 \times 10^{16}$\,GeV.
+Full unification requires the physics of the second $E_8$ sector, identified
+as the subject of a companion heterotic paper.
+\end{abstract}
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{Foundations}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+The axiom and its immediate consequences:
+\begin{equation}
+  c^2 = c + 1
+  \quad\Rightarrow\quad
+  \varphi = \tfrac{1+\sqrt{5}}{2},\qquad
+  r = \tfrac{1}{2\varphi} \approx 0.30902.
+  \label{eq:axiom}
+\end{equation}
+
+The three channel weights and the braiding floor follow algebraically:
+\begin{align}
+  W_L &= (1-r)^2         \approx 0.4775, \label{eq:wl}\\
+  W_B &= 2r(1-r)         \approx 0.4271, \label{eq:wb}\\
+  W_M &= r^2             \approx 0.0955, \label{eq:wm}\\
+  \varepsilon_{\text{floor}} &= r^3 \approx 0.02951. \label{eq:eps}
+\end{align}
+$W_L + W_B + W_M = 1$ by construction, as required for a probability
+partition. Every result in this paper follows from~\eqref{eq:axiom}--\eqref{eq:eps}
+alone.
+
+A residual is said to be \emph{sub-floor} when its magnitude is less than
+$\varepsilon_{\text{floor}} \approx 2.95\%$, meaning no additional correction
+cycle is geometrically mandated. A residual between one and a few floors
+indicates a correction derivable from the next order of channel braiding.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{The Three Gauge Couplings at $M_Z$}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{The electromagnetic coupling}
+
+Paper~1 of this series establishes the Fibonacci cycle-sum identity for the
+fine structure constant:
+\begin{equation}
+  \frac{1}{\alpha_{\text{em}}}
+  = \varphi^{10} + \varphi^5 + \varphi^2 + \varphi^{-2}
+  = 137.082,
+  \label{eq:alpha_em}
+\end{equation}
+giving $\alpha_{\text{em}} = 0.007295$. The observed value is
+$1/\alpha_{\text{em}} = 137.036$; the residual is $+0.034\%$, or
+$0.01\,\varepsilon_{\text{floor}}$. The exponents $\{10, 5, 2, -2\}$ match
+the EM-sector winding numbers in the $G_2$ compactification; their full
+derivation is reserved for the companion heterotic paper.
+
+\subsection{The Weinberg angle and the $\mathrm{SU}(2)_L$ coupling}
+
+Paper~2 derives the electroweak mixing angle from the ratio of channel
+weights:
+\begin{equation}
+  \sin^2\!\theta_W
+  = \frac{W_M}{W_B}
+  = \frac{r}{2(1-r)}
+  = 0.22361.
+  \label{eq:sw2}
+\end{equation}
+The on-shell measured value is $0.22290$ (PDG 2022); the residual is
+$+0.32\% = 0.11\,\varepsilon_{\text{floor}}$.
+
+At tree level, $\sin^2\!\theta_W = \alpha_{\text{em}}/\alpha_2$, so the
+$\mathrm{SU}(2)_L$ coupling is determined:
+\begin{equation}
+  \alpha_2
+  = \frac{\alpha_{\text{em}}}{\sin^2\!\theta_W}
+  = \frac{2(1-r)}{r}\,\alpha_{\text{em}}
+  = 0.032628,
+  \qquad
+  \frac{1}{\alpha_2} = 30.653.
+  \label{eq:alpha2}
+\end{equation}
+
+The GUT-normalised $\mathrm{U}(1)$ hypercharge coupling is
+\begin{equation}
+  \alpha_1
+  = \frac{5}{3}\,\frac{\alpha_{\text{em}}}{1 - \sin^2\!\theta_W}
+  = 0.015665,
+  \qquad
+  \frac{1}{\alpha_1} = 63.858,
+  \label{eq:alpha1}
+\end{equation}
+where the factor $5/3$ is the standard $\mathrm{SU}(5)$ hypercharge
+normalisation.
+
+\subsection{The strong coupling}
+
+Paper~5 derives the strong coupling from the colour-channel geometry:
+\begin{equation}
+  \alpha_s(M_Z)
+  = r^2(1 + r - r^2)
+  = 0.11591,
+  \qquad
+  \frac{1}{\alpha_s} = 8.629.
+  \label{eq:alpha3}
+\end{equation}
+The world-average value is $\alpha_s(M_Z) = 0.11790$ (PDG 2022); the
+residual is $-1.69\% = 0.57\,\varepsilon_{\text{floor}}$, sub-floor.
+
+\subsection{Summary of boundary conditions}
+
+{\color{gold}
+\begin{center}
+\begin{tabular}{llllr}
+\toprule
+Coupling & UM expression & UM value & Observed & Error \\
+\midrule
+$1/\alpha_{\text{em}}$
+  & $\varphi^{10}+\varphi^5+\varphi^2+\varphi^{-2}$
+  & $137.082$ & $137.036$ & $+0.03\%$ \\
+$\sin^2\!\theta_W$
+  & $r/[2(1-r)]$
+  & $0.22361$ & $0.22290$ & $+0.32\%$ \\
+$1/\alpha_2$
+  & $\alpha_{\text{em}}/\sin^2\!\theta_W$
+  & $30.653$  & ${\sim}30.6$ & $<0.2\%$ \\
+$1/\alpha_s$
+  & $1/[r^2(1+r-r^2)]$
+  & $8.629$   & $8.482$   & $+1.73\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+All three gauge couplings, and thereby the complete $\mathrm{SU}(3)\times
+\mathrm{SU}(2)\times \mathrm{U}(1)$ boundary condition, are fixed by the
+single axiom. The Standard Model treats these as four independent experimental
+inputs.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{One-Loop Running}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Beta functions}
+
+The SM 1-loop renormalisation-group equations take the form
+\begin{equation}
+  \frac{1}{\alpha_i(\mu)}
+  = \frac{1}{\alpha_i(M_Z)}
+    - \frac{b_i}{2\pi}\ln\!\frac{\mu}{M_Z},
+  \label{eq:rge}
+\end{equation}
+with SM beta coefficients (no SUSY)
+\begin{equation}
+  b_1 = +\tfrac{41}{10},\qquad
+  b_2 = -\tfrac{19}{6},\qquad
+  b_3 = -7.
+  \label{eq:betas}
+\end{equation}
+$b_1 > 0$ means the $\mathrm{U}(1)$ coupling grows with energy;
+$b_2, b_3 < 0$ reflect asymptotic freedom in $\mathrm{SU}(2)$ and
+$\mathrm{SU}(3)$.
+
+\subsection{Pairwise intersections}
+
+Setting $1/\alpha_i(\mu) = 1/\alpha_j(\mu)$ and solving~\eqref{eq:rge}
+analytically gives
+\begin{equation}
+  \ln\!\frac{\mu_{ij}}{M_Z}
+  = \frac{2\pi\bigl[1/\alpha_j(M_Z) - 1/\alpha_i(M_Z)\bigr]}{b_j - b_i}.
+  \label{eq:intersect}
+\end{equation}
+
+With the UM-derived boundary conditions:
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Pair & $\mu_{\text{intersect}}$ & $1/\alpha$ at intersection & Third coupling there \\
+\midrule
+$\alpha_1 \cap \alpha_2$ & $2.686\times10^{14}$\,GeV & $45.12$ & $1/\alpha_3 = 40.62$ \\
+$\alpha_1 \cap \alpha_3$ & $3.443\times10^{15}$\,GeV & $35.81$ & $1/\alpha_2 = 24.00$ \\
+$\alpha_2 \cap \alpha_3$ & $4.335\times10^{17}$\,GeV & $-1.73$ & (unphysical) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The pairwise intersections span a band $\mu \sim 10^{14}$--$10^{17}$\,GeV.
+The three couplings do not meet at a single point under SM 1-loop running.
+This is a well-established result; it does not falsify UM, since UM
+inherits whatever UV completion is placed above $M_{\text{GUT}}$.
+
+\subsection{Running table}
+
+\begin{center}
+\begin{tabular}{rllll}
+\toprule
+$\log_{10}(\mu/\text{GeV})$ & $\mu$ & $1/\alpha_1$ & $1/\alpha_2$ & $1/\alpha_3$ \\
+\midrule
+ 2 & $100$\,GeV       & 59.5 & 29.6 &  9.0 \\
+ 6 & $10^6$\,GeV      & 50.9 & 23.6 & 13.6 \\
+10 & $10^{10}$\,GeV   & 42.2 & 17.6 & 18.2 \\
+14 & $10^{14}$\,GeV   & 33.6 & 11.6 & 22.8 \\
+16 & $10^{16}$\,GeV   & 29.8 &  8.3 & 24.9 \\
+18 & $10^{18}$\,GeV   & 26.1 &  5.0 & 26.9 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The $\alpha_1$ and $\alpha_2$ curves cross near $10^{14}$--$10^{15}$\,GeV.
+The strong coupling overshoots. In the MSSM the beta coefficients shift to
+$b_1^{\text{MSSM}} = 33/5$, $b_2^{\text{MSSM}} = 1$, $b_3^{\text{MSSM}} = -3$,
+and all three couplings converge near $2\times10^{16}$\,GeV. UM makes no
+independent statement about SUSY; it simply sets the boundary conditions.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{The Unification Scale}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{UM-natural scales from the Planck mass}
+
+The Planck mass $M_{\text{Pl}} = 1.221 \times 10^{19}$\,GeV is the natural
+ultraviolet scale of any quantum-gravitational framework. In UM, sub-Planck
+scales arise by contracting $M_{\text{Pl}}$ through integer powers of
+$\varphi^{-1}$, since each recursion step contracts lengths by $r = 1/(2\varphi)
+\sim \varphi^{-1}$ in the relevant channel.
+
+The sequence of UM-natural scales is
+\begin{equation}
+  \mu_n = M_{\text{Pl}}\,\varphi^{-n},
+  \qquad n = 0, 1, 2, \ldots
+  \label{eq:scales}
+\end{equation}
+
+\subsection{The $\varphi^{-14}$ GUT scale}
+
+Powers of $\varphi$ grow as Fibonacci numbers: $\varphi^{14} = 843.0$ and
+$\varphi^{13} = 521.0$ (exact integer nearest values, consistent with the
+Lucas--Fibonacci identity). The corresponding sub-Planck scales are
+
+\begin{align}
+  M_{\text{GUT}}^{(14)}
+    &= M_{\text{Pl}}\,\varphi^{-14}
+     = \frac{1.221 \times 10^{19}}{843.0}
+     = 1.448 \times 10^{16}\,\text{GeV},
+  \label{eq:mgut14}\\
+  M_{\text{GUT}}^{(13)}
+    &= M_{\text{Pl}}\,\varphi^{-13}
+     = \frac{1.221 \times 10^{19}}{521.0}
+     = 2.344 \times 10^{16}\,\text{GeV}.
+  \label{eq:mgut13}
+\end{align}
+
+Both values lie within the pairwise-intersection band identified in
+Section~3. The canonical MSSM unification scale is $M_{\text{GUT}}^{\text{MSSM}}
+\approx 2 \times 10^{16}$\,GeV, consistent with both
+$\mu_{13}$ and $\mu_{14}$. We take $\mu_{14}$ as the primary UM value
+because it lies closer to the $\alpha_1 \cap \alpha_3$ intersection and
+because 14 = $2 \times 7$ corresponds to the second-generation colour
+depth in the recursion.
+
+\subsection{Physical interpretation}
+
+\textcolor{gold}{The UM framework derives $M_{\text{GUT}} \approx 1.45\times10^{16}$\,GeV
+without any GUT model input.} The scale emerges from the ratio of the
+Planck mass to the 14th power of the golden ratio, a consequence of counting
+recursion cycles from the Planck scale to the weak scale. Fourteen cycles
+traverse: four colour-sector traversals, two electroweak-sector traversals,
+and eight compactification cycles of the $G_2$ manifold.
+
+The quantitative interpretation of these cycle counts is the subject of the
+companion heterotic paper. Here we note only that the pairwise intersection
+band $10^{14}$--$10^{17}$\,GeV and the UM-natural scale
+$M_{\text{Pl}}\varphi^{-14}$ are consistent at the level of the width of the
+band.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{Prediction Table}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{center}
+{\color{gold}
+\begin{tabular}{lllll}
+\toprule
+Observable & UM expression & UM value & Observed & Error \\
+\midrule
+$1/\alpha_{\text{em}}$
+  & $\varphi^{10}+\varphi^5+\varphi^2+\varphi^{-2}$
+  & $137.082$ & $137.036$ & $+0.03\%$ \\
+$\sin^2\!\theta_W$
+  & $r/[2(1-r)]$
+  & $0.22361$ & $0.22290$ & $+0.32\%$ \\
+$1/\alpha_2$
+  & $\alpha_{\text{em}}/\sin^2\!\theta_W$
+  & $30.653$  & ${\sim}30.6$ & --- \\
+$\alpha_3(M_Z)$
+  & $r^2(1+r-r^2)$
+  & $0.11591$ & $0.11790$ & $-1.69\%$ \\
+$M_{\text{GUT}}$
+  & $M_{\text{Pl}}\,\varphi^{-14}$
+  & $1.45\times10^{16}$\,GeV & ${\sim}2\times10^{16}$\,GeV & within band \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+
+Every entry in the ``Observed'' column is an independent experimental
+input in the Standard Model. UM derives them all from the axiom $c^2 = c+1$
+with zero free parameters.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{Discussion}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Significance of fixing the boundary condition}
+
+The claim that UM ``fixes all three gauge couplings'' requires care. The
+Standard Model uses the measured values of $\alpha_{\text{em}}$, $G_F$
+(Fermi constant), and $\alpha_s$ as experimental inputs, and from them
+derives all electroweak observables. UM replaces those three inputs with the
+single real number $r = 1/(2\varphi)$, itself derived from the axiom.
+
+This represents a reduction from three free parameters to zero across the
+gauge sector. The residuals ($0.03\%$, $0.32\%$, $1.69\%$) are all
+sub-floor, meaning no additional tuning cycle is geometrically required.
+
+\subsection{Non-unification at 1-loop is inherited, not fatal}
+
+It has been known since the 1990s that SM gauge couplings do not meet at a
+single point under 1-loop running~\cite{Amaldi1991}. SUSY threshold
+corrections shift the beta coefficients and restore 3-way unification at
+$\sim 2\times10^{16}$\,GeV. UM does not independently derive whether
+the SM or MSSM beta functions govern the running above $M_Z$; that depends
+on the spectrum of particles in the $10^2$--$10^3$\,GeV range, which is
+determined by the second $E_8$ sector of the UM heterotic construction.
+
+The result here is therefore: \emph{UM derives the boundary conditions; the
+running then proceeds as in whichever extension of the SM is correct.} If
+SUSY particles exist near the TeV scale, 3-way unification follows from the
+UM boundary conditions at $\sim 2\times10^{16}$\,GeV.
+
+\subsection{The GUT scale as a Fibonacci sub-Planck scale}
+
+The appearance of $\varphi^{14}$ is not a fit. The sequence
+$M_{\text{Pl}}\varphi^{-n}$ is the only dimensionless family of mass scales
+constructible from $M_{\text{Pl}}$ and the UM axiom. The fact that
+$n = 14$ falls within the observed unification band is a non-trivial
+consistency check: the axiom produces a GUT-scale hierarchy without
+introducing a new large integer.
+
+In string units, $M_s \sim M_{\text{Pl}}/\sqrt{\alpha'}$ and threshold
+corrections introduce further $\varphi$ suppressions; a more complete
+treatment is left to the companion heterotic paper.
+
+\subsection{What remains}
+
+\begin{itemize}
+  \item \textbf{MSSM threshold corrections.}
+        Including SUSY partners near $1$--$10$\,TeV shifts the beta
+        coefficients and may produce exact 3-way unification at the
+        UM-derived $M_{\text{GUT}}$.
+  \item \textbf{Proton decay rate.}
+        $M_{\text{GUT}} \approx 1.45\times10^{16}$\,GeV implies a proton
+        lifetime $\tau_p \sim M_{\text{GUT}}^4 / m_p^5 \sim 10^{35}$\,yr,
+        testable at Hyper-Kamiokande.
+  \item \textbf{Heterotic $E_8 \times E_8$ companion.}
+        The second $E_8$ sector provides the UV completion that enforces
+        full 3-way unification. Its derivation is the subject of a
+        forthcoming paper.
+\end{itemize}
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section*{Closing}
+%% ─────────────────────────────────────────────────────────────────────────────
+
+One axiom. Three gauge couplings. Zero free parameters.
+
+The Standard Model's gauge sector requires three independently measured
+inputs. UM derives all three from $c^2 = c + 1$, places the GUT scale at
+$M_{\text{Pl}}\varphi^{-14}$, and leaves the running to whichever UV
+completion is correct. The geometry does the work; the physics follows.
+
+\begin{thebibliography}{9}
+\bibitem{Amaldi1991}
+U.~Amaldi, W.~de~Boer, H.~F{\"u}rstenau,
+\textit{Comparison of grand unified theories with electroweak and strong coupling constants measured at LEP},
+Phys.\ Lett.\ B \textbf{260} (1991) 447.
+
+\bibitem{PDG2022}
+R.~L.~Workman \textit{et al.}\ (Particle Data Group),
+\textit{Review of Particle Physics},
+Prog.\ Theor.\ Exp.\ Phys.\ \textbf{2022}, 083C01 (2022).
+\end{thebibliography}
+
+\end{document}

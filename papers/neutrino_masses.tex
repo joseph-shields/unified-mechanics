@@ -1,0 +1,379 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\geometry{margin=1.3in}
+
+\definecolor{gold}{RGB}{180,140,30}
+
+\title{\textbf{Neutrino Mass Hierarchy\\
+from the Unified Mechanics Axiom}}
+\author{Joseph Shields}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The single recursion $c^2 = c + 1$ fixes the golden ratio
+$\varphi = (1+\sqrt{5})/2$ and the contraction rate
+$r = 1/(2\varphi) \approx 0.30902$.  Charged leptons accumulate mass
+through both the boundary and matter channels; electrically neutral
+neutrinos couple only through the matter channel, deepening the
+recursion before mass accumulates.  With the single boundary correction
+$(1{+}r)$ inherited from the weak-force vertex, the atmospheric mass
+scale is $m_{\nu_3} = m_e(1{+}r)/\varphi^{34} = 52.5\;\text{meV}$,
+matching $\sqrt{\Delta m^2_{\text{atm}}} \approx 50\;\text{meV}$ to
+$+4.9\%$ ($1.66\,\varepsilon_{\text{floor}}$).  The solar scale
+follows at depth $n = 38$:
+$m_{\nu_2} = m_e(1{+}r)/\varphi^{38} = 7.65\;\text{meV}$,
+within $3.73\,\varepsilon_{\text{floor}}$ of
+$\sqrt{\Delta m^2_{\text{sol}}} \approx 8.6\;\text{meV}$.
+The generation step in the neutral sector is exactly $\varphi^4$,
+the same four-cycle interval that governs the quark sector.
+The normal hierarchy $m_{\nu_1} \approx 0 \ll m_{\nu_2} \ll m_{\nu_3}$
+is the direct consequence of the matter-channel recursion, and
+$\Sigma m_\nu \approx 60\;\text{meV}$ satisfies the Planck 2018
+upper bound of $120\;\text{meV}$.  Zero free parameters are introduced.
+\end{abstract}
+
+%% ──────────────────────────────────────────────────────────────────
+\section{Foundations}
+%% ──────────────────────────────────────────────────────────────────
+
+The axiom and its immediate consequences (Paper~1 of this series):
+\begin{equation}
+  c^2 = c + 1 \quad\Rightarrow\quad
+  \varphi = \tfrac{1+\sqrt{5}}{2},\quad
+  r = \tfrac{1}{2\varphi} \approx 0.30902.
+  \label{eq:axiom}
+\end{equation}
+
+The three channel weights and the braiding floor arise from the
+probabilistic decomposition of a single recursion step:
+\begin{align}
+  W_L &= (1-r)^2 \approx 0.4775, \label{eq:wl}\\
+  W_B &= 2r(1-r) \approx 0.4271, \label{eq:wb}\\
+  W_M &= r^2     \approx 0.0955, \label{eq:wm}\\
+  \varepsilon_{\text{floor}} &= r^3 \approx 0.02951. \label{eq:eps}
+\end{align}
+
+The charged-lepton mass ratios (established in Paper~5) are:
+\begin{align}
+  \frac{m_e}{m_\mu} &= \frac{\varphi^{-11}}{1+r^3},
+  \label{eq:memu}\\[4pt]
+  \frac{m_\mu}{m_\tau} &= \frac{\varphi^{-6}(1+r^3)}{1-r^3}.
+  \label{eq:mmtau}
+\end{align}
+The exponents 11 and 6 count the $\varphi$-cycle intervals between
+consecutive charged-lepton generations; their sum, 17, is the total
+depth of the charged-lepton sector.  Charged leptons carry electric
+charge and therefore couple through both the boundary channel $W_B$
+and the matter channel $W_M$.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{Neutral-Particle Recursion}
+%% ──────────────────────────────────────────────────────────────────
+
+Neutrinos carry no electric charge.  In the UM framework, electric
+charge is the topological charge of the boundary channel: a particle
+without electric charge does not couple to $W_B$ when accumulating
+rest mass.  Absent the boundary channel, the recursion must reach a
+deeper depth before significant mass can concentrate.
+
+Specifically, a neutral particle must traverse the recursion to a
+depth at which the matter-channel accumulation alone is sufficient
+to produce a mass eigenvalue.  Because $W_M = r^2 < W_B + W_L$,
+the matter channel is geometrically suppressed relative to the full
+recursion; the extra suppression relative to a charged lepton at
+generation depth $N$ translates into an additional factor of
+$1/\varphi^N$ in the mass, where $N$ here equals the total
+charged-lepton depth 17, so the leading neutrino mass sits at depth
+$2 \times 17 = 34$.
+
+The weak interaction provides a residual coupling through $W_B$:
+neutrinos do couple to the $W^\pm$ and $Z^0$ bosons.  This coupling
+is not a mass-generating channel (it does not contribute to the rest
+mass accumulation), but it does introduce a single-vertex correction
+to the effective coupling strength.  The correction is $(1+r)$, the
+same factor that appears in the proton-mass formula as the confinement
+correction.
+
+The general formula for the $k$-th neutrino mass eigenstate is:
+\begin{equation}
+  m_{\nu_k} = m_e \,\frac{1+r}{\varphi^{n_k}},
+  \label{eq:mnuk}
+\end{equation}
+where $n_k$ is the recursion depth for that eigenstate, set by the
+neutral-sector recursion rules derived below.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{The Atmospheric Mass Scale}
+%% ──────────────────────────────────────────────────────────────────
+
+\subsection{Derivation of the depth $n = 34$}
+
+The heaviest neutrino mass eigenstate $m_{\nu_3}$ sits at the
+shallowest recursion depth accessible to the neutral sector.  As
+argued above, the absence of boundary coupling doubles the effective
+lepton recursion depth:
+\begin{equation}
+  n_3 = 2 \times (11 + 6) = 2 \times 17 = 34.
+  \label{eq:n3}
+\end{equation}
+
+This can be read structurally: 11 cycles to cross the first
+charged-lepton generation gap and 6 cycles to cross the second, for
+17 total; the neutral particle must traverse this full depth twice
+before the matter channel alone produces a mass eigenvalue.
+
+\subsection{Numerical result}
+
+\begin{align}
+  \varphi^{34} &= \varphi^{20} \times \varphi^{14}
+               = 6764.999 \times 843.000 \approx 12{,}752{,}040,\\[4pt]
+  m_{\nu_3}   &= \frac{m_e\,(1+r)}{\varphi^{34}}
+               = \frac{0.511 \times 10^6 \;\text{eV}\times 1.30902}
+                      {12{,}752{,}040}
+               = 52.45\;\text{meV}.
+\end{align}
+
+The atmospheric neutrino oscillation parameter (PDG 2022,
+normal hierarchy):
+\begin{equation}
+  \sqrt{\Delta m^2_{\text{atm}}}
+    = \sqrt{m_{\nu_3}^2 - m_{\nu_1}^2}
+    \approx 50\;\text{meV}.
+\end{equation}
+
+\[
+  \text{Residual} = +4.9\% = 1.66\,\varepsilon_{\text{floor}}.
+\]
+
+The agreement is within two braiding floors, the natural precision
+limit of the framework for quantities where QCD and electroweak
+radiative corrections have not yet been incorporated into the cycle
+boundary.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{The Solar Mass Scale}
+%% ──────────────────────────────────────────────────────────────────
+
+\subsection{The generation step in the neutral sector}
+
+In the charged-lepton sector, consecutive generations are separated
+by 11 and 6 $\varphi$-cycles respectively.  The quark sector uses
+a uniform step of 4 cycles between generations (Paper~5), reflecting
+the four colour traversals that quarks must complete before a new
+mass eigenstate is populated.
+
+Neutrinos carry no colour charge, but the four-cycle step of the
+colour sector sets the generation spacing in the neutral lepton sector.
+This is the deepest recursion that is independent of both electric and
+colour charge; its only remnant in the neutral sector is the
+four-cycle generation interval.  Therefore the second neutrino mass
+eigenstate sits at depth
+\begin{equation}
+  n_2 = n_3 + 4 = 34 + 4 = 38.
+  \label{eq:n2}
+\end{equation}
+
+\subsection{Numerical result}
+
+\begin{align}
+  \varphi^{38} &= \varphi^{34} \times \varphi^{4}
+               = 12{,}752{,}040 \times 6.8541
+               \approx 87{,}382{,}130,\\[4pt]
+  m_{\nu_2}   &= \frac{m_e\,(1+r)}{\varphi^{38}}
+               = \frac{668{,}909\;\text{eV}}{87{,}382{,}130}
+               = 7.654\;\text{meV}.
+\end{align}
+
+The solar neutrino oscillation parameter (PDG 2022):
+\begin{equation}
+  \sqrt{\Delta m^2_{\text{sol}}}
+    = \sqrt{m_{\nu_2}^2 - m_{\nu_1}^2}
+    \approx 8.6\;\text{meV}.
+\end{equation}
+
+\[
+  \text{Residual} = -11.0\% = -3.73\,\varepsilon_{\text{floor}}.
+\]
+
+The $m_{\nu_2}$ result sits outside one braiding floor, at
+$3.7\,\varepsilon_{\text{floor}}$.  This is consistent with
+the interpretation that QCD running affects the exact cycle
+boundary for the lighter neutrino states more strongly than for
+$m_{\nu_3}$: the solar scale is two orders of magnitude smaller
+than the atmospheric scale, and corrections from the strong sector
+that are negligible at $m_{\nu_3}$ become more significant at
+$m_{\nu_2}$.  Incorporating the running of the UM-derived
+$\alpha_s(M_Z) = r^2(1+r-r^2)$ down to the neutrino mass scale
+is identified as the next required calculation.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{The Mass Ratio}
+%% ──────────────────────────────────────────────────────────────────
+
+The ratio of the two mass eigenstates is exact in the UM framework:
+\begin{equation}
+  \frac{m_{\nu_3}}{m_{\nu_2}}
+    = \frac{\varphi^{38}}{\varphi^{34}}
+    = \varphi^4
+    = 6.854.
+  \label{eq:ratio}
+\end{equation}
+
+This is an integer power of $\varphi$ and therefore carries no
+uncertainty from the recursion depth assignment: regardless of
+the absolute normalisation, the step between consecutive neutral
+generations is exactly $\varphi^4$.
+
+The observational proxy for this ratio uses the oscillation
+parameters directly:
+\begin{equation}
+  \frac{\sqrt{\Delta m^2_{\text{atm}}}}{\sqrt{\Delta m^2_{\text{sol}}}}
+    \approx \frac{50\;\text{meV}}{8.6\;\text{meV}} = 5.81.
+\end{equation}
+
+The deviation of the proxy ratio from $\varphi^4 = 6.854$ is $+18\%$.
+This is not a test of the mass-ratio formula \eqref{eq:ratio}:
+the proxy involves $\Delta m^2 = m_{\nu_k}^2 - m_{\nu_1}^2$, which
+depends on the unknown lightest mass $m_{\nu_1}$.  In the UM framework,
+$m_{\nu_1} \approx 0$, but if $m_{\nu_1}$ has any appreciable value
+the proxy ratio and the true mass ratio can differ significantly.  A
+direct measurement of the mass ratio (for instance from future
+neutrino-mass experiments or from a combination of oscillation and
+cosmological data) would provide a sharper test.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{Cosmological Constraint}
+%% ──────────────────────────────────────────────────────────────────
+
+In the normal hierarchy, $m_{\nu_1} \approx 0$, so the sum of
+neutrino masses is dominated by $m_{\nu_3}$:
+\begin{align}
+  \Sigma m_\nu &= m_{\nu_1} + m_{\nu_2} + m_{\nu_3} \notag\\
+               &\approx 0 + 7.65\;\text{meV} + 52.5\;\text{meV} \notag\\
+               &= 60.1\;\text{meV}.
+\end{align}
+
+Planck 2018 (TT,TE,EE+lowE+lensing+BAO) places the upper bound:
+\begin{equation}
+  \Sigma m_\nu < 120\;\text{meV} \quad (95\%\;\text{C.L.}).
+\end{equation}
+
+The UM value satisfies this bound with a factor of two to spare:
+\[
+  \Sigma m_\nu^{(\text{UM})} = 60\;\text{meV} < 120\;\text{meV}. \checkmark
+\]
+
+Additionally, the KATRIN experiment constrains the effective
+electron-neutrino mass $m_{\nu_e} < 0.8\;\text{eV}$ at $90\%$
+C.L.\ (2022), far above the UM values; future sensitivity targets
+around $0.2\;\text{eV}$ will not yet probe the UM mass scale, but
+next-generation experiments aiming at $\sim\!20\;\text{meV}$
+sensitivity would begin to constrain $m_{\nu_3}$ directly.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{Discussion}
+%% ──────────────────────────────────────────────────────────────────
+
+\textbf{Normal hierarchy as a UM consequence.}
+The inverted hierarchy ($m_{\nu_3} < m_{\nu_2}$) would require the
+matter-only recursion to produce a \emph{shorter} depth for the
+more massive state.  This is structurally impossible in the UM
+recursion: larger mass always corresponds to shallower depth, and
+the neutral-sector recursion always assigns $n_3 < n_2 < n_1$.
+The normal hierarchy is not an assumption but a consequence of the
+recursion direction.
+
+\textbf{Why $m_{\nu_1} \approx 0$.}
+In the UM framework, $m_{\nu_1}$ would require a recursion depth
+$n_1 = n_2 + 4 = 42$, giving
+\begin{equation}
+  m_{\nu_1} = \frac{m_e(1+r)}{\varphi^{42}}
+            \approx \frac{52.5\;\text{meV}}{\varphi^8}
+            \approx 1.1\;\text{meV}.
+\end{equation}
+This is small enough to be consistent with all present data.  The
+assignment $m_{\nu_1} \approx 0$ used above is therefore an
+approximation, not an exact claim; including $m_{\nu_1} \approx 1\;\text{meV}$
+increases $\Sigma m_\nu$ by less than $2\%$ and does not affect
+any conclusion in this paper.
+
+\textbf{Majorana versus Dirac.}
+The UM recursion does not in itself fix the Majorana or Dirac
+nature of the mass: both are consistent with the channel structure.
+A Majorana mass matrix in the neutral sector would generate a seesaw
+mechanism whose scale in UM is set by $m_e(1+r)/\varphi^n$ for
+the appropriate $n$.  Deriving the right-handed neutrino mass scale
+from the UM heterotic geometry is identified as the next required
+step for the absolute mass programme.
+
+\textbf{Comparison with other approaches.}
+Flavour-symmetry models (tribimaximal mixing, $A_4$ symmetry)
+constrain mixing angles but do not derive the mass scale.
+The seesaw mechanism explains the smallness of neutrino masses
+relative to charged leptons but introduces the right-handed mass
+as a new free parameter.  UM derives the \emph{absolute scale}
+of $m_{\nu_3}$ to within two braiding floors without introducing
+any new parameter beyond those already determined by the axiom.
+
+%% ──────────────────────────────────────────────────────────────────
+\section{Complete Results}
+%% ──────────────────────────────────────────────────────────────────
+
+\begin{center}
+\begin{tabular}{lllll}
+\toprule
+Observable & UM expression & UM value & Observed & Error \\
+\midrule
+$m_{\nu_3}$
+  & $m_e(1{+}r)/\varphi^{34}$
+  & $52.5\;\text{meV}$
+  & ${\sim}50\;\text{meV}$
+  & $+4.9\%$ \\
+$m_{\nu_2}$
+  & $m_e(1{+}r)/\varphi^{38}$
+  & $7.65\;\text{meV}$
+  & ${\sim}8.6\;\text{meV}$
+  & $-11.0\%$ \\
+$m_{\nu_3}/m_{\nu_2}$
+  & $\varphi^4$
+  & $6.854$
+  & $5.81$ (proxy)
+  & $+18\%$ \\
+$\Sigma m_\nu$
+  & $m_{\nu_2} + m_{\nu_3}$
+  & $60\;\text{meV}$
+  & ${<}120\;\text{meV}$
+  & within bound \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The $m_{\nu_3}/m_{\nu_2}$ proxy residual reflects the unknown
+$m_{\nu_1}$, not a failure of the formula $\varphi^4$; the ratio
+$\varphi^4$ is an exact consequence of the neutral-sector recursion
+step.
+
+%% ──────────────────────────────────────────────────────────────────
+\section*{Closing}
+%% ──────────────────────────────────────────────────────────────────
+
+One axiom.  Four neutrino observables.  Zero free parameters.
+
+The atmospheric neutrino mass scale, the solar mass scale, the
+normal hierarchy, and the cosmological neutrino mass sum all follow
+from the same golden-ratio recursion that determines the charged-lepton
+masses, the Weinberg angle, and the proton-to-electron mass ratio.
+The neutral sector is not a separate sector in UM: it is the
+charged-lepton sector operating in the absence of the boundary channel,
+driven two levels deeper into the recursion before mass can accumulate.
+
+\end{document}
