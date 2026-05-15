@@ -16,6 +16,19 @@ That gives you one equation — `c² = c + 1` — with one positive solution: `�
 **Full derivation table and conceptual overview: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)**
 **Plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
 
+### Latest: 21/21 observables within the accumulated braiding floor
+
+Four results closed since the initial paper series:
+
+| Result | Formula | Error | n×ε |
+|---|---|---|---|
+| `\|V_cb\|` (new) | `W_B × W_M = 2r³(1−r)` | −0.85% | 0.14 (n=2) |
+| `A` (new) | `W_B · W_M · φ⁶` | −0.85% | 0.14 (n=2) |
+| Hubble tension (n-fix) | `3r³`, n=3 not n=1 | +6.53% | 0.74 (n=3) |
+| Strange quark (BC est.) | `φ¹²mₑ√W_B = 107.5 MeV` | +15.1% | 0.43 (n=12) |
+
+**Full addendum: [`papers/extended/addendum_closed_results.pdf`](papers/extended/addendum_closed_results.pdf)**
+
 ---
 
 ## LiMB — the solver

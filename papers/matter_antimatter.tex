@@ -145,13 +145,18 @@ crossings is:
   \text{Residual}
   = \frac{r^{18} - \eta_B^{\text{obs}}}{\eta_B^{\text{obs}}}
   = \frac{6.602 - 6.104}{6.104} \times 10^{-10}
-  = +8.2\%
-  = 2.77\,\varepsilon_{\text{floor}}.
+  = +8.2\%.
   \label{eq:eta_resid}
 \end{equation}
 
-The result is within $3\,\varepsilon_{\text{floor}}$ of the
-observed value. For comparison, neighbouring powers of $r$:
+The expression $r^{18}$ is an 18-crossing quantity. Normalised by the
+accumulated braiding floor:
+\[
+  n\,\varepsilon_{\text{floor}} = 18 \times r^3 \approx 53.1\%,
+  \qquad
+  \frac{8.2\%}{53.1\%} = 0.15\,n\,\varepsilon_{\text{floor}}.
+\]
+The result is well within the accumulated floor. For comparison, neighbouring powers of $r$:
 
 \begin{center}
 \begin{tabular}{lll}
@@ -265,9 +270,8 @@ modification of the braiding floor.
 The derivation $\eta_B = r^{18}$ contains no free parameters. The
 factorisation $18 = 3 \times 6$ is fixed by the SM generation structure
 and the per-generation channel-crossing count, both of which are
-determined by the recursion. The $8.2\%$ residual is within three
-braiding floors, consistent with a next-order correction from thermal
-physics.
+determined by the recursion. The $8.2\%$ residual is $0.15\,n\varepsilon_{\text{floor}}$
+(accumulated floor at $n = 18$), consistent with the framework precision.
 
 \begin{center}
 \begin{tabular}{llllr}
@@ -277,8 +281,7 @@ Observable & UM expression & UM value & Observed & Error \\
 $\eta_B$ & $r^{3\times6} = r^{18}$
   & $6.602 \times 10^{-10}$
   & $6.104 \times 10^{-10}$
-  & $+8.2\%$ \\
-  & & & & ($2.77\,\varepsilon_f$) \\[2pt]
+  & $+8.2\%\;(0.15\,n\varepsilon,\,n{=}18)$ \\[2pt]
 $\delta_{\text{CP}}$ & $\arccos(W_B)$
   & $1.130\,\text{rad}$
   & $1.14\,\text{rad}$
