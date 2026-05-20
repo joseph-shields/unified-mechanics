@@ -1,6 +1,6 @@
 # UM everything-at-once test suite — results
 
-- framework: c² = c + 1
+- framework: φ² = φ + 1
 - ε_floor = r³ ≈ 2.9508% per channel-traversal cycle
 - total tests: 98 | PASS: 77 | FAIL: 9 | SUB-FLOOR: 12
 

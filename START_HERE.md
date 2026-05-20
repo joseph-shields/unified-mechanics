@@ -18,7 +18,7 @@ In other words — what cut makes the ratio repeat at every scale, no matter how
 
 ## Step 2: The algebra falls out
 
-Call the ratio between longer and shorter `c`. Then the whole line is `cS + S` (longer plus shorter).
+Call the ratio between longer and shorter `φ`. Then the whole line is `φS + S` (longer plus shorter).
 
 The self-repeating condition is:
 
@@ -29,7 +29,7 @@ whole / longer  =  longer / shorter
 Substitute and simplify. You get:
 
 ```
-c² = c + 1
+φ² = φ + 1
 ```
 
 One equation. No assumptions. No constants chosen in advance.
@@ -80,7 +80,7 @@ Every cosmological model before this one has free parameters — numbers that ge
 This framework has zero. Every number in the table above comes from one equation and one equation only:
 
 ```
-c² = c + 1
+φ² = φ + 1
 ```
 
 The question was: what ratio repeats at every scale?

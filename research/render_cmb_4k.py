@@ -85,7 +85,7 @@ DPI = 451
 plt.close("all")
 
 hp.mollview(T_map,
-            title=r"UM-derived CMB sky  —  simulated realization from $c^2 = c + 1$  (not the Planck sky)",
+            title=r"UM-derived CMB sky  —  simulated realization from $φ² = φ + 1$  (not the Planck sky)",
             unit=r"$\delta T$ ($\mu$K)",
             cmap=PLANCK_CMAP, min=-500, max=500,
             cbar=True)

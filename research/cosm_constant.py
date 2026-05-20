@@ -99,5 +99,5 @@ print(f"  {'Lambda/M_Pl^4 = r^241':<26} {rn_um:>14.4e} {ratio_obs:>14.4e} {resid
 print(f"  {'Exact depth n':<26} {n_exact:>14.4f} {'(observed)':>14} {'':>8}")
 print("=" * 65)
 print()
-print("  All results from c^2 = c + 1 and the E8 root count (240).")
+print("  All results from φ² = φ + 1 and the E8 root count (240).")
 print("  Zero free parameters.")

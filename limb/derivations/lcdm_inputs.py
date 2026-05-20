@@ -4,7 +4,7 @@
 UM derivations of every LCDM "free input."
 
 LCDM cosmology has six base parameters and a handful of fixed-by-hand
-constants. UM derives every one of them from ``c² = c + 1`` and the
+constants. UM derives every one of them from ``φ² = φ + 1`` and the
 channel structure. Each function below returns the UM value; a pinned
 test sits next to each one in ``tests/test_limb_derivations.py``.
 
@@ -207,7 +207,7 @@ def Y_He() -> float:
 # ── CMB monopole ────────────────────────────────────────────────────
 def T_cmb_K() -> float:
     """**OBSERVATIONAL**. extended/11 §8: UM cannot derive an absolute
-    temperature from the dimensionless recursion c² = c + 1.
+    temperature from the dimensionless recursion φ² = φ + 1.
     Temperature carries dimension of energy; UM supplies ratios
     (a_rec/a_today, T_rec/T_today) but the absolute scale of T_today
     is a single dimensional anchor.

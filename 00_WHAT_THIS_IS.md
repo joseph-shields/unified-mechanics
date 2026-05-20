@@ -7,7 +7,7 @@
 A framework derived from a single algebraic axiom:
 
 ```
-c² = c + 1
+φ² = φ + 1
 ```
 
 Six characters. The simplest non-trivial recursion in one variable. Its unique positive solution is the golden ratio φ = (1+√5)/2 ≈ 1.618. From φ, the contraction rate r = 1/(2φ) ≈ 0.309. From r alone — with no further inputs and no fitted parameters — the framework derives cosmology, gravity, quantum mechanics, and particle physics.
@@ -41,7 +41,7 @@ The three are not three substances. They are three relationships the universe ma
 3. **The Born rule has a per-cycle coefficient `1/φ`** — testable in single-cycle measurements near nuclear isomer sources at 13.6 ppm magnitude.
 4. **The Bekenstein-Hawking `1/4` factor derives exactly** from the identity `(2rφ)² = 1` applied to area dimensionality.
 5. **The cosmological constant problem dissolves** — the `r²⁴⁰` cancellation is not fine-tuned; it is the algebraic completion of the recursion's full traversal.
-6. **The string-theory landscape resolves** — `c² = c + 1` is the algebraic-minimality selection that picks (G₂)₁ ⊂ (E₈)₁ from heterotic E₈ × E₈ on a G₂-holonomy 7-manifold.
+6. **The string-theory landscape resolves** — `φ² = φ + 1` is the algebraic-minimality selection that picks (G₂)₁ ⊂ (E₈)₁ from heterotic E₈ × E₈ on a G₂-holonomy 7-manifold.
 
 
 ## The same operation at every scale
@@ -58,7 +58,7 @@ Black holes are Strategy B at stellar and galactic scale. Dark-matter halos are 
 
 ## Heterotic identification
 
-The framework's specific instantiation in string theory is heterotic E₈ × E₈ compactified on a 7-dimensional G₂-holonomy manifold with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor. The recursion c² = c + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The two E₈s split as: first E₈ → visible sector (Standard Model + gravity); second E₈ → dark matter sector (gravitationally coupled, electromagnetically decoupled by structure).
+The framework's specific instantiation in string theory is heterotic E₈ × E₈ compactified on a 7-dimensional G₂-holonomy manifold with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor. The recursion φ² = φ + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The two E₈s split as: first E₈ → visible sector (Standard Model + gravity); second E₈ → dark matter sector (gravitationally coupled, electromagnetically decoupled by structure).
 
 
 ## Headline

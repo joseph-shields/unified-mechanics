@@ -47,7 +47,7 @@ sum to zero). For a scalar field threading the equilibrium between
 gravity and matter — neither falling into either side — the field
 must satisfy a stability condition
 
-    c² = c + 1                                        (1)
+    φ² = φ + 1                                        (1)
 
 where c is the scalar field's braiding coupling in the nKGB
 Horndeski action. The unique stable solution is

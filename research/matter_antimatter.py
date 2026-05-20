@@ -1,7 +1,7 @@
 """
 matter_antimatter.py — Baryon Asymmetry in Unified Mechanics
 =============================================================
-UM axiom: c^2 = c + 1  =>  phi = (1+sqrt(5))/2,  r = 1/(2*phi)
+UM axiom: φ² = φ + 1  =>  phi = (1+sqrt(5))/2,  r = 1/(2*phi)
 
 Computes:
   - eta_B = r^18 from 3 generations x 6 channel crossings per generation

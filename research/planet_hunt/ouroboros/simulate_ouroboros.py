@@ -443,7 +443,7 @@ r_s = derived_d['rdrag']
 txt = f"""OUROBOROS SYSTEM — UM DERIVATION CARD
 {'═'*56}
 
-UM AXIOM:  c² = c + 1
+UM AXIOM:  φ² = φ + 1
 φ = (1+√5)/2 = {phi:.10f}
 r = 1/(2φ)   = {r:.10f}
 ε_floor = r³ = {eps:.8f}  ({eps*100:.4f}% per cycle)

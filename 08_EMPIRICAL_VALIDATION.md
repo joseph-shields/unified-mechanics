@@ -175,7 +175,7 @@ The aggregate failure rate of 1.97% sits *below* the framework's single-cycle no
 
 ### 4.1 Question
 
-Does the agreement between UM and observation come *specifically from* the recursion `c² = c + 1`, or would *any* small-integer self-referential algebra produce similar agreement?
+Does the agreement between UM and observation come *specifically from* the recursion `φ² = φ + 1`, or would *any* small-integer self-referential algebra produce similar agreement?
 
 ### 4.2 Method
 

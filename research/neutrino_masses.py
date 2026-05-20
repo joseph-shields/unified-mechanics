@@ -4,7 +4,7 @@ Unified Mechanics — Neutrino Mass Hierarchy
 Joseph Shields, 2026
 
 Derives the atmospheric and solar neutrino mass scales from the UM axiom
-c^2 = c + 1, using only r = 1/(2*phi) and m_e = 0.511 MeV.
+φ² = φ + 1, using only r = 1/(2*phi) and m_e = 0.511 MeV.
 No free parameters.
 """
 
@@ -140,4 +140,4 @@ print(f"  {'m_nu3/m_nu2':<22} {ratio_um:>12.4f} {ratio_obs:>12.4f} {resid_ratio:
 print(f"  {'Sigma m_nu (meV)':<22} {sum_mv*1e3:>12.2f} {'<120':>12} {'within':>10}")
 print("=" * 65)
 print()
-print("  All results from c^2 = c + 1.  Zero free parameters.")
+print("  All results from φ² = φ + 1.  Zero free parameters.")

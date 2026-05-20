@@ -1,7 +1,7 @@
 """
 alpha_em_g2.py — Fine Structure Constant from G2 Cycle Geometry
 ================================================================
-UM axiom: c^2 = c + 1  =>  phi = (1+sqrt(5))/2,  r = 1/(2*phi)
+UM axiom: φ² = φ + 1  =>  phi = (1+sqrt(5))/2,  r = 1/(2*phi)
 
 Computes:
   - Fibonacci cycle sum  phi^10 + phi^5 + phi^2 + phi^(-2) = 137.082

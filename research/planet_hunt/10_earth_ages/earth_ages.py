@@ -1,6 +1,6 @@
 """
 Earth's light age, matter age, and biological recursion depth within UM.
-c² = c + 1  →  φ = (1+√5)/2  →  r = 1/(2φ) ≈ 0.309
+φ² = φ + 1  →  φ = (1+√5)/2  →  r = 1/(2φ) ≈ 0.309
 """
 import numpy as np
 

@@ -147,7 +147,7 @@ Peak combined RV: **0.337 m/s** — within ESPRESSO capability at G=8.3
 ## Citation / Framework
 
 **Cosmological inputs:** All derived from Unified Mechanics (UM) via LiMB/CAMB backend.
-No ΛCDM free parameters — H0, Ωb, Ωc, ns, As all closed-form functions of r from c²=c+1.
+No ΛCDM free parameters — H0, Ωb, Ωc, ns, As all closed-form functions of r from φ²=φ+1.
 
 **Gaia data:** Gaia DR3 (ESA), queried via astroquery TAP.
 **Exoplanet catalogue:** NASA Exoplanet Archive.

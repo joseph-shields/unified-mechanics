@@ -32,7 +32,7 @@ The Planck SMICA map shows Earth's Laniakea direction sits in a **CMB cold spot*
 
 ## Cosmological Framework
 
-All parameters derived from Unified Mechanics (c²=c+1). No free parameters fitted.
+All parameters derived from Unified Mechanics (φ²=φ+1). No free parameters fitted.
 
 | Parameter | UM Derivation | Planck 2018 |
 |-----------|--------------|-------------|

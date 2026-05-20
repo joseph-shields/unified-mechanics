@@ -2,7 +2,7 @@
 gauge_unification.py
 Unified Mechanics — Gauge Coupling Unification
 =============================================
-Derives all three SM gauge couplings at M_Z from the single axiom c^2 = c + 1,
+Derives all three SM gauge couplings at M_Z from the single axiom φ² = φ + 1,
 runs them with SM 1-loop beta functions, locates pairwise intersections, and
 compares the UM-natural GUT scale M_Pl * phi^{-14} to the intersection band.
 

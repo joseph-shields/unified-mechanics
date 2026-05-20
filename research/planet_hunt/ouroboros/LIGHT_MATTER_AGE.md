@@ -2,13 +2,13 @@
 
 **Joseph Shields · 2026**
 
-*Derived from the Unified Mechanics framework: c² = c + 1*
+*Derived from the Unified Mechanics framework: φ² = φ + 1*
 
 ---
 
 ## Abstract
 
-The Unified Mechanics framework derives all cosmological parameters from a single axiom — the recursion `c² = c + 1` — producing the golden ratio `φ = (1+√5)/2` and the contraction rate `r = 1/(2φ) ≈ 0.309`. From `r` alone, we derive not only the standard cosmological observables but a two-channel decomposition of age itself: the **light boundary** (L-channel record) and the **matter age** (M-channel accumulation). The matter age, dominated by biological recursion, is orders of magnitude larger than the light boundary for any system with active life.
+The Unified Mechanics framework derives all cosmological parameters from a single axiom — the recursion `φ² = φ + 1` — producing the golden ratio `φ = (1+√5)/2` and the contraction rate `r = 1/(2φ) ≈ 0.309`. From `r` alone, we derive not only the standard cosmological observables but a two-channel decomposition of age itself: the **light boundary** (L-channel record) and the **matter age** (M-channel accumulation). The matter age, dominated by biological recursion, is orders of magnitude larger than the light boundary for any system with active life.
 
 We apply this framework to the Ouroboros system (primary: HIP 98049, candidate planet Gaya) and to the five final candidates from our CMB-guided planet hunt. We show that **Earth has the deepest matter age of all nearest accessible candidates, leading the closest by 235 million years.** We simulate the Ouroboros system's universe — deriving its CMB sky, matter power spectrum, light boundary, and recursion depth — entirely from `r`. Everything that follows uses zero free parameters.
 
@@ -21,7 +21,7 @@ The simulation is fully reproducible: `simulate_ouroboros.py` generates all four
 The axiom is:
 
 ```
-c² = c + 1
+φ² = φ + 1
 ```
 
 The unique positive fixed point is `φ = (1+√5)/2 ≈ 1.618`. The contraction rate is:
@@ -316,7 +316,7 @@ Runtime: ~90 seconds on a consumer CPU. Output: `figures/01_light_boundary.png` 
 
 ## 9. Summary
 
-From the single axiom `c² = c + 1`:
+From the single axiom `φ² = φ + 1`:
 
 - `r = 0.30902` fixes every cosmological parameter with zero free inputs
 - The **light boundary** `τ_L = t_stellar` is the L-channel record of a system's history

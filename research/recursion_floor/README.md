@@ -9,7 +9,7 @@
 
 ## What this shows
 
-When UM fixes all cosmological parameters from c²=c+1, the MCMC sampler has
+When UM fixes all cosmological parameters from φ²=φ+1, the MCMC sampler has
 nothing to explore in cosmology space. The posterior collapses to a single
 nuisance dimension (A_planck). Pushing the convergence criterion to R^8 reveals
 that the Gelman-Rubin statistic doesn't descend smoothly — it clusters at
@@ -53,7 +53,7 @@ The standard cobaya convergence threshold (Rminus1_stop = 0.01) is within 9%
 of R^4 = 9.119×10⁻³. The chain's natural floor is R^8. Both are exact powers
 of the UM recursion constant R = 1/(2φ). This is not tuned — it emerges from
 running a standard MCMC sampler on a posterior whose structure is determined
-by the golden ratio recursion c²=c+1.
+by the golden ratio recursion φ²=φ+1.
 
 ## Files
 

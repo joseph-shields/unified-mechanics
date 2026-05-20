@@ -20,7 +20,7 @@ Earth itself appears at rank #0 by construction. Every star in the catalogue bel
 ## Pipeline
 
 ```
-UM cosmology (c²=c+1, zero free parameters)
+UM cosmology (φ²=φ+1, zero free parameters)
   → LiMB/CAMB: Cℓ power spectrum
   → healpy synfast NSIDE=512, lmax=3000, seed 271828
   → 5° disc average at all HEALPix centres
@@ -121,4 +121,4 @@ The architecture of the Ouroboros system — eight planets, inner rocky worlds, 
 ---
 
 *Joseph Shields · Unified Mechanics · 2026*
-*All cosmological parameters derived from c²=c+1. H0=67.4, Ωb=0.0477, Ωc=0.264, ns=0.9635, As=2.136×10⁻⁹*
+*All cosmological parameters derived from φ²=φ+1. H0=67.4, Ωb=0.0477, Ωc=0.264, ns=0.9635, As=2.136×10⁻⁹*

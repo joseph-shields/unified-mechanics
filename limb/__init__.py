@@ -4,7 +4,7 @@
 LiMB — *Light instigating Matter Barrier*.
 
 A zero-free-parameter CMB forward solver. All cosmological inputs are
-derived from a single boundary condition (c² = c + 1) via the golden
+derived from a single boundary condition (φ² = φ + 1) via the golden
 ratio φ and its contraction rate r = 1/(2φ).
 
 Quickstart

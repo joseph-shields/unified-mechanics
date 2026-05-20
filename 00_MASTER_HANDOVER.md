@@ -59,6 +59,6 @@
 
 - **98-observable test suite:** 88 PASS within n×ε_floor band
 - **Million-test sweep:** 98.03% PASS across 1,242,895 sample points
-- **Alternate-recursion check:** c²=c+1 residual 0.43%; next-best 29% (68× worse)
+- **Alternate-recursion check:** φ²=φ+1 residual 0.43%; next-best 29% (68× worse)
 - **Structural Bayes vs null:** ln B = +102, P_fluke ≈ 10⁻⁴⁴
 - **Demo chain (LiMB vs Planck TT):** A_planck = 1.0067 ± 0.0012, χ²/dof = 1.343
