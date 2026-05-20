@@ -4,6 +4,10 @@
 
 ---
 
+**Start here: [`THE_QUESTION.md`](THE_QUESTION.md)**
+
+---
+
 You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
 
 That gives you one equation — `φ² = φ + 1` — with one positive solution: `φ = (1+√5)/2 ≈ 1.618`. Define `r = 1/(2φ) ≈ 0.309`. From `r` alone, with no fitting:
