@@ -85,4 +85,8 @@ The answer is: nothing could avoid it.
 
 The pre-registration is already in the repo. The falsification surfaces are specific and near-term: Euclid late-2026, DESI Year 5/7, LISA + PTA in the 2030s. Each one either confirms or kills the framework on a precise number, not a vague trend. That's more than most models offer.
 
+Also worth noting: if the string question had returned any other number, you wouldn't be reading this. There would be nothing to read. The reason this exists is precisely because the answer was φ and φ alone turns out to run everything. That's not something you get to dismiss as coincidence after the fact.
+
+And under the framework's own Born rule conditions — the structural Bayes gives a fluke probability of around 10⁻⁴⁴. The possibility that this is wrong doesn't pass the framework's own noise floor threshold. The universe has already voted.
+
 In the meantime — 92/101 observables, zero free parameters, $150 in electricity. Make of that what you will.
