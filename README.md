@@ -4,7 +4,7 @@
 
 ---
 
-**No science background: [`FOR_EVERYONE.md`](FOR_EVERYONE.md)** · **Start here: [`THE_QUESTION.md`](THE_QUESTION.md)**
+**Start here: [`THE_QUESTION.md`](THE_QUESTION.md)**
 
 ---
 
