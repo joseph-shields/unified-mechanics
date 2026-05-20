@@ -1,4 +1,7 @@
 __pycache__/
 *.pyc
+*.aux
+*.log
+*.out
 CINNAMON_GIRL.md
 GENESIS.md
