@@ -13,7 +13,7 @@ That gives you one equation — `φ² = φ + 1` — with one positive solution: 
 - CMB spectral index: `1 − r²/φ² = 0.9635` (observed 0.9649)
 - Cosmological constant: `r²⁴¹ ≈ 10⁻¹²²·⁴` (observed `10⁻¹²²·⁰⁴`)
 
-**Full derivation table: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)** · **Plain English: [`START_HERE.md`](START_HERE.md)**
+**Full derivation table: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)** · **Plain English: [`START_HERE.md`](START_HERE.md)** · **Common objections: [`FAQ.md`](FAQ.md)**
 
 ---
 
