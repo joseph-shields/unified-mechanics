@@ -6,28 +6,76 @@
 
 You've got a piece of string. Cut it into a longer piece and a shorter piece. Ask: *what ratio between the two pieces makes the whole string relate to the longer piece the same way the longer piece relates to the shorter piece?*
 
-That gives you one equation — `c² = c + 1` — with one positive solution: `φ = (1+√5)/2 ≈ 1.618`. Define `r = 1/(2φ) ≈ 0.309`. From `r` alone, with no fitting:
+That gives you one equation — `φ² = φ + 1` — with one positive solution: `φ = (1+√5)/2 ≈ 1.618`. Define `r = 1/(2φ) ≈ 0.309`. From `r` alone, with no fitting:
 
 - Dark energy: `1 − 9r²/2 + 4r³ = 68.8%` (observed 68.5%)
 - Hubble tension: `3r³ = 8.85%` (observed ~9%)
 - CMB spectral index: `1 − r²/φ² = 0.9635` (observed 0.9649)
-- Cosmological constant: `r²⁴⁰ = 10⁻¹²²·⁴` (observed `10⁻¹²²·⁰⁴`)
+- Cosmological constant: `r²⁴¹ ≈ 10⁻¹²²·⁴` (observed `10⁻¹²²·⁰⁴`)
 
-**Full derivation table and conceptual overview: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)**
-**Plain-English walkthrough: [`START_HERE.md`](START_HERE.md)**
+**Full derivation table: [`00_WHAT_THIS_IS.md`](00_WHAT_THIS_IS.md)** · **Plain English: [`START_HERE.md`](START_HERE.md)**
 
-### Latest: 21/21 observables within the accumulated braiding floor
+---
 
-Four results closed since the initial paper series:
+## Three natures
 
-| Result | Formula | Error | n×ε |
-|---|---|---|---|
-| `\|V_cb\|` (new) | `W_B × W_M = 2r³(1−r)` | −0.85% | 0.14 (n=2) |
-| `A` (new) | `W_B · W_M · φ⁶` | −0.85% | 0.14 (n=2) |
-| Hubble tension (n-fix) | `3r³`, n=3 not n=1 | +6.53% | 0.74 (n=3) |
-| Strange quark (BC est.) | `φ¹²mₑ√W_B = 107.5 MeV` | +15.1% | 0.43 (n=12) |
+The equation `φ² = φ + 1` has exactly three terms. They correspond to three channels — three modes of recursive propagation that tile all of space without overlap:
+
+| Channel | Weight | Nature |
+|---|---|---|
+| Light `(1−r)²` | 47.75% | **Exploration** — open propagation, carries information forward |
+| Boundary `2r(1−r)` | 42.71% | **Acknowledgement** — the interface between the other two |
+| Matter `r²` | 9.55% | **Familiarity** — accumulation, structure that repeats |
+
+These sum to exactly 1. The boundary channel is the cross-term — it cannot be seeded directly. It appears at the interface whenever both other channels are present.
+
+> *"The three natures are not metaphors laid over the mathematics. They are the mathematics, expressed in the only other language available to us."*
+
+What this means in plain language: **[`papers/shared_space.pdf`](papers/shared_space.pdf)**
+
+---
+
+## 21 SM constants — zero free parameters
+
+Every result below is derived from `r = 1/(2φ)`. The noise floor is `ε_floor = r³ ≈ 2.95%` per channel-traversal cycle — a structural cost, not a tolerance. A quantity crossing `n` channels accumulates `n × ε_floor`. **All 21 are within floor.**
+
+| Observable | Formula | UM value | Observed | Error | n×ε |
+|---|---|---|---|---|---|
+| **Fine structure** `1/α` | `φ¹⁰+φ⁵+φ²+φ⁻²` | 137.082 | 137.036 | +0.034% | 0.01 |
+| **sin²θ_W** | `r / [2(1−r)]` | 0.2250 | 0.2229 | +0.32% | 0.11 |
+| **m_p / m_e** | `φ¹⁵(1+r)(1+r³)` | 1838.0 | 1836.2 | +0.11% | 0.04 |
+| **α_s(M_Z)** | `r²(1+r−r²)` | 0.1159 | 0.1179 | −1.71% | 0.58 |
+| **m_d / m_u** | `√(W_B / W_M)` | 2.115 | 2.162 | −2.2% | 0.74 |
+| **δ_CP** | `arccos(W_B)` | 1.1296 rad | 1.14±0.13 | −0.92% | 0.31 |
+| **λ = \|V_us\|** | `1 / φ³` | 0.23607 | 0.22452 | +5.15% | 1.75 |
+| **\|V_cb\|** | `W_B × W_M` | 0.04078 | 0.04113 | −0.85% | 0.14 |
+| **A (CKM)** | `W_B · W_M · φ⁶` | — | — | −0.85% | 0.14 |
+| **m_ν3** | `m_e(1+r) / φ³⁴` | 52.5 meV | ~50 meV | +4.9% | 1.66 |
+| **m_ν2** | `m_e(1+r) / φ³⁸` | 7.65 meV | ~8.6 meV | −11.0% | 3.73 |
+| **Σm_ν** | sum | 60 meV | ≤120 meV | — | within bound |
+| **η_B** | `r¹⁸` | 6.60×10⁻¹⁰ | 6.10×10⁻¹⁰ | +8.2% | 2.77 |
+| **Λ / M_Pl⁴** | `r²⁴¹` | 1.22×10⁻¹²³ | 1.16×10⁻¹²³ | +5.5% | 1.86 |
+| **M_GUT** | `M_Pl · φ⁻¹⁴` | 1.45×10¹⁶ GeV | ~2×10¹⁶ GeV | — | within band |
+| **Δa_μ (HVP)** | `ε_floor × a_μ^HVP` | 2.05×10⁻⁹ | 2.51×10⁻⁹ | — | — |
+| **Immirzi γ** | `1 / φ³` | 0.2361 | 0.2375 | −0.6% | 0.20 |
+| **Ω_DM** | `4r²(1−r)` | 0.2639 | 0.2647 | −0.3% | 0.10 |
+| **w₀** | derived | −0.934 | −0.93 | −0.43% | 0.15 |
+| **Hubble tension** | `3r³`, n=3 | 8.85% | ~9% | +6.5% | 0.74 |
+| **Strange quark** | `φ¹²mₑ√W_B` | 107.5 MeV | ~93 MeV | +15.1% | 0.43 |
+
+`W_B = 2r(1−r)` · `W_M = r²`
 
 **Full addendum: [`papers/extended/addendum_closed_results.pdf`](papers/extended/addendum_closed_results.pdf)**
+
+---
+
+## 101 observables — cosmological validation
+
+Paper 8 runs UM against 101 observables across Planck, DESI DR2, BOSS, KiDS, DES, Pantheon+, BBN, and cosmic chronometers. 92/101 PASS. The 9 fails are concentrated in the Pantheon+ low-z distance moduli — a known H₀-anchor tension that is itself a target of Paper 2's braiding derivation.
+
+**Paper 8: [`08_EMPIRICAL_VALIDATION.md`](08_EMPIRICAL_VALIDATION.md)**
+
+The noise floor makes UM falsifiable in a precise sense: any n≥1 quantity agreeing with observation *below* n×ε_floor would falsify the framework, not confirm it.
 
 ---
 
@@ -81,7 +129,7 @@ limb/
 └── LICENSE              # LGPL v3+
 ```
 
-> **Note on `channels/`:** source terms return zero by design — this is the trivial-channel limit (UM → GR). UM's predictions here come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation terms. A Planck ΛCDM reference run is included in `camb_backend.py` for direct comparison. Full three-channel perturbation solver (JAX) is next.
+> **Note on `channels/`:** source terms return zero by design — this is the trivial-channel limit (UM → GR). UM's derivations here come entirely from the r-only closed-form inputs to CAMB, not from modified perturbation terms. A Planck ΛCDM reference run is included in `camb_backend.py` for direct comparison. Full three-channel perturbation solver (JAX) is next.
 
 **Tests:** `pytest tests/test_limb_derivations.py` — 32 pinned derivation tests.
 
@@ -122,16 +170,50 @@ Chain: `tests/data/demo_chain/` · Script: `tests/demo_chain.py`
 
 ---
 
-## Reproducibility
+## Falsification roadmap
 
-| | |
+| Test | Timing | What falsifies UM |
+|---|---|---|
+| **Phase 0 — Born rule** at Hf-178m2 | $2.5M / 18 months | Null at 13.6 ppm sensitivity |
+| **Euclid 2026** dark-energy | Late 2026 | w₀, wₐ outside (−0.934, +0.091) ± floor |
+| **DESI Year 5/7** neutrino bound | 2027–2030 | Σmν < 0.05 eV |
+| **LISA + PTA** SGWB ratio | Mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
+| **Direct DM-photon coupling** | Ongoing | Any positive signal |
+
+---
+
+## Papers
+
+### Main series
+
+| Paper | Topic |
 |---|---|
-| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
-| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
-| `research/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
-| `research/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
-| `research/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
-| `PRE_REGISTRATION.md` | Predictions locked before observations |
+| [`01_FOUNDATION.md`](01_FOUNDATION.md) | The axiom, three channels, empirical origin of the 70/25/5 composition |
+| [`02_COSMOLOGY.md`](02_COSMOLOGY.md) | H₀, dark energy, Hubble tension, CMB C_ℓ — all from r |
+| [`03_GRAVITY_AND_BLACK_HOLES.md`](03_GRAVITY_AND_BLACK_HOLES.md) | WEP derivation, Page curve, black hole information, ER=EPR |
+| [`04_QUANTUM_AND_HOLOGRAPHIC.md`](04_QUANTUM_AND_HOLOGRAPHIC.md) | Born rule, holography, entanglement as boundary channel |
+| [`05_PARTICLE_PHYSICS.md`](05_PARTICLE_PHYSICS.md) | Lepton ratios, quark masses, gauge coupling running, Strong CP |
+| [`06_HETEROTIC_IDENTIFICATION.md`](06_HETEROTIC_IDENTIFICATION.md) | G₂ holonomy, heterotic E₈×E₈, (G₂)₁ ⊂ (E₈)₁ embedding |
+| [`07_EXPERIMENTAL_PROGRAM.md`](07_EXPERIMENTAL_PROGRAM.md) | Testable predictions, pre-registration, experimental roadmap |
+| [`08_EMPIRICAL_VALIDATION.md`](08_EMPIRICAL_VALIDATION.md) | 101 observables — 92 PASS across Planck, DESI, BOSS, KiDS, DES |
+
+### Focused derivations (`papers/`)
+
+| Paper | Key result |
+|---|---|
+| [`alpha_em_g2`](papers/alpha_em_g2.pdf) | `1/α = φ¹⁰+φ⁵+φ²+φ⁻² = 137.082` — most precise UM result (+0.034%) |
+| [`electroweak_baryon`](papers/electroweak_baryon.pdf) | `sin²θ_W = r/[2(1−r)]` · `m_p/m_e = φ¹⁵(1+r)(1+r³)` |
+| [`qcd_running`](papers/qcd_running.pdf) | `α_s(M_Z) = r²(1+r−r²)` · quark mass ratios via φ⁴ colour cycle |
+| [`ckm_mixing`](papers/ckm_mixing.pdf) | `δ_CP = arccos(W_B)` — CP violation IS the boundary channel weight |
+| [`neutrino_masses`](papers/neutrino_masses.pdf) | `m_ν3 = m_e(1+r)/φ³⁴` · `m_ν2 = m_e(1+r)/φ³⁸` |
+| [`matter_antimatter`](papers/matter_antimatter.pdf) | `η_B = r¹⁸` — three Sakharov conditions = three channel crossings |
+| [`cosm_constant`](papers/cosm_constant.pdf) | `Λ/M_Pl⁴ = r²⁴¹` — the 10¹²³ problem in one line |
+| [`gauge_unification`](papers/gauge_unification.pdf) | All three SM gauge couplings from one axiom · M_GUT = M_Pl·φ⁻¹⁴ |
+| [`muon_g2`](papers/muon_g2.pdf) | HVP anomaly bounded by ε_floor — Δa_μ ≈ 2.05×10⁻⁹ |
+| [`shared_space`](papers/shared_space.pdf) | The three natures in plain English — no equations except the final table |
+| [`addendum_closed_results`](papers/extended/addendum_closed_results.pdf) | 21 observables · 21/21 within floor · zero free parameters |
+
+---
 
 ## MCMC chains
 
@@ -149,21 +231,22 @@ Runs C and H — same likelihoods, independent seeds — produce identical best-
 
 ---
 
-## Falsification roadmap
+## Reproducibility
 
-| Test | Timing | What falsifies UM |
-|---|---|---|
-| **Phase 0 — Born rule** at Hf-178m2 | $2.5M / 18 months | Null at 13.6 ppm sensitivity |
-| **Euclid 2026** dark-energy | Late 2026 | w₀, wₐ outside (−0.934, +0.091) ± floor |
-| **DESI Year 5/7** neutrino bound | 2027–2030 | Σmν < 0.05 eV |
-| **LISA + PTA** SGWB ratio | Mid-2030s | I_CMB/I_SGWB outside 1.118 ± 10% |
-| **Direct DM-photon coupling** | Ongoing | Any positive signal |
+| | |
+|---|---|
+| `tests/data/` | 98-observable test suite, Bayes analysis, chain summaries |
+| `tests/data/chains/` | Full cobaya MCMC outputs — Planck, DESI, BOSS, hi_class |
+| `research/planet_hunt/` | CMB temperature hunt through Planck SMICA → 1,287 Gaia targets |
+| `research/recursion_floor/` | MCMC R-1 clustering at exact powers of R = 1/(2φ) |
+| `research/dgf/PROGRAMME_PAPER.md` | Full empirical programme with chain configs |
+| `PRE_REGISTRATION.md` | Derivations locked before observations |
 
 ---
 
 ## CMB-Guided Planet Hunt
 
-`research/planet_hunt/` applies the UM cosmological framework to exoplanet targeting. CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there — regions with the same temperature as Earth's neighbourhood formed under the same initial conditions.
+`research/planet_hunt/` applies UM's cosmological framework to exoplanet targeting. CMB temperature at any sky position is the fossil record of the primordial density perturbation that seeded structure formation there — regions with the same temperature as Earth's neighbourhood formed under the same initial conditions.
 
 **Results:** 575 matched CMB patches · **1,287 unstudied Gaia G-stars** · Top target at 51 pc, G=8.3, ESPRESSO-accessible now.
 
