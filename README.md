@@ -35,9 +35,9 @@ What this means in plain language: **[`papers/shared_space.pdf`](papers/shared_s
 
 ---
 
-## 21 SM constants — zero free parameters
+## 20 SM constants — zero free parameters
 
-Every result below is derived from `r = 1/(2φ)`. The noise floor is `ε_floor = r³ ≈ 2.95%` per channel-traversal cycle — a structural cost, not a tolerance. A quantity crossing `n` channels accumulates `n × ε_floor`. **All 21 are within floor.**
+Every result below is derived from `r = 1/(2φ)`. The noise floor is `ε_floor = r³ ≈ 2.95%` per channel-traversal cycle — a structural cost, not a tolerance. A quantity crossing `n` channels accumulates `n × ε_floor`. **All 20 are within floor.**
 
 | Observable | Formula | UM value | Observed | Error | n×ε |
 |---|---|---|---|---|---|
@@ -49,7 +49,6 @@ Every result below is derived from `r = 1/(2φ)`. The noise floor is `ε_floor =
 | **δ_CP** | `arccos(W_B)` | 1.1296 rad | 1.14±0.13 | −0.92% | 0.31 |
 | **λ = \|V_us\|** | `1 / φ³` | 0.23607 | 0.22452 | +5.15% | 1.75 |
 | **\|V_cb\|** | `W_B × W_M` | 0.04078 | 0.04113 | −0.85% | 0.14 |
-| **A (CKM)** | `W_B · W_M · φ⁶` | — | — | −0.85% | 0.14 |
 | **m_ν3** | `m_e(1+r) / φ³⁴` | 52.5 meV | ~50 meV | +4.9% | 1.66 |
 | **m_ν2** | `m_e(1+r) / φ³⁸` | 7.65 meV | ~8.6 meV | −11.0% | 3.73 |
 | **Σm_ν** | sum | 60 meV | ≤120 meV | — | within bound |
@@ -211,7 +210,7 @@ Chain: `tests/data/demo_chain/` · Script: `tests/demo_chain.py`
 | [`gauge_unification`](papers/gauge_unification.pdf) | All three SM gauge couplings from one axiom · M_GUT = M_Pl·φ⁻¹⁴ |
 | [`muon_g2`](papers/muon_g2.pdf) | HVP anomaly bounded by ε_floor — Δa_μ ≈ 2.05×10⁻⁹ |
 | [`shared_space`](papers/shared_space.pdf) | The three natures in plain English — no equations except the final table |
-| [`addendum_closed_results`](papers/extended/addendum_closed_results.pdf) | 21 observables · 21/21 within floor · zero free parameters |
+| [`addendum_closed_results`](papers/extended/addendum_closed_results.pdf) | 20 observables · 20/20 within floor · zero free parameters |
 
 ---
 
