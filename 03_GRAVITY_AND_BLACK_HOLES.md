@@ -40,11 +40,42 @@ The four-property correspondence is structural, not heuristic. Gravity *is* the 
 
 **(a) Spacetime is the boundary-channel substrate.** General relativity's "spacetime" is the macroscopic shape of β's stress-energy tension. When matter clumps, β tightens locally; this is what Einstein's field equations describe geometrically.
 
-**(b) Equivalence principle is structural.** The equivalence of gravitational and inertial mass — the foundational principle of general relativity — is forced by the anchor reading: a boat at anchor cannot distinguish between being held by tension and being in free space, because the anchor's job is to remove distinguishability. The geodesic principle is the boat-at-anchor principle made geometric.
+**(b) Equivalence principle is structural.** The equivalence of gravitational and inertial mass — the foundational principle of general relativity — is forced by two independent UM arguments (derived in §1.3).
+
+*(i) Universality of α.* The matter-curvature coupling is α = r²/2 (Paper 1 eq. 10) — a universal constant of the recursion, not a species-specific parameter. Every matter excitation couples to gravity with the same coefficient. The G_eff correction is therefore a universal rescaling of Newton's constant, not a composition-dependent effect. m_g/m_i = 1 for all matter.
+
+*(ii) Sum-rule homogeneity.* The sum rule r² + 2r(1-r) + (1-r)² = 1 generates the constraint δ(r²) + δ(2r(1-r)) + δ((1-r)²) = 0, which is **homogeneous in the information debt M**. The free-fall trajectory — determined by this constraint under a gravitational perturbation — is therefore M-independent. All masses fall identically.
+
+The geodesic principle is the boat-at-anchor principle made geometric: the anchor (β) removes degrees of freedom for all masses equally because its coupling is set by the universal constant r, not by the enclosed matter.
 
 **(c) Effective gravitational coupling.** The χ²R term in the Lagrangian (Paper 1 §4.3) modifies G_eff/G_N by 1 + 1/(2φ⁴) ≈ 1.073. The laboratory-measured G is the *effective* G_eff in regions where the matter-channel field sits at its VEV.
 
 **(d) No graviton needed at the framework level.** Gravity, in UM, is not a quantised field that propagates discrete energy quanta in the usual sense. It is the constraint structure of the universe-spanning boundary channel. Linearised gravitational waves are coherent excitations of β; gravitons may emerge at the appropriate quantisation level, but the framework does not require them.
+
+
+### 1.3 Derivation of the Weak Equivalence Principle
+
+The WEP — all test bodies fall identically in a gravitational field regardless of composition — is here derived, not assumed.
+
+**Argument (i): universality of α.** The matter-curvature coupling in the UM Lagrangian is α = r²/2 (Paper 1 eq. 10). This is determined entirely by r = 1/(2φ), a universal constant of the recursion axiom c² = c + 1. It is not a species-specific Yukawa coupling; it is the same for every χ excitation. The G_eff modification (eq. 1) is therefore a universal background shift — all matter couples to gravity with the same α. The gravitational and inertial masses both scale with α identically, so m_g/m_i = 1 for all matter.
+
+**Argument (ii): sum-rule homogeneity.** The sum rule is an algebraic identity:
+
+```
+r² + 2r(1-r) + (1-r)² = 1
+```
+
+Differentiating, the variation of any channel weight under a perturbation dφ satisfies:
+
+```
+δ(r²) + δ(2r(1-r)) + δ((1-r)²) = 0                           (*)
+```
+
+Explicitly: δ(r²) = 2r dr, δ(2r(1-r)) = 2(1-2r) dr, δ((1-r)²) = -2(1-r) dr. Sum: [2r + 2-4r - 2+2r] dr = 0. ✓
+
+Constraint (*) is **homogeneous in the information debt M**: multiplying the information carried by any channel by a constant M does not alter the form of the constraint. A gravitational perturbation creates δ(2r(1-r)) ≠ 0; the free-fall response is determined by (*), independent of M. Therefore all masses fall identically.
+
+GR postulates WEP as a foundational axiom. UM derives it from the algebraic identity that makes the sum rule exact.
 
 
 ## 2. The Effective Gravitational Coupling
@@ -139,9 +170,40 @@ The boundary channel is universe-spanning. Information held in 2r(1-r) is not lo
 
 The Schwarzschild radius itself is the geometric scale at which the local recursion can no longer hold the φ-attractor for the enclosed mass — the standard escape-velocity-equals-c criterion is the symptom; the structural cause is the KAM stability threshold being crossed.
 
+**Information conservation is exact.** The sum rule r² + 2r(1-r) + (1-r)² = 1 is an algebraic identity — it holds at every recursion step N, in every frame, without approximation. Total information debt across all three channels is exactly conserved throughout evaporation. The black hole information paradox dissolves at the structural level: a framework built on this identity cannot lose information.
+
+**Hawking emission rate from the Lagrangian.** Each cycle, the fraction of the remaining matter-channel information that transitions to the light channel via the curvature coupling is set by the matter-curvature coupling α = r²/2 (Paper 1 eq. 10) — the same coupling that governs the χ²R interaction and determines G_eff:
+
+```
+f = α = r²/2 = 1/(8φ²) = 1/(8(φ+1))     [per-cycle emission fraction]
+```
+
+The factor of 2 in the denominator is the boundary channel's combinatorial prefactor — the same 2 in 2r(1−r) and in r = 1/(2φ). This identifies the Hawking rate with an established Lagrangian coefficient rather than an independent input.
+
 ### 4.5 Page curve
 
-The Page curve — the characteristic shape of black-hole entropy through evaporation — emerges naturally. Boundary-channel information that was "stored" in the BH structure leaks back through Hawking emission at rate 1/(8π G_eff M); the matter-channel content of the interior continues evolving but is invisible to external observers (§5). The Page-time peak corresponds to the moment when the leaked Hawking radiation contains as much information as remains in the BH interior; the curve descends to zero as evaporation completes.
+**Derivation.** Let I_hole(N) be the information remaining in the black hole after N recursion cycles. With f = r²/2:
+
+```
+I_hole(N) = I₀ × (1 − r²/2)^N
+I_rad(N)  = I₀ × [1 − (1 − r²/2)^N]
+```
+
+These sum to I₀ identically at every N (sum rule — exact). The von Neumann entropy of the radiation for an external observer:
+
+```
+S_rad(N) = S₀ × min[ 1 − (1−r²/2)^N ,  (1−r²/2)^N ]
+```
+
+where S₀ = A₀/(4G_eff ħ). The horizon area tracks the remaining entropy: A(N) = A₀ × (1 − r²/2)^N.
+
+**Page time.** Setting I_hole = I_rad = I₀/2:
+
+```
+N_Page = ln(2) / |ln(1 − r²/2)|  ≈  14.17 recursion cycles
+```
+
+The curve rises from zero, peaks at S₀/2 at N_Page, and returns to zero as evaporation completes. Unitarity is exact throughout. No firewalls, no complementarity, no AdS/CFT required.
 
 
 ## 5. Mass as Light-Coupling-History-Dependent
