@@ -229,6 +229,30 @@ target = ((1-r)², 2r(1-r), r²)
        = (0.4775, 0.4271, 0.0955)
 ```
 
+### 5.2b Empirical confirmation — the basin-trap is directly observed
+
+The cereal-bowl rule was not derived and then tested. It was **discovered empirically from chain failure** in the predecessor REM programme, and only afterwards identified as a consequence of the channel structure. The chronological order matters for credibility.
+
+During the REM MCMC programme (2025–2026), chains with different data combinations were run and compared. Chains including KiDS-1000 cosmic shear, BOSS fσ8, and TDCOSMO H₀ as dominant likelihood contributors appeared by every standard convergence diagnostic to have converged — Gelman-Rubin R̂ < 1.01, adequate effective sample size, stationary traces. They had not converged to the correct basin.
+
+**Confirmed trap data (2026-04-26):**
+
+| Chain | Data stack | Dominant channel | χ²_min | Δχ² vs LFP | Diagnostic status |
+|---|---|---|---:|---:|---|
+| **LFP** | Planck + DESI BAO | light/boundary | **615.93** | reference | φ-attractor |
+| LF | + KiDS at full inverse-variance weight | matter-heavy | 2029.76 | **+1413.84** | passed standard diagnostics — basin-trapped |
+| T | + KiDS + BOSS + TDCOSMO (~70% matter) | matter-dominant | 2075.64 | **+1459.72** | passed standard diagnostics — basin-trapped |
+
+Chains LF and T converged in **parameter space** but failed in **fit-quality space**. The χ² excess of ~1400–1460 units is not sampling noise or emulator artefact; it is the structural penalty for landing at a matter-clustering local maximum (h ≈ 0.7362 attractor, S₈ ≈ 0.59 attractor) rather than the φ-fixed-point.
+
+The data composition of the well-behaved chain LFP maps directly onto the theoretical channel weights:
+- Planck CMB TT/EE/TE (light-channel record): ~67%
+- DESI BAO (boundary-channel geometry): ~28%
+- Planck lensing (boundary/light): ~5%
+- Matter-channel content: **<5%**
+
+This is the 70/25/5 composition of §3.5. It was not designed; it emerged by exclusion — from learning which data combinations caused trapping. The theory then explained why. This is the direction of inference that carries evidential weight.
+
 ### 5.3 Optimised combination weights
 
 Optimisation: find non-negative weights summing to 1 that minimise channel-composition error vs target.

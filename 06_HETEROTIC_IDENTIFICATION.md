@@ -7,16 +7,16 @@
 
 ## Abstract
 
-We identify the specific string-theory vacuum corresponding to Unified Mechanics's algebraic structure. Our universe is heterotic E₈ × E₈ string theory compactified on a 7-dimensional G₂ holonomy manifold X, with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor of the compactification. The recursion c² = c + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The contraction rate r = 1/(2φ) is the Fibonacci anyon quantum dimension multiplied by a Z₂ orbifold factor in X. The 240 = E₈ root count is the full traversal length of the recursion's closed orbit. The two E₈s of heterotic string theory split as: **first E₈ = visible sector** (Standard Model + gravity); **second E₈ = dark matter sector** (gravitationally coupled, electromagnetically decoupled by structure). All UM-derived numerical predictions follow from explicit moduli values of this specific compactification.
+We identify the specific string-theory vacuum corresponding to Unified Mechanics's algebraic structure. Our universe is heterotic E₈ × E₈ string theory compactified on a 7-dimensional G₂ holonomy manifold X, with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor of the compactification. The recursion φ² = φ + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The contraction rate r = 1/(2φ) is the Fibonacci anyon quantum dimension multiplied by a Z₂ orbifold factor in X. The 240 = E₈ root count is the full traversal length of the recursion's closed orbit. The two E₈s of heterotic string theory split as: **first E₈ = visible sector** (Standard Model + gravity); **second E₈ = dark matter sector** (gravitationally coupled, electromagnetically decoupled by structure). All UM-derived numerical predictions follow from explicit moduli values of this specific compactification.
 
 **Keywords:** heterotic string theory, E₈ symmetry, G₂ holonomy, Fibonacci anyons, dark matter, landscape problem
 
 
 ## 1. The Identification
 
-Our universe is heterotic E₈ × E₈ string theory compactified on a 7-dimensional G₂ holonomy manifold X, with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor of the compactification. The recursion c² = c + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The contraction rate r = 1/(2φ) is the Fibonacci anyon quantum dimension multiplied by a Z₂ orbifold factor in X. The 240 = E₈ root count is the full traversal length of the recursion's closed orbit. The two E₈s of heterotic string theory split as: **first E₈ = visible sector** (Standard Model + gravity); **second E₈ = dark matter sector** (gravitationally coupled, electromagnetically decoupled).
+Our universe is heterotic E₈ × E₈ string theory compactified on a 7-dimensional G₂ holonomy manifold X, with the conformal embedding (G₂)₁ ⊂ (E₈)₁ at level 1 as the structural anchor of the compactification. The recursion φ² = φ + 1 emerges from the Fibonacci anyon fusion algebra in the (G₂)₁ Chern-Simons sector. The contraction rate r = 1/(2φ) is the Fibonacci anyon quantum dimension multiplied by a Z₂ orbifold factor in X. The 240 = E₈ root count is the full traversal length of the recursion's closed orbit. The two E₈s of heterotic string theory split as: **first E₈ = visible sector** (Standard Model + gravity); **second E₈ = dark matter sector** (gravitationally coupled, electromagnetically decoupled).
 
-This identification is not hypothetical. It is the unique heterotic compactification in which (i) the recursion structure c² = c + 1 emerges from the algebraic content, (ii) the channel weights r², 2r(1-r), (1-r)² match the energy throughput of the resulting 4D effective theory, and (iii) all UM-derived numerical predictions follow from explicit moduli values.
+This identification is not hypothetical. It is the unique heterotic compactification in which (i) the recursion structure φ² = φ + 1 emerges from the algebraic content, (ii) the channel weights r², 2r(1-r), (1-r)² match the energy throughput of the resulting 4D effective theory, and (iii) all UM-derived numerical predictions follow from explicit moduli values.
 
 
 ## 2. The Structural Correspondences
@@ -29,7 +29,7 @@ UM identifies 240 as the E₈ root count and uses it as the recursion's closed o
 
 ### 2.2 Fibonacci anyons / φ in both frameworks
 
-UM's coupling constant is φ = (1+√5)/2, the Fibonacci anyon quantum dimension (Paper 1 §2.2). Heterotic string theory contains topological sectors where Fibonacci anyons appear with the same quantum dimension φ. The Fibonacci anyon fusion algebra τ × τ = 1 + τ is structurally identical to the algebraic recursion c² = c + 1 — both express that the next-state amplitude squared equals the current state plus the trivial. The recursion and the fusion rule are the same identity read in two languages.
+UM's coupling constant is φ = (1+√5)/2, the Fibonacci anyon quantum dimension (Paper 1 §2.2). Heterotic string theory contains topological sectors where Fibonacci anyons appear with the same quantum dimension φ. The Fibonacci anyon fusion algebra τ × τ = 1 + τ is structurally identical to the algebraic recursion φ² = φ + 1 — both express that the next-state amplitude squared equals the current state plus the trivial. The recursion and the fusion rule are the same identity read in two languages.
 
 ### 2.3 The conformal embedding (G₂)₁ ⊂ (E₈)₁
 
@@ -51,7 +51,7 @@ X has the following properties:
 - **Volume:** V_7 tuned such that 4D Newton's constant satisfies G_eff = G_N(1 + 1/(2φ⁴)).
 - **Flux:** The 4-form flux G_4 quantised such that the 4D vacuum energy density equals r²⁴⁰ M_Pl⁴. Specifically the flux integers correspond to Pisano-241 cycle counts, with the 240 = full recursion cycle manifesting as the flux's topological winding.
 
-This is one specific vacuum in the heterotic landscape. It is not picked anthropically. It is picked by **algebraic minimality**: c² = c + 1 is the simplest non-trivial algebraic recursion (Paper 1 §2.2), and its structural realisation in heterotic E₈ × E₈ uniquely requires the (G₂)₁ ⊂ (E₈)₁ embedding with Z₂ orbifold structure. Other heterotic vacua correspond to other algebraic recursions on other branches.
+This is one specific vacuum in the heterotic landscape. It is not picked anthropically. It is picked by **algebraic minimality**: φ² = φ + 1 is the simplest non-trivial algebraic recursion (Paper 1 §2.2), and its structural realisation in heterotic E₈ × E₈ uniquely requires the (G₂)₁ ⊂ (E₈)₁ embedding with Z₂ orbifold structure. Other heterotic vacua correspond to other algebraic recursions on other branches.
 
 
 ## 4. Dark Matter as the Second E₈
@@ -199,7 +199,7 @@ If our universe is heterotic E₈ × E₈ on a G₂ holonomy manifold with (G₂
 
 **Physics is unified.** UM and string theory are not competing frameworks; they are the same framework with different starting points. UM provides the algebraic-minimality selection principle that tells string theory which vacuum is ours. String theory provides the full mathematical machinery for analysing that specific vacuum. Together, they constitute one complete framework.
 
-**The landscape problem dissolves.** The 10⁵⁰⁰ vacua of string theory are the algebraic landscape's branch enumeration. We are on one specific branch (the c² = c + 1 branch). Other vacua are other branches with their own algebraic recursions. The "anthropic" framing of vacuum selection is wrong; the selection is algebraic-minimality.
+**The landscape problem dissolves.** The 10⁵⁰⁰ vacua of string theory are the algebraic landscape's branch enumeration. We are on one specific branch (the φ² = φ + 1 branch). Other vacua are other branches with their own algebraic recursions. The "anthropic" framing of vacuum selection is wrong; the selection is algebraic-minimality.
 
 **Dark matter is identified.** The second E₈ of heterotic string theory IS dark matter. It has its own gauge structure, particle content, and internal dynamics. It couples to us only through gravity. All non-gravitational dark-matter searches will return null forever; this is structural decoupling, not weak coupling.
 

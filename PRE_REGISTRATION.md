@@ -9,7 +9,7 @@ The pre-registration locks the framework's quantitative predictions publicly, wi
 ## Section 1: Identity of the framework
 
 **Framework name:** Unified Mechanics (UM)
-**Foundational axiom:** c² = c + 1 (algebraic recursion with unique positive fixed point φ = (1+√5)/2)
+**Foundational axiom:** φ² = φ + 1 (algebraic recursion with unique positive fixed point φ = (1+√5)/2)
 **Number of free parameters:** zero
 **Reference deposit:** https://github.com/joseph-shields/unified-mechanics
 
