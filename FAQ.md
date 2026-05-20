@@ -2,6 +2,42 @@
 
 ---
 
+## "Why ask the string question in the first place? It seems arbitrary."
+
+It's the opposite of arbitrary — it's the least arbitrary question you can ask. It doesn't assume a force, a particle, a field, a constant, or a geometry. It just asks: what ratio is consistent with itself at every scale? That's it. No physics enters before the question. The question is chosen precisely because it has the fewest assumptions of anything you could write down.
+
+The fact that the answer turns out to describe the universe isn't a consequence of the question being designed to fit. It's a consequence of the question being minimal enough that only one thing survives it. If you think there's a simpler question with a unique answer that doesn't describe the universe, write it down.
+
+---
+
+## "Why does (1−r)² equal light and r² equal matter? That's just asserted."
+
+The recursion has two rates: r and its complement (1−r). When you ask how a recursion with those two rates distributes itself completely across all of space — no gaps, no overlaps — you get the binomial expansion of unity:
+
+```
+(r + (1−r))² = r² + 2r(1−r) + (1−r)²
+```
+
+Three terms. That's not a choice — it's the only way to tile everything with two rates.
+
+Now look at what each term structurally does. `(1−r)²` is two consecutive applications of the propagation complement — the mode that doesn't contract. That's what propagation is. Light doesn't accumulate; it moves. `r²` is two consecutive applications of the contraction rate — accumulation. Matter is what accumulates. The boundary term `2r(1−r)` is the cross-term, the interface where one mode transitions to the other — which is exactly what gravity does: it mediates between propagating and accumulating things.
+
+The identification isn't imposed on the maths. It follows from what each term literally does.
+
+---
+
+## "What is a recursion cycle? What exactly is recurring? Is it literal or metaphorical?"
+
+Literal. `φ² = φ + 1` means the square of the ratio equals the ratio plus one — the same relationship holds at the next level up as at the current level. Applied at every scale, each level of organisation contains the same ratio as the one above and below it. A cycle is one traversal of that relationship. The cost of each traversal — r³ ≈ 2.95% — is the structural overhead of applying the recursion once. It's the same way compound interest has a per-period rate. Something real is recurring: the self-similar ratio φ, at every scale the universe has.
+
+---
+
+## "The noise floor is just a way to excuse values outside experimental bounds."
+
+No — it works in both directions, which is what makes it a real constraint rather than a fudge. Values landing *below* the floor would falsify the framework just as much as values landing above it. If a quantity that crosses two channels agreed with observation to 0.001% — far below the 5.9% two-cycle floor — that would be a problem, not a success. The floor isn't a tolerance band you hide behind. It's a derived cost of the recursion that the results have to land near, not inside.
+
+---
+
 ## "You're just fitting φ to the data."
 
 No parameter was fitted. φ falls out of one question — what ratio makes a line self-similar at every scale? — before any physics enters. The formula `φ² = φ + 1` has one positive solution and that solution is forced. Once you have φ, you have r. Once you have r, every number in the framework follows algebraically. There's nothing to fit because there's nothing free.
